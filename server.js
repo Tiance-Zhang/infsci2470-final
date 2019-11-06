@@ -5,9 +5,16 @@
 const express = require('express');
 const app = express();
 
-//load my .json file of english dictionary word
-const dictionary = require('./dictionary.json');
+var bodyPraser = require('body-parser');
+var urlencodedPraser = bodyPraser.urlencoded({extended: false});
 
+app.use(bodyPraser.urlencoded({
+  extended: true
+}));
+
+//load my .json file of english dictionary word
+const manager = require('./manager.json');
+const product = require('./product.json');
 
 //use the static files in the public folder
 app.use(express.static('public'));

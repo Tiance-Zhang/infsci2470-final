@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "shirt",
+      "size": "S",
+      "price": "20",
+      "volumn": "10"
+    },
+    {
+      "name": "pants",
+      "size": "S",
+      "price": "20",
+      "volumn": "10"
+    },
+    {
+      "name": "sweatshirt",
+      "size": "S",
+      "price": "20",
+      "volumn": "10"
+    },
+    {
+      "name": "hooded",
+      "size": "S",
+      "price": "20",
+      "volumn": "10"
+    }
+  ]
+}
