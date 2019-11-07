@@ -23,7 +23,7 @@
       <a class="nav-link active" href="/addNew">Add New Product</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="/vendor">Check Vendors</a>
+      <a class="nav-link active" href="/vendors">Check Vendors</a>
     </li>
   </nav>
   
@@ -31,15 +31,14 @@
     
     <ul class="list-group">
       
-      <% products.products.forEach(function(item) { %>
+      <% vendors.vendors.forEach(function(item) { %>
       <div class="card">
         <li class="list-group-item">ID: <%= item.id %></li>
         <li class="list-group-item">NAME: <%= item.name %></li>
-        <li class="list-group-item">SIZE: <%= item.size %></li>
-        <li class="list-group-item">PRICE: <%= item.price %></li>
-        <li class="list-group-item">VOLUMN: <%= item.volumn %></li>
-        <li class="list-group-item"><a href="/delete/<%= item.id %>">Delete</a></li>
-        
+        <li class="list-group-item">EMAIL: <%= item.email %></li>
+        <li class="list-group-item">TEL: <%= item.tel %></li>
+        <li class="list-group-item">PRODUCT: <%= item.product %></li>
+        <li class="list-group-item"><a href="/deleteVendor/<%= item.id %>">Delete</a></li>
       </div>
       <br>
       <% }) %>

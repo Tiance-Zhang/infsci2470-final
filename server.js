@@ -14,6 +14,7 @@ app.use(bodyPraser.urlencoded({
 
 //load my .json file
 const product_data = require('./product.json');
+const vendor_data = require('./vendor.json');
 
 //use the static files in the public folder
 app.use(express.static('public'));
@@ -54,7 +55,7 @@ app.get('/addNew', function(request, response, next) {
 app.get('/vendors', function(request, response, next) {
   try
   {
-    response.render("addNew", {products: product_data});
+    response.render("vendors", {vendors: vendor_data});
   }
   catch(err){
     next(err);
@@ -146,6 +147,20 @@ app.put('/products/:id', urlencodedPraser, function(request, response, next) {
   }
 });
 
+
+//Delete operation by using HTTP delete, you can use Postman to test.
+app.get('/deleteVendor/:id', function(request, response, next) {
+  try
+  {
+    var id = request.params;
+    delete vendor_data.vendors[id.id-1];
+    response.render("vendors", {vendors: vendor_data});
+  }
+  catch(err){
+    next(err);
+  }
+  
+});
 
 
 
