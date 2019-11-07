@@ -19,16 +19,16 @@
   
     <nav class="nav">
       <li class="nav-item">
-        <a class="nav-link active" href="/">Home</a>
+        <a class="nav-link active" href=" ">Home</a >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/product">Check All Products</a>
+        <a class="nav-link" href="/product">Check All Products</a >
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/addNew">Add New Product</a>
+        <a class="nav-link active" href="/addNew">Add New Product</a >
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/vendors">Check Vendors</a>
+        <a class="nav-link active" href="/vendors">Check Vendors</a >
       </li>
     </nav>
     
@@ -50,32 +50,24 @@
             <td class="td2">  The end point to get all products. </td>
           </tr>
           <tr>
-            <td class="td1"> /addNew </td>
-            <td class="td2">  The end point to get all information about cartoon. </td>
+            <td class="td1"> GET /vendors </td>
+            <td class="td2">  The end point to get all vendors. </td>
           </tr>
           <tr>
-            <td class="td1"> GET /api/movieinfo </td>
-            <td class="td2">  The end point to get all information about movie. </td>
+            <td class="td1"> POST /addOne </td>
+            <td class="td2">  The end point to add a new product. </td>
           </tr>
           <tr>
-            <td class="td1"> GET /api/comments/id </td>
-            <td class="td2">  The end point to get the comments for a cartoon by id. </td>
+            <td class="td1"> GET /delete/:id </td>
+            <td class="td2">  The end point to delete chosen product. </td>
           </tr>
           <tr>
-            <td class="td1"> GET /api/rating/mid </td>
-            <td class="td2">  The end point to get the ticket price for a movie by mid. </td>
+            <td class="td1"> PUT /products/:id </td>
+            <td class="td2">  The end point to update chosen product. </td>
           </tr>
           <tr>
-            <td class="td1"> POST /comments/c1 </td>
-            <td class="td2">  The end point to add new comment to cartoon with id "c1". </td>
-          </tr>
-          <tr>
-            <td class="td1"> POST /comments/c2 </td>
-            <td class="td2">  The end point to add new comment to cartoon with id "c2". </td>
-          </tr>
-          <tr>
-            <td class="td1"> POST /comments/c3 </td>
-            <td class="td2">  The end point to add new comment to cartoon with id "c3". </td>
+            <td class="td1"> DELETE /deleteVendor/:id </td>
+            <td class="td2">  The end point to delete chosen vendor. </td>
           </tr>
 
       </table>

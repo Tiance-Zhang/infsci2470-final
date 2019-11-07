@@ -106,19 +106,6 @@ app.get('/delete/:id', function(request, response, next) {
   
 });
 
-//Delete operation by using HTTP delete, you can use Postman to test.
-app.delete('/movies/:id', function(request, response, next) {
-  try
-  {
-    var id = request.params;
-    delete product_data.products[id.id-1];
-    response.send(product_data);
-  }
-  catch(err){
-    next(err);
-  }
-});
-
 //use postman to test updating function
 app.put('/products/:id', urlencodedPraser, function(request, response, next) {
   try
