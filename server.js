@@ -129,7 +129,7 @@ app.put('/products/:id', urlencodedPraser, function(request, response, next) {
 
 
 //Delete operation by using HTTP delete, you can use Postman to test.
-app.get('/deleteVendor/:id', function(request, response, next) {
+app.get('/deleteVendor/:id/vendor', function(request, response, next) {
   try
   {
     var id = request.params;
