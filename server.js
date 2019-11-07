@@ -4,6 +4,7 @@
 // init project
 const express = require("express");
 const app = express();
+var router = express.Router();
 
 var bodyPraser = require("body-parser");
 var urlencodedPraser = bodyPraser.urlencoded({ extended: false });
@@ -32,19 +33,23 @@ app.get("/", function(request, response) {
   });
 });
 
-app.post("/register", function(req, res, next) {
-  manager.findOne({ username: req.body.username }, function(err, doc) {
-    if (err) throw err;
-    if (doc) {
-      // the name already exists
-      res.json({ Failed: true, message: "the name already exists" });
-    } else {
-      manager.create(req.body, function(err, post) {
-        if (err) return next(err);
-        res.json({ Failed: false, message: "User Created !" });
-      });
-    }
-  });
+// app.post("/register", function(req, res, next) {
+//   manager.findOne({ username: req.body.username }, function(err, doc) {
+//     if (err) throw err;
+//     if (doc) {
+//       // the name already exists
+//       res.json({ Failed: true, message: "the name already exists" });
+//     } else {
+//       manager.create(req.body, function(err, post) {
+//         if (err) return next(err);
+//         res.json({ Failed: false, message: "User Created !" });
+//       });
+//     }
+//   });
+// });
+
+router.get('/register2', function(req, res, next) {
+  res.render('views/register', {title: 'index'});
 });
 
 // listen for requests :)
