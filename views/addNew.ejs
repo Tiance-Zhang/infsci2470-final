@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add movies!</title>
+    <link rel="stylesheet" href="/style.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+<body>
+<div class="container" style="padding-top: 20px">
+  <nav class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/product">Check All Products</a>
+    </li>
+  </nav>
+  
+  <div class="card">
+  <h2 class="card-header">Use the post method to add one data</h2>
+
+  
+  <form action="/addOne" method="post">
+    <div>
+      <label for="id">ID (Please input id from 5 uniquely):</label>
+      <input type="text" name="id">
+    </div>
+    
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" name="Title">
+    </div>
+    
+    <div>
+      <label for="year">Year:</label>
+      <input type="text" name="Year">
+    </div>
+    
+    <div>
+      <label for="genre">Genre:</label>
+      <input type="text" name="Genre">
+    </div>  
+    
+    <div>
+      <label for="director">Director:</label>
+      <input type="text" name="Director">
+    </div>
+      
+    <div>
+      <label for="awards">Awards:</label>
+      <input type="text" name="Awards">
+    </div>
+      
+    <div>
+      <label for="images">Images (URL):</label>
+      <input type="text" name="Images">
+    </div>
+    <button type="submit"> Submit </button>
+  </form>
+  
+  </div>
+  </div>
+</body>
+

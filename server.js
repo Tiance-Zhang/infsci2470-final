@@ -163,13 +163,9 @@ app.post('/addOne',urlencodedPraser, function(request, response, next) {
 app.get('/delete/:id', function(request, response, next) {
   try
   {
-    //response.render("movies", {movies_key: movie_data});
-    //response.send("Test delete");
     var id = request.params;
-    //response.send(id.id);
-    delete movie_data.movies[id.id-1];
-    //response.send(movie_data);
-    response.render("movies", {movies_key: movie_data});
+    delete movie_data.products[id.id-1];
+    response.render("product", {products: movie_data});
   }
   catch(err){
     next(err);
@@ -181,13 +177,9 @@ app.get('/delete/:id', function(request, response, next) {
 app.delete('/movies/:id', function(request, response, next) {
   try
   {
-    //var movie_data_temp = movie_data;;
     var id = request.params;
-    //response.send(request.body);
-    //var check = false;
-    delete movie_data.movies[id.id-1];
+    delete movie_data.products[id.id-1];
     response.send(movie_data);
-  //console.log(request.params);
   }
   catch(err){
     next(err);
