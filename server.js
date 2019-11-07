@@ -31,6 +31,16 @@ app.get('/', function(request, response) {
   });
 });
 
+app.get('/product', function(request, response, next) {
+  try
+  {
+    response.render("product", {products: movie_data});
+  }
+  catch(err){
+    next(err);
+  }
+});
+
 app.get('/movies', function(request, response, next) {
   try
   {
