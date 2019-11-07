@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Hello movies!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -13,182 +17,72 @@
 <body>
   <div class="container" style="padding-top: 20px">
   
-  <nav class="nav">
-    <li class="nav-item">
-      <a class="nav-link active" href="/">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/product">Check All Products</a>
-    </li>
-  <li class="nav-item">
-      <a class="nav-link active" href="/addNew">Add New Product</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="/vendors">Check Vendors</a>
-    </li>
-  </nav>
-  
+    <nav class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/product">Check All Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/addNew">Add New Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/vendors">Check Vendors</a>
+      </li>
+    </nav>
     
-  <div class="card">
-    <h2 class="card-header">
-      API documentation
-    </h2>
-  <div class="card-header">
-    <h5>GET /list</h5>
-  </div>
-  <div class="card-body">
-    <p class="card-text">This endpoint is the lists that can show my two json resources: "movies.json" and "movies_others.json".</p>
-    <p class="card-text">These two json file contact the movies important information and additional information.</p>
-    <p class="card-text">Response code: 200</p>
-    <code>
-      const express = require('express');<br>
-      const app = express();<br>
-      <br>
-      app.get('/list', function(request, response, next) { <br>
-      ...<br>
-      });
-    </code>
-    <br>
-    <br>
-    <p class="card-text">3 parameters: request, response and next (for middleware).</p>
-  </div>
-  <div class="card-header">
-    <h5>GET /movies</h5>
-  </div>
-  <div class="card-body">
-    <p class="card-text">This endpoint can get lists of movies from "movies.json".</p>
-    <p class="card-text">Response code: 200</p>
-    <code >
-      app.get('/movies', function(request, response, next) { <br>
-      ...<br>
-      });
-    </code>
+    <div class="card">
+      <h2 class="card-header">
+        API documentation
+      </h2>
+    </div>
     
-  </div>
-  <div class="card-header">
-    <h5>GET /movies/{id}</h5>
-  </div>
-  <div class="card-body">
-    <p class="card-text">This endpoint can find the movie whose id equals request id.</p>
-    <p class="card-text">Response code: 200</p>
-    <code >
-      app.get('/movies/:id', function(request, response, next) { <br>
-      ...//find the movie whose id equals request params id<br>
-      });
-    </code>
-    <br>
-    <br>
-    <p class="card-text">If the id is not exist, return error code and print "There is no this ID".</p>
+<!--     <div class="table-responsive"> -->
+
+        <table class="table">
+          <tr>
+            <th>API</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td class="td1"> GET /product </td>
+            <td class="td2">  The end point to get all products. </td>
+          </tr>
+          <tr>
+            <td class="td1"> /addNew </td>
+            <td class="td2">  The end point to get all information about cartoon. </td>
+          </tr>
+          <tr>
+            <td class="td1"> GET /api/movieinfo </td>
+            <td class="td2">  The end point to get all information about movie. </td>
+          </tr>
+          <tr>
+            <td class="td1"> GET /api/comments/id </td>
+            <td class="td2">  The end point to get the comments for a cartoon by id. </td>
+          </tr>
+          <tr>
+            <td class="td1"> GET /api/rating/mid </td>
+            <td class="td2">  The end point to get the ticket price for a movie by mid. </td>
+          </tr>
+          <tr>
+            <td class="td1"> POST /comments/c1 </td>
+            <td class="td2">  The end point to add new comment to cartoon with id "c1". </td>
+          </tr>
+          <tr>
+            <td class="td1"> POST /comments/c2 </td>
+            <td class="td2">  The end point to add new comment to cartoon with id "c2". </td>
+          </tr>
+          <tr>
+            <td class="td1"> POST /comments/c3 </td>
+            <td class="td2">  The end point to add new comment to cartoon with id "c3". </td>
+          </tr>
+
+      </table>
+<!--     </div> -->
     
-  </div>
-  <div class="card-header">
-    <h5>GET /movies/{id}/image</h5>
-  </div>
-  <div class="card-body">
-    <p class="card-text">This endpoint can find the movie's all images whose id equals request id.</p>
-    <p class="card-text">Response code: 200</p>
-    <code >
-      app.get('/movies/:id/image', function(request, response, next) { <br>
-      ...//find the movie whose id equals request params id<br>
-      });
-    </code>
-  </div>
-  <div class="card-header">
-    <h5>GET /information</h5>
-  </div>
-  <div class="card-body">
-    <p class="card-text">This endpoint can get lists of movies from "movies_others.json".</p>
-    <p class="card-text">Response code: 200</p>
-    <code >
-      app.get('/information', function(request, response, next) { <br>
-      ...<br>
-      });
-    </code>
     
-  </div>
     
-  <div class="card-header">
-    <h5>GET /search?id=#</h5> Eg: /search?id=1
-  </div>
-  <div class="card-body">
-    <p class="card-text">This endpoint can accept query parameters and the query parameters is id.</p>
-    <p class="card-text">Response code: 200</p>
-    <code >
-      app.get('/search', function(request, response, next) { <br>
-      ... //use request.query.id to get query parameters <br>
-      });
-    </code>
-  </div>
-    
-  <div class="card-header">
-    <h5>POST /addOne</h5>
-  </div>
-  <div class="card-body">
-    
-    <p class="card-text">This endpoint can use POST method to create one data and save locally (not in the JSON file).</p>
-    <p class="card-text">Response code: 200</p>
-    <code >
-      var bodyPraser = require('body-parser');<br>
-      var urlencodedPraser = bodyPraser.urlencoded({extended: false});<br>
-      <br>
-      app.post('/addOne',urlencodedPraser, function(request, response, next) { <br>
-      ... <br>
-      }); <br>
-    </code>
-    <br>
-    <p class="card-text">4 parameters: request, response, next (for middleware) and urlencodedPraser.</p>
-  </div>
-    
-  <div class="card-header">
-    <h5>GET /delete/{id}</h5>
-  </div>
-  <div class="card-body">
-    
-    <p class="card-text">This endpoint can use GET method to delete one data and render to the movies page.</p>
-    <p class="card-text">Response code: 200</p>
-    <code >
-      app.get('/delete/:id', function(request, response, next) { <br>
-      ... //The id is from movies page.<br>
-      });
-    </code>
-  </div>
-    
-  <div class="card-header">
-    <h5>PUT /movies/{id}</h5>
-  </div>
-  <div class="card-body">
-    
-    <p class="card-text">This endpoint can use PUT method to update one data whose id equals requset id.</p>
-    <p class="card-text">Response code: 200</p>
-    <code >
-      app.put('/movies/:id', function(request, response, next) { <br>
-      ... <br>
-      });
-    </code>
-    <p class="card-text">You can test it by using Postman, and the example is below (PS: request body use X-www-form-urlencoded).</p>
-    <p class="card-text">Test update movie whose id = 2.</p>
-    <img src="https://cdn.glitch.com/8388da17-86bb-4511-8559-7bfd166a4ace%2F2.png?v=1572755274521", alt="2">
-  </div>
-    
-  <div class="card-header">
-    <h5>DELETE /movies/{id}</h5>
-  </div>
-  <div class="card-body">
-    
-    <p class="card-text">This endpoint can use DELETE method to delete one data whose id equals requset id.</p>
-    <p class="card-text">Response code: 200</p>
-    <code >
-      app.delete('/movies/:id', function(request, response, next) { <br>
-      ... <br>
-      });
-    </code>
-    <p class="card-text">You can test it by using Postman, and the example is below.</p>
-    <p class="card-text">Test delete movie whose id = 1.</p>
-    <img src="https://cdn.glitch.com/8388da17-86bb-4511-8559-7bfd166a4ace%2F1.png?v=1572754985633", alt="1">
-    
-  </div>
-    
-</div>   
   </div>
   
 </body>

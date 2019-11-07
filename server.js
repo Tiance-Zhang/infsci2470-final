@@ -26,6 +26,8 @@ app.set("view engine", "ejs");
 
 
 //define your routes here. don't forget about error handling
+
+// Five routes for rendering view pages
 app.get('/', function(request, response) {
   response.render("index", {
     message: "Hey everyone! This is my webpage.",
@@ -62,18 +64,6 @@ app.get('/vendors', function(request, response, next) {
   }
 });
 
-app.get('/movies', function(request, response, next) {
-  try
-  {
-    response.render("movies", {movies_key: product_data});
-  }
-  catch(err){
-    next(err);
-  }
-});
-
-
-//Create operation, you can test it in the page 
 app.get('/addOne', function(request, response, next) {
   try
   {
@@ -82,9 +72,12 @@ app.get('/addOne', function(request, response, next) {
   catch(err){
     next(err);
   }
-  
 });
 
+
+
+
+// APIs for functions
 app.post('/addOne',urlencodedPraser, function(request, response, next) {
   try
   {
