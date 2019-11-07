@@ -51,22 +51,20 @@ app.get('/addNew', function(request, response, next) {
   }
 });
 
-app.get('/movies', function(request, response, next) {
+app.get('/vendors', function(request, response, next) {
   try
   {
-    response.render("movies", {movies_key: product_data});
+    response.render("addNew", {products: product_data});
   }
   catch(err){
     next(err);
   }
 });
 
-app.get('/list', function(request, response, next) {
+app.get('/movies', function(request, response, next) {
   try
   {
-    response.render("list", {
-      item1:product_data,
-    });
+    response.render("movies", {movies_key: product_data});
   }
   catch(err){
     next(err);
@@ -134,7 +132,6 @@ app.put('/products/:id', urlencodedPraser, function(request, response, next) {
     for (let item of product_data.products){
       if (item.id === request.params.id){
         //response.send(request.body);
-        item.id = request.body.id;
         item.name = request.body.name;
         item.price = request.body.price;
         item.size = request.body.size;

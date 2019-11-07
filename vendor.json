@@ -1,34 +1,34 @@
 {
-  "managers": [
+  "vendors": [
     {
       "name": "Alan1",
-      "password": "asdf",
       "email": "tic1@gmail.com",
-      "tel": "4121111111"
+      "tel": "4121111111",
+      "product": "1"
     },
     {
       "name": "Alan2",
-      "password": "asdf",
       "email": "tic2@gmail.com",
-      "tel": "4121111111"
+      "tel": "4121111111",
+      "product": "2"
     },
     {
       "name": "Alan3",
-      "password": "asdf",
       "email": "tic3@gmail.com",
-      "tel": "4121111111"
+      "tel": "4121111111",
+      "product": "3"
     },
     {
       "name": "Alan4",
-      "password": "asdf",
       "email": "tic4@gmail.com",
-      "tel": "4121111111"
+      "tel": "4121111111",
+      "product": "4"
     },
     {
       "name": "Alan5",
-      "password": "asdf",
       "email": "tic5@gmail.com",
-      "tel": "4121111111"
+      "tel": "4121111111",
+      "product": "5"
     }
   ]
 }
