@@ -127,7 +127,35 @@ app.delete('/movies/:id', function(request, response, next) {
   }
 });
 
+//use postman to test updating function
+app.put('/products/:id', urlencodedPraser, function(request, response, next) {
+  try
+  {
+    for (let item of product_data.products){
+      if (item.id === request.params.id){
+        //response.send(request.body);
+        item.id = request.body.id;
+        item.name = request.body.name;
+        item.price = request.body.price;
+        item.size = request.body.size;
+        item.volumn = request.body.volumn;
+        response.send(item);
+      }
+    }
+    response.status(400).send('There is no this ID');
+  }
+  catch(err){
+    next(err);
+  }
+});
 
+
+
+
+
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
 //Capture 404 and direct to error handling
 app.use(function(request, response, next) {
   var err = new Error('Not Found');
@@ -144,6 +172,7 @@ app.use(function(err, req, res, next) {
     layout: false
   });
 });
+
 
 
 
