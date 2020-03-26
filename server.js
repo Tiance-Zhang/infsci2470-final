@@ -13,6 +13,7 @@ app.use(bodyPraser.urlencoded({
 }));
 
 //load my .json file
+const product_data2 = require('./shoes.json');
 const product_data = require('./product.json');
 const vendor_data = require('./vendor.json');
 
@@ -47,7 +48,7 @@ app.get('/product', function(request, response, next) {
 app.get('/product2', function(request, response, next) {
   try
   {
-    response.render("product", {products: product_data});
+    response.render("product2", {shoes: product_data});
   }
   catch(err){
     next(err);
