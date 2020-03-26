@@ -65,6 +65,8 @@ app.get('/addNew', function(request, response, next) {
   }
 });
 
+
+
 app.get('/vendors', function(request, response, next) {
   try
   {
@@ -78,7 +80,7 @@ app.get('/vendors', function(request, response, next) {
 app.get('/addOne', function(request, response, next) {
   try
   {
-    response.render("addNew", {products: product_data});
+    response.render("addNew", {products: shoes_data});
   }
   catch(err){
     next(err);
@@ -93,8 +95,8 @@ app.post('/addOne',urlencodedPraser, function(request, response, next) {
   try
   {
     var name = JSON.stringify(request.body);
-    product_data.products.push(JSON.parse(name));
-    response.render("showadd", {products: product_data,
+    shoes_data.shoes.push(JSON.parse(name));
+    response.render("added", {products: product_data,
                                 message: 'POST Success!!!'});
   }
   catch(err){
