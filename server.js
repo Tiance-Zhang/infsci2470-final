@@ -111,7 +111,7 @@ app.get('/delete/:id', function(request, response, next) {
   {
     var id = request.params;
     delete shoes_data.shoes[id.id-1];
-    response.render("shoes", {foot: shoes_data});
+    response.render("product2", {foot: shoes_data});
   }
   catch(err){
     next(err);
