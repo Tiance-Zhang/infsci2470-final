@@ -31,13 +31,16 @@
     
     <ul class="list-group">
       
-      <% products.shoes.forEach(function(item) { %>
+      <% foot.shoes.forEach(function(item) { %>
       <div class="card">
         <li class="list-group-item">ID: <%= item.id %></li>
         <li class="list-group-item">NAME: <%= item.name %></li>
-        <li class="list-group-item">SIZE: <%= item.size %></li>
+        <li class="list-group-item">BRAND: <%= item.brand %></li>
         <li class="list-group-item">PRICE: <%= item.price %></li>
-        <li class="list-group-item">VOLUMN: <%= item.volumn %></li>
+        <li class="list-group-item">COLOR: <%= item.color %></li>
+        <li class="list-group-item">IMAGE: <%= item.shoeUrl %></li>
+        <li class="list-group-item"><img src=<%= item.Screenshots[randomNum] %> 
+                  alt="Screenshots of the games" width="900" height="500"></li>
         <li class="list-group-item"><a href="/delete/<%= item.id %>">Delete</a></li>
         
       </div>
