@@ -2,38 +2,38 @@
   "vendors": [
     {
       "id": "1",
-      "name": "Alan1",
+      "name": "Nike",
       "email": "abc@gmail.com",
       "tel": "4121111111",
-      "product": "1"
+      "sign": "1"
     },
     {
       "id": "2",
-      "name": "Alan2",
+      "name": "Adidas",
       "email": "abc2@gmail.com",
       "tel": "4121111111",
-      "product": "2"
+      "sign": "2"
     },
     {
       "id": "3",
-      "name": "Alan3",
+      "name": "Under Armour",
       "email": "abc3@gmail.com",
       "tel": "4121111111",
-      "product": "3"
+      "sign": "3"
     },
     {
       "id": "4",
-      "name": "Alan4",
+      "name": "Puma",
       "email": "abc4@gmail.com",
       "tel": "4121111111",
-      "product": "4"
+      "sign": "4"
     },
     {
       "id": "5",
-      "name": "Alan5",
+      "name": "New balance",
       "email": "abc5@gmail.com",
       "tel": "4121111111",
-      "product": "5"
+      "sign": "5"
     }
   ]
 }
