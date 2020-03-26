@@ -44,6 +44,16 @@ app.get('/product', function(request, response, next) {
   }
 });
 
+app.get('/product2', function(request, response, next) {
+  try
+  {
+    response.render("product", {products: product_data});
+  }
+  catch(err){
+    next(err);
+  }
+});
+
 app.get('/addNew', function(request, response, next) {
   try
   {
