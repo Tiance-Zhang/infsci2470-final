@@ -80,7 +80,7 @@ app.get('/vendors', function(request, response, next) {
 app.get('/addOne', function(request, response, next) {
   try
   {
-    response.render("addNew", {products: shoes_data});
+    response.render("addNew", {foot: shoes_data});
   }
   catch(err){
     next(err);
@@ -96,7 +96,7 @@ app.post('/addOne',urlencodedPraser, function(request, response, next) {
   {
     var name = JSON.stringify(request.body);
     shoes_data.shoes.push(JSON.parse(name));
-    response.render("added", {products: product_data,
+    response.render("added", {foot: shoes_data,
                                 message: 'POST Success!!!'});
   }
   catch(err){
@@ -105,13 +105,13 @@ app.post('/addOne',urlencodedPraser, function(request, response, next) {
   
 });
 
-//Delete operation by using HTTP get, it can show in page
+//Delete shoes
 app.get('/delete/:id', function(request, response, next) {
   try
   {
     var id = request.params;
-    delete product_data.products[id.id-1];
-    response.render("product", {products: product_data});
+    delete shoes_data.shoes[id.id-1];
+    response.render("shoes", {foot: shoes_data});
   }
   catch(err){
     next(err);
