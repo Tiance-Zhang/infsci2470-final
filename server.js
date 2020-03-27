@@ -119,7 +119,6 @@ app.get('/delete/:id', function(request, response, next) {
   
 });
 
-//use postman to test updating function
 app.put('/products/:id', urlencodedPraser, function(request, response, next) {
   try
   {
