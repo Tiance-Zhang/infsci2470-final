@@ -86,6 +86,15 @@ app.get('/addOne', function(request, response, next) {
 app.post('/addOne',urlencodedPraser, function(request, response, next) {
   try
   {
+    
+      for (let item of shoes_data.shoes)
+      {
+        if (item.id === request.params.id)
+          {
+            response.status(404).send('No such ID. Please check your input.');
+          }
+      }
+    
     var name = JSON.stringify(request.body);
     shoes_data.shoes.push(JSON.parse(name));
     response.render("added", {foot: shoes_data,
