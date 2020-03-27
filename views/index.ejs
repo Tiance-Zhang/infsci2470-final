@@ -39,30 +39,24 @@
 <!--     <div class="table-responsive"> -->
 
         <table class="table">
-          <tr>
-            <th>API</th>
-            <th>Description</th>
-          </tr>
           
           
-          <div class="card border-dark">
+         
   <div class="card-header">
-    <h3>Request specific game</h3>
+    <h3>GET /product</h3>
   </div>
       <div class="card-body">
-      <h5 class="card-title">GET /product </h5> 
-        <p class="card-text">The end point to get all products.</p>
+      <h5 class="card-title">The end point to get all products.</h5> 
       
   </div>
   </div> 
           
 
             <div class="card-header">
-    <h3>Request specific game</h3>
+    <h3>GET /vendors/h3>
   </div>
       <div class="card-body">
-      <h5 class="card-title">GET /vendors</h5> 
-        <p class="card-text"> The end point to get all vendors.</p>
+      <h5 class="card-title">The end point to get all vendors.</h5> 
       
 
   </div>
@@ -70,11 +64,10 @@
     
     
       <div class="card-header">
-    <h3>Request specific game</h3>
+    <h3>POST /addOne</h3>
   </div>
       <div class="card-body">
-      <h5 class="card-title">POST /addOne</h5> 
-        <p class="card-text"> The end point to add a new product.</p>
+      <h5 class="card-title">The end point to add a new product.</h5> 
       
 
   </div>
@@ -83,11 +76,10 @@
   
   
     <div class="card-header">
-    <h3>Request specific game</h3>
+    <h3>GET /delete/:id </h3>
   </div>
       <div class="card-body">
-      <h5 class="card-title"> GET /delete/:id </h5> 
-        <p class="card-text">The end point to delete chosen product.</p>
+      <h5 class="card-title">The end point to delete chosen product.</h5> 
       
   </div>
   </div> 
@@ -95,62 +87,28 @@
   
   
     <div class="card-header">
-    <h3>Request specific game</h3>
+    <h3>DELETE /deleteVendor/:id/vendor</h3>
   </div>
       <div class="card-body">
-      <h5 class="card-title">DELETE /deleteVendor/:id/vendor </h5> 
-        <p class="card-text">The end point to update chosen product.</p>
+      <h5 class="card-title">The end point to update chosen product. </h5> 
       
-    <code>
-      app.get('/games/:id', function(request, response, next) { <br>
-      ...//find the movie whose id equals request params id<br>
-      });
-    </code>
   </div>
   </div> 
 
 
 
   <div class="card-header">
-    <h3>Request specific game</h3>
+    <h3>GET /games/{id}</h3>
   </div>
       <div class="card-body">
       <h5 class="card-title">GET /games/{id}</h5> 
-        <p class="card-text">Return to the game and its detailed information which is connect to the given id</p>
+        <p class="card-text">The end point to delete chosen vendor.</p>
       
-    <code>
-      app.get('/games/:id', function(request, response, next) { <br>
-      ...//find the movie whose id equals request params id<br>
-      });
-    </code>
   </div>
   </div> 
           
           
-          <tr>
-            <td class="td1"> GET /product </td>
-            <td class="td2">  The end point to get all products. </td>
-          </tr>
-          <tr>
-            <td class="td1"> GET /vendors </td>
-            <td class="td2">  The end point to get all vendors. </td>
-          </tr>
-          <tr>
-            <td class="td1"> POST /addOne </td>
-            <td class="td2">  The end point to add a new product. </td>
-          </tr>
-          <tr>
-            <td class="td1"> GET /delete/:id </td>
-            <td class="td2">  The end point to delete chosen product. </td>
-          </tr>
-          <tr>
-            <td class="td1"> PUT /products/:id </td>
-            <td class="td2">  The end point to update chosen product. </td>
-          </tr>
-          <tr>
-            <td class="td1"> DELETE /deleteVendor/:id/vendor </td>
-            <td class="td2">  The end point to delete chosen vendor. </td>
-          </tr>
+  
 
       </table>
 <!--     </div> -->
