@@ -46,15 +46,7 @@
       "brand": "Nike",
       "price": "160$",
       "color": "black and blue",
-      "shoeUrl": "http://s2.shoes.com/images/br072/womens-trotters-estee-purple-suede-494139_120_45.jpg"
-    },
-    {
-      "id": "7",
-      "name": "Simone",
-      "brand": "Wanted",
-      "price": 39.95,
-      "color": "red",
-      "shoeUrl": "http://s1.shoes.com/images/br574/womens-wanted-simone-coral-490199_120_45.jpg"
+      "shoeUrl": "https://cdn.glitch.com/1ef72584-6f5a-4f1f-be95-76248bbd816f%2FKevin-Durants-Nike-KD-3-Shoes.jpg?v=1585334958382"
     }
   ]
 }

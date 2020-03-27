@@ -132,28 +132,6 @@ app.get('/deleteVendor/:id/vendor', function(request, response, next) {
 
 
 
-///////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////
-//Capture 404 and direct to error handling
-app.use(function(request, response, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-//Error handling in production environment
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {},
-    layout: false
-  });
-});
-
-
-
-
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
