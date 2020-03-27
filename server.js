@@ -14,7 +14,7 @@ app.use(bodyPraser.urlencoded({
 
 //load my .json file
 const shoes_data = require('./shoes.json');
-const product_data = require('./product.json');
+
 const vendor_data = require('./vendor.json');
 
 //use the static files in the public folder
@@ -35,15 +35,7 @@ app.get('/', function(request, response) {
   });
 });
 
-app.get('/product', function(request, response, next) {
-  try
-  {
-    response.render("product", {products: product_data});
-  }
-  catch(err){
-    next(err);
-  }
-});
+
 
 app.get('/product2', function(request, response, next) {
   try
@@ -58,7 +50,7 @@ app.get('/product2', function(request, response, next) {
 app.get('/addNew', function(request, response, next) {
   try
   {
-    response.render("addNew", {products: product_data});
+    response.render("addNew", {foot: shoes_data});
   }
   catch(err){
     next(err);
@@ -119,25 +111,7 @@ app.get('/delete/:id', function(request, response, next) {
   
 });
 
-app.put('/products/:id', urlencodedPraser, function(request, response, next) {
-  try
-  {
-    for (let item of product_data.products){
-      if (item.id === request.params.id){
-        //response.send(request.body);
-        item.name = request.body.name;
-        item.price = request.body.price;
-        item.size = request.body.size;
-        item.volumn = request.body.volumn;
-        response.send(item);
-      }
-    }
-    response.status(400).send('There is no this ID');
-  }
-  catch(err){
-    next(err);
-  }
-});
+
 
 
 //Delete operation by using HTTP delete, you can use Postman to test.
