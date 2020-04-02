@@ -1,9 +1,9 @@
  console.log("In server.js!");
+
 // init project
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
 
 // Establish a connection with the Mongo Database
 // Get the username, password, host, and databse from the .env file
@@ -15,154 +15,39 @@ const mongoDB = ("mongodb+srv://"+
                  +process.env.HOST+
                  "/"
                  +process.env.DATABASE);
+// console.log("Connection String: "+mongoDB);
+
 mongoose.connect(mongoDB, {useNewUrlParser: true, retryWrites: true});
 
+//debugging 
+mongoose.connection.on('connected', function (){
+  console.log('Mongoose connected to '+process.env.DATABASE);
+});
 
+mongoose.connection.on('error', function (err){
+  console.log('Mongoose connection error: '+err);
+});
 
+mongoose.connection.on('disconnected', function (){
+  console.log('Mongoose disconnected.');
+});
 
-// server.js
-// where your node app starts
+//start express 
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// init project
-
-
-
-var bodyPraser = require('body-parser');
-var urlencodedPraser = bodyPraser.urlencoded({extended: false});
-
-app.use(bodyPraser.urlencoded({
-  extended: true
-}));
-
-//load my .json file
-const shoes_data = require('./shoes.json');
-
-const vendor_data = require('./vendor.json');
-
-//use the static files in the public folder
-app.use(express.static('public'));
-
-//tell express where to get your views and which template engine to use
+// set the view engine
+app.set("view engine", "ejs")
 app.set("views", __dirname + "/views/");
-app.set("view engine", "ejs");
 
+// Load routes
+// const apiRouter = require("./routes/api");
+const indexRouter = require("./routes/index");
 
-
-//define your routes here. don't forget about error handling
-
-// Five routes for rendering view pages
-app.get('/', function(request, response) {
-  response.render("index", {
-    message: "Hey everyone! This is my webpage.",
-  });
-});
-
-
-
-app.get('/product2', function(request, response, next) {
-  try
-  {
-    response.render("product2", {foot: shoes_data});
-  }
-  catch(err){
-    next(err);
-  }
-});
-
-app.get('/addNew', function(request, response, next) {
-  try
-  {
-    response.render("addNew", {foot: shoes_data});
-  }
-  catch(err){
-    next(err);
-  }
-});
-
-
-
-app.get('/vendors', function(request, response, next) {
-  try
-  {
-    response.render("vendors", {vendors: vendor_data});
-  }
-  catch(err){
-    next(err);
-  }
-});
-
-app.get('/addOne', function(request, response, next) {
-  try
-  {
-    response.render("addNew", {foot: shoes_data});
-  }
-  catch(err){
-    next(err);
-  }
-});
-
-
-
-
-// APIs for functions
-app.post('/addOne',urlencodedPraser, function(request, response, next) {
-  try
-  {
-    
-      for (let item of shoes_data.shoes)
-      {
-        if (item.id === request.params.id)
-          {
-            response.status(404).send('No such ID. Please check your input.');
-          }
-      }
-    
-    var name = JSON.stringify(request.body);
-    shoes_data.shoes.push(JSON.parse(name));
-    response.render("added", {foot: shoes_data,
-                                message: 'POST Success!!!'});
-  }
-  catch(err){
-    next(err);
-  }
-  
-});
-
-//Delete shoes
-app.get('/delete/:id', function(request, response, next) {
-  try
-  {
-    var id = request.params;
-    delete shoes_data.shoes[id.id-1];
-    response.render("product2", {foot: shoes_data});
-  }
-  catch(err){
-    next(err);
-  }
-  
-});
-
-
-
-
-//Delete operation by using HTTP delete, you can use Postman to test.
-app.get('/deleteVendor/:id/vendor', function(request, response, next) {
-  try
-  {
-    var id = request.params;
-    delete vendor_data.vendors[id.id-1];
-    response.render("vendors", {vendors: vendor_data});
-  }
-  catch(err){
-    next(err);
-  }
-  
-});
-
-
-
-
-
+app.use("/", indexRouter);
+// app.use("/api/product", apiRouter);
+// app.use(express.static("public"));
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
