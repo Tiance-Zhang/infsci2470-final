@@ -22,6 +22,12 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/product", function(req,res){
+  Product.find({}, function (err, product_list){
+    res.json(product_list);
+  });
+});
+
 // RETRIEVE a specific book
 router.get("/:productId", function(req, res) {
   Product.findById(req.params.productId, function(err, product) {
@@ -31,6 +37,12 @@ router.get("/:productId", function(req, res) {
 
 //CREATE
 router.post("/", function(req, res) {
+  let product = new Product(req.body);
+  product.save();
+  res.status(201).send(product);
+});
+
+router.post("/product", function(req, res) {
   let product = new Product(req.body);
   product.save();
   res.status(201).send(product);

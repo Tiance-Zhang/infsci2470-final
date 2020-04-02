@@ -28,7 +28,33 @@
   </nav>
     
     
-  
+   <div>
+    
+     <% if (product) { %>
+    <p>There are <%= product.length %> products in the database.</p>
+    <table class="table">
+      <tbody><tr><th>Id</th><th>Name</th><th>Size</th><th>Price</th><th>Volumn</th></tr>
+        <% product.forEach(function(product){ %>
+     <div class="card">
+        <li class="list-group-item">ID: <%= product.id %></li>
+        <li class="list-group-item">NAME: <%= product.name %></li>
+        <li class="list-group-item">BRAND: <%= product.brand %></li>
+        <li class="list-group-item">PRICE: <%= product.price %></li>
+        <li class="list-group-item">COLOR: <%= product.color %></li>
+        <li class="list-group-item">IMAGE: <%= product.shoeUrl %></li>
+        <li class="list-group-item"><img src=<%= product.shoeUrl %> 
+                  alt="Screenshots of the games" width="900" height="500"></li>
+      
+        
+      </div>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <p>No products in the database.</p>
+    <% } %>
+    
+  </div>
     
     
 

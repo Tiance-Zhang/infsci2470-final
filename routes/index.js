@@ -5,9 +5,9 @@ const router = express.Router();
 //import data models
 const Product = require("../models/product");
 
-//router.get("/", function(req, res) {
-//  res.render("index");
-//});
+router.get("/", function(req, res) {
+  res.render("index");
+});
 
 // RETREIVE all books
 
