@@ -26,6 +26,33 @@
         <a class="nav-link active" href="/vendors">Check Brand</a >
       </li>
   </nav>
+    
+    
+    
+    <div>
+    
+     <% if (product) { %>
+    <p>There are <%= product.length %> products in the database.</p>
+    <table class="table">
+      <tbody><tr><th>Id</th><th>Name</th><th>Size</th><th>Price</th><th>Volumn</th></tr>
+        <% product.forEach(function(product){ %>
+         <div class="card">
+        <li class="list-group-item">ID: <%= item.id %></li>
+        <li class="list-group-item">NAME: <%= item.name %></li>
+        <li class="list-group-item">SIZE: <%= item.size %></li>
+        <li class="list-group-item">PRICE: <%= item.price %></li>
+        <li class="list-group-item">VOLUMN: <%= item.volumn %></li>
+      </div>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <p>No products in the database.</p>
+    <% } %>
+    
+  </div>
+    
+    
   
    <div>
     
