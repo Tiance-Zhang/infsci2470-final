@@ -36,30 +36,7 @@
     <table class="table">
       <tbody><tr><th>Id</th><th>Name</th><th>Size</th><th>Price</th><th>Volumn</th></tr>
         <% product.forEach(function(product){ %>
-         <div class="card">
-        <li class="list-group-item">ID: <%= item.id %></li>
-        <li class="list-group-item">NAME: <%= item.name %></li>
-        <li class="list-group-item">SIZE: <%= item.size %></li>
-        <li class="list-group-item">PRICE: <%= item.price %></li>
-        <li class="list-group-item">VOLUMN: <%= item.volumn %></li>
-      </div>
-        <% }); %>
-      </tbody>
-    </table>
-    <% } else { %>
-    <p>No products in the database.</p>
-    <% } %>
-    
-  </div>
-    
-    
-  
-   <div>
-    
-    <ul class="list-group">
-      
-      <% foot.shoes.forEach(function(item) { %>
-      <div class="card">
+     <div class="card">
         <li class="list-group-item">ID: <%= item.id %></li>
         <li class="list-group-item">NAME: <%= item.name %></li>
         <li class="list-group-item">BRAND: <%= item.brand %></li>
@@ -71,12 +48,19 @@
       
         
       </div>
-      <br>
-      <% }) %>
-     
-    </ul>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <p>No products in the database.</p>
+    <% } %>
     
   </div>
+    
+    
+
+
+
     
   </div>
 </body>
