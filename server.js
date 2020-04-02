@@ -17,6 +17,20 @@ const mongoDB = ("mongodb+srv://"+
                  +process.env.DATABASE);
 mongoose.connect(mongoDB, {useNewUrlParser: true, retryWrites: true});
 
+
+//debugging 
+mongoose.connection.on('connected', function (){
+  console.log('Mongoose connected to '+process.env.DATABASE);
+});
+
+mongoose.connection.on('error', function (err){
+  console.log('Mongoose connection error: '+err);
+});
+
+mongoose.connection.on('disconnected', function (){
+  console.log('Mongoose disconnected.');
+});
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
