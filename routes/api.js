@@ -5,6 +5,7 @@ const router = express.Router();
 const Product = require("../models/product");
 const Vendor = require("../models/vendor");
 
+/*
 router.get("/", function(req,res){
   Product.find({}, function (err, product_list){
     res.render("product", {products:product_list,
@@ -12,6 +13,7 @@ router.get("/", function(req,res){
   });
 });
 
+*/
 
 // RETREIVE all books
 router.get("/", function(req, res) {
