@@ -1,4 +1,4 @@
-
+ console.log("In server.js!");
 // init project
 const express = require('express');
 const mongoose = require('mongoose');
@@ -25,7 +25,7 @@ mongoose.connect(mongoDB, {useNewUrlParser: true, retryWrites: true});
 
 // init project
 
-const app = express();
+
 
 var bodyPraser = require('body-parser');
 var urlencodedPraser = bodyPraser.urlencoded({extended: false});
