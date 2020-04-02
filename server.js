@@ -40,11 +40,13 @@ app.set("view engine", "ejs")
 app.set("views", __dirname + "/views/");
 
 // Load routes
-const apiRouter = require("./routes/api");
+//const apiRouter = require("./routes/api");
 const indexRouter = require("./routes/index");
-app.use("/view/product",indexRouter);
+
+
+//app.use("/view/product",indexRouter);
 app.use("/", indexRouter);
-app.use("/api/product", apiRouter);
+//app.use("/api/product", apiRouter);
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
