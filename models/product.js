@@ -5,9 +5,10 @@ const vendorSchema = new Schema(
   {
     id: {type: Number},
     name: {type: String},
-    email: {type: String},
-    tel: {type: String},
-    product: {type: String},
+    brand: {type: String},
+    price: {type: String},
+    color: {type: String},
+    shoeUrl: {type: String},
   }
 );
 

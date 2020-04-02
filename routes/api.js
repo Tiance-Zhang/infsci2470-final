@@ -97,7 +97,7 @@ router.post('/newvendor', function(req, res){
 });
 
 //UPDATE  product
-router.put("/product/:productId", function(req, res) {
+/*router.put("/product/:productId", function(req, res) {
   Product.findById(req.params.productId, function(err, product) {
     if(err){
       res.status(500).send(err);
@@ -159,6 +159,8 @@ router.delete("/vendor/:vendorId", function(req, res){
     });
   });
 });
+
+*/
 
 
 module.exports = router;

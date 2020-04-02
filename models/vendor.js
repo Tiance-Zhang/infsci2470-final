@@ -5,9 +5,9 @@ const productSchema = new Schema(
   {
     id: {type: Number},
     name: {type: String},
-    size: {type: String},
-    price: {type: String},
-    volumn: {type: String},
+    email: {type: String},
+    tel: {type: String},
+    sign: {type: String},
   }
 );
 
