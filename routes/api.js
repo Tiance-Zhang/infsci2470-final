@@ -5,7 +5,13 @@ const router = express.Router();
 const Product = require("../models/product");
 const Vendor = require("../models/vendor");
 
-//import data models
+router.get("/", function(req,res){
+  Product.find({}, function (err, product_list){
+    res.render("product", {products:product_list,
+                        type: "Product"});
+  });
+});
+
 
 // RETREIVE all books
 router.get("/", function(req, res) {
