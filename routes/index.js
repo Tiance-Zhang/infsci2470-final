@@ -4,6 +4,7 @@ const router = express.Router();
 
 //import data models
 const Product = require("../models/product");
+const vendor = require("../models/product");
 
 router.get("/", function(req, res) {
   res.render("index");
