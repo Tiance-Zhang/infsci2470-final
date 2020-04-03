@@ -19,6 +19,16 @@ router.get("/product", function(request, response) {
   });
 });
 
+// RETREIVE all vendor
+
+router.get("/vendor", function(request, response) {
+  Product.find({}, function(err, product_list) {
+    response.render("product", {
+      product: product_list
+    });
+  });
+});
+
 //
 
 router.get("/addNew", function(request, response, next) {
