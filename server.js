@@ -44,6 +44,20 @@ const apiRouter = require("./routes/api");
 const indexRouter = require("./routes/index");
 
 
+//add one
+
+app.get('/addNew', function(request, response, next) {
+  try
+  {
+    response.render("addNew", {foot: shoes_data});
+  }
+  catch(err){
+    next(err);
+  }
+});
+
+
+
 //app.use("/view/product",indexRouter);
 app.use("/", indexRouter);
 app.use("/api/product", apiRouter);
