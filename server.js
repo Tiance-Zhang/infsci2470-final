@@ -46,15 +46,6 @@ const indexRouter = require("./routes/index");
 
 //add one
 
-app.get('/addNew', function(request, response, next) {
-  try
-  {
-    response.render("addNew", {foot: shoes_data});
-  }
-  catch(err){
-    next(err);
-  }
-});
 
 
 
