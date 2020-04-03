@@ -32,21 +32,20 @@
      <% if (vendor) { %>
     <p>There are <%= vendor.length %> products in the database.</p>
     <table class="table">
-      <tbody><tr><th>Id</th><th>Name</th><th>Size</th><th>Price</th><th>Volumn</th></tr>
-        <% product.forEach(function(product){ %>
+        <% vendor.forEach(function(vendor){ %>
      <div class="card">
         <li class="list-group-item">ID: <%= vendor.id %></li>
-        <li class="list-group-item">NAME: <%= item.name %></li>
-        <li class="list-group-item">EMAIL: <%= item.email %></li>
-        <li class="list-group-item">TEL: <%= item.tel %></li>
-        <li class="list-group-item">Sign: <%= item.sign %></li>
+        <li class="list-group-item">NAME: <%= vendor.name %></li>
+        <li class="list-group-item">EMAIL: <%= vendor.email %></li>
+        <li class="list-group-item">TEL: <%= vendor.tel %></li>
+        <li class="list-group-item">Sign: <%= vendor.sign %></li>
         
       </div>
         <% }); %>
       </tbody>
     </table>
     <% } else { %>
-    <p>No products in the database.</p>
+    <p>No vendors in the database.</p>
     <% } %>
     
 

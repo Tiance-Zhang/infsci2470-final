@@ -23,7 +23,7 @@ router.get("/product", function(request, response) {
 // RETREIVE all vendor
 
 router.get("/vendors", function(request, response) {
-  Product.find({}, function(err, vendor_list) {
+  vendor.find({}, function(err, vendor_list) {
     response.render("vendors", {
       vendor: vendor_list
     });
