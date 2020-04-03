@@ -44,6 +44,7 @@ const apiRouter = require("./routes/api");
 const indexRouter = require("./routes/index");
 
 
+
 //add one
 
 
@@ -53,6 +54,7 @@ const indexRouter = require("./routes/index");
 app.use("/", indexRouter);
 app.use("/api/product", apiRouter);
 app.use("/api/product", indexRouter);
+
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {

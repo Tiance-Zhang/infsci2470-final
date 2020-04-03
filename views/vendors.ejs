@@ -27,23 +27,29 @@
       </li>
   </nav>
   
-   <div>
+       <div>
     
-    <ul class="list-group">
-      
-      <% vendors.vendors.forEach(function(item) { %>
-      <div class="card">
-        <li class="list-group-item">ID: <%= item.id %></li>
+     <% if (vendor) { %>
+    <p>There are <%= vendor.length %> products in the database.</p>
+    <table class="table">
+      <tbody><tr><th>Id</th><th>Name</th><th>Size</th><th>Price</th><th>Volumn</th></tr>
+        <% product.forEach(function(product){ %>
+     <div class="card">
+        <li class="list-group-item">ID: <%= vendor.id %></li>
         <li class="list-group-item">NAME: <%= item.name %></li>
         <li class="list-group-item">EMAIL: <%= item.email %></li>
         <li class="list-group-item">TEL: <%= item.tel %></li>
         <li class="list-group-item">Sign: <%= item.sign %></li>
         
       </div>
-      <br>
-      <% }) %>
-     
-    </ul>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <p>No products in the database.</p>
+    <% } %>
+    
+
     
   </div>
     

@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 // import data models
 const Product = require("../models/product");
+const vendor = require("../models/vendor");
 
 
 /*
@@ -27,6 +28,20 @@ router.get("/product", function(req,res){
     res.json(product_list);
   });
 });
+
+// RETREIVE all books
+router.get("/", function(req, res) {
+  vendor.find({}, function(err, vendor_list) {
+    res.json(vendor_list);
+  });
+});
+
+router.get("/vendors", function(req,res){
+  vendor.find({}, function (err, vendor_list){
+    res.json(vendor_list);
+  });
+});
+
 
 // RETRIEVE a specific book
 router.get("/:productId", function(req, res) {
