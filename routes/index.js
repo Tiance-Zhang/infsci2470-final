@@ -4,7 +4,7 @@ const router = express.Router();
 
 //import data models
 const Product = require("../models/product");
-const vendor = require("../models/product");
+const vendor = require("../models/vendor");
 
 router.get("/", function(req, res) {
   res.render("index");
@@ -23,9 +23,9 @@ router.get("/product", function(request, response) {
 // RETREIVE all vendor
 
 router.get("/vendor", function(request, response) {
-  Product.find({}, function(err, product_list) {
-    response.render("product", {
-      product: product_list
+  Product.find({}, function(err, vendor_list) {
+    response.render("vendor", {
+      vendor: vendor_list
     });
   });
 });
