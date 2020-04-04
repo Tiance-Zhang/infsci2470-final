@@ -5,7 +5,6 @@ const router = express.Router();
 const Product = require("../models/product");
 const Vendor = require("../models/vendor");
 
-
 /*
 router.get("/", function(req,res){
   Product.find({}, function (err, product_list){
@@ -18,22 +17,19 @@ router.get("/", function(req,res){
 
 // RETREIVE all books
 
-
-router.get("/product", function(req,res){
-  Product.find({}, function (err, product_list){
+router.get("/product", function(req, res) {
+  Product.find({}, function(err, product_list) {
     res.json(product_list);
   });
 });
 
 // RETREIVE all vendors
 
-
-router.get("/vendors", function(req,res){
-  Vendor.find({}, function (err, vendor_list){
+router.get("/vendors", function(req, res) {
+  Vendor.find({}, function(err, vendor_list) {
     res.json(vendor_list);
   });
 });
-
 
 // RETRIEVE a specific book
 router.get("/:productId", function(req, res) {
@@ -42,28 +38,27 @@ router.get("/:productId", function(req, res) {
   });
 });
 
-
 //Read media by author
 // Read shoes by vendors
-router.get("/:vendorsId/product", function(req, res){
-  Product.find({ vendors: req.params.vendorsId, }, function (err, product_list) {
-    Vendor.findById(req.params.vendorsId, function (err, vendor) {
-      if(!vendor){
+router.get("/:venId/product", function(req, res) {
+  Product.findById(req.params.venId, function(err, product_list) {
+    Vendor.findById(req.params.venId, function(err, vendor) {
+      if (!vendor) {
         res.status(404).send("404 Error: Page Not Found");
         return;
-      }else{
-      for(var m of product_list){
-            m.brand = vendor.name;
-          };
-          res.status(200).render("product", {products:product_list,
-                          type: "Product"});
-      console.log(vendor);
-      console.log(product_list);
-    }
-      });
+      } else {
+        for (var m of product_list) {
+          m.brand = vendor.name;
+        }
+        res
+          .status(200)
+          .render("product", { products: product_list, type: "Product" });
+        console.log(vendor);
+        console.log(product_list);
+      }
+    });
   });
 });
-
 
 //CREATE
 router.post("/", function(req, res) {
@@ -84,7 +79,6 @@ router.post("/", function(req, res) {
   vendor.save();
   res.status(201).send(vendor);
 });
-
 
 router.post("/vendors", function(req, res) {
   let vendor = new Vendor(req.body);
