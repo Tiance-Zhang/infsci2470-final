@@ -41,8 +41,8 @@ router.get("/:productId", function(req, res) {
 //Read media by author
 // Read shoes by vendors
 router.get("/:venId/product", function(req, res) {
-  Product.findById(req.params.venId, function(err, product_list) {
-    Vendor.findById(req.params.venId, function(err, vendor) {
+  Vendor.findById(req.params.venId, function(err, vendor) {
+    Product.findById(req.params.venId, function(err, product_list) {
       if (!vendor) {
         res.status(404).send("404 Error: Page Not Found");
         return;
