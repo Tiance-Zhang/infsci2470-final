@@ -45,15 +45,15 @@ const indexRouter = require("./routes/index");
 
 
 
-//add one
+
 
 
 
 
 //app.use("/view/product",indexRouter);
 app.use("/", indexRouter);
-app.use("/api/product", apiRouter);
-app.use("/api/vendors", apiRouter);
+app.use("/api/", apiRouter);
+app.use("/api/", apiRouter);
 
 
 // listen for requests :)

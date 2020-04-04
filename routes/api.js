@@ -17,11 +17,7 @@ router.get("/", function(req,res){
 */
 
 // RETREIVE all books
-router.get("/", function(req, res) {
-  Product.find({}, function(err, product_list) {
-    res.json(product_list);
-  });
-});
+
 
 router.get("/product", function(req,res){
   Product.find({}, function (err, product_list){
@@ -30,11 +26,7 @@ router.get("/product", function(req,res){
 });
 
 // RETREIVE all vendors
-router.get("/", function(req, res) {
-  Vendor.find({}, function(err, vendor_list) {
-    res.json(vendor_list);
-  });
-});
+
 
 router.get("/vendors", function(req,res){
   Vendor.find({}, function (err, vendor_list){
@@ -54,7 +46,7 @@ router.get("/:productId", function(req, res) {
 //Read media by author
 // Read shoes by vendors
 router.get("/:vendorsId/product", function(req, res){
-  Product.find({ author: req.params.vendorsId, }, function (err, product_list) {
+  Product.find({ vendors: req.params.vendorsId, }, function (err, product_list) {
     Vendor.findById(req.params.vendorsId, function (err, vendor) {
       if(!vendor){
         res.status(404).send("404 Error: Page Not Found");
