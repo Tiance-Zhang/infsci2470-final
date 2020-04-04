@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 // import data models
 const Product = require("../models/product");
-const vendor = require("../models/vendor");
+const Vendor = require("../models/vendor");
 
 
 /*
@@ -29,15 +29,15 @@ router.get("/product", function(req,res){
   });
 });
 
-// RETREIVE all books
+// RETREIVE all vendors
 router.get("/", function(req, res) {
-  vendor.find({}, function(err, vendor_list) {
+  Vendor.find({}, function(err, vendor_list) {
     res.json(vendor_list);
   });
 });
 
 router.get("/vendors", function(req,res){
-  vendor.find({}, function (err, vendor_list){
+  Vendor.find({}, function (err, vendor_list){
     res.json(vendor_list);
   });
 });
@@ -61,6 +61,20 @@ router.post("/product", function(req, res) {
   let product = new Product(req.body);
   product.save();
   res.status(201).send(product);
+});
+
+//CREATE vendors
+router.post("/", function(req, res) {
+  let vendor = new Vendor(req.body);
+  vendor.save();
+  res.status(201).send(vendor);
+});
+
+
+router.post("/vendors", function(req, res) {
+  let vendor = new Vendor(req.body);
+  vendor.save();
+  res.status(201).send(vendor);
 });
 
 //UPDATE
