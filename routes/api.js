@@ -64,6 +64,7 @@ router.get("/:vendorsId/product", function(req, res){
   });
 });
 
+
 //CREATE
 router.post("/", function(req, res) {
   let product = new Product(req.body);
