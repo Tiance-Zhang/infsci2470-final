@@ -52,9 +52,8 @@ const indexRouter = require("./routes/index");
 
 //app.use("/view/product",indexRouter);
 app.use("/", indexRouter);
-app.use("/", apiRouter);
 app.use("/api/product", apiRouter);
-app.use("/api/product", indexRouter);
+app.use("/api/vendors", apiRouter);
 
 
 // listen for requests :)
