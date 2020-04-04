@@ -50,6 +50,28 @@ router.get("/:productId", function(req, res) {
   });
 });
 
+
+//Read media by author
+// Read shoes by vendors
+router.get("/:vendorsId/product", function(req, res){
+  Product.find({ author: req.params.vendorsId, }, function (err, product_list) {
+    Vendor.findById(req.params.vendorsId, function (err, vendor) {
+      if(!vendor){
+        res.status(404).send("404 Error: Page Not Found");
+        return;
+      }else{
+      for(var m of product_list){
+            m.brand = vendor.name;
+          };
+          res.status(200).render("product", {products:product_list,
+                          type: "Product"});
+      console.log(vendor);
+      console.log(product_list);
+    }
+      });
+  });
+});
+
 //CREATE
 router.post("/", function(req, res) {
   let product = new Product(req.body);
