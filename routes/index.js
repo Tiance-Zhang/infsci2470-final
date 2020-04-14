@@ -32,6 +32,9 @@ router.get("/vendors", function(request, response) {
 
 //
 
+
+
+
 router.get("/addNew", function(request, response, next) {
   Product.find({}, function(err, product_list) {
     try {
@@ -59,6 +62,8 @@ router.post("/addone", function(req, res) {
   product.save();
   res.status(201).send(product);
 });
+
+
 
 
 
