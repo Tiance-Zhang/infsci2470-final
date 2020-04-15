@@ -6,6 +6,30 @@ const router = express.Router();
 const Product = require("../models/product");
 const vendor = require("../models/vendor");
 
+
+const expressip = require('express-ip');
+
+router.use(expressip().getIpInfoMiddleware);
+
+const ipstack = require('ipstack')
+ 
+router.get('/', function(req, res) {
+  const ipInfo = req.ipInfo.ip.substring(0,13);
+
+     res.status(200).render("home",{
+
+     })
+  
+});
+
+//
+
+router.get('/signup', function(req, res) { 
+    res.render('signup', {
+    });
+}); 
+
+
 router.get("/", function(req, res) {
   res.render("index");
 });
