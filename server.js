@@ -1,8 +1,22 @@
- console.log("In server.js!");
 // init project
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const path = require("path");
+const fetch = require("node-fetch");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const flash = require("connect-flash");
+const MongoStore = require("connect-mongo")(session);
+const config = require("./config/database");
+const passport = require("passport");
+const authStrategy = require('./config/config-passport'); 
+
+
+// init project
+//const express = require('express');
+//const mongoose = require('mongoose');
+//const bodyParser = require('body-parser');
 
 
 // Establish a connection with the Mongo Database
@@ -16,6 +30,16 @@ const mongoDB = ("mongodb+srv://"+
                  "/"
                  +process.env.DATABASE);
 mongoose.connect(mongoDB, {useNewUrlParser: true, retryWrites: true});
+
+//test
+passport.use(authStrategy);
+
+const app = express();
+app.use(express.static("public"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(require("cookie-parser")());
+//test over
 
 
 //debugging 
@@ -31,7 +55,7 @@ mongoose.connection.on('disconnected', function (){
   console.log('Mongoose disconnected.');
 });
 
-const app = express();
+//const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -53,7 +77,7 @@ const indexRouter = require("./routes/index");
 //app.use("/view/product",indexRouter);
 app.use("/", indexRouter);
 app.use("/api/", apiRouter);
-app.use("/api/", apiRouter);
+
 
 
 // listen for requests :)
