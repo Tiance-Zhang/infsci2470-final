@@ -7,8 +7,15 @@ const User = require("../models/users");
 
 
 // Route handlers
-//const express = require("express");
-//const router = express.Router();
+// Route handlers
+const express = require('express');
+const router = express.Router()
+const fetch = require("node-fetch");
+const expressip = require('express-ip');
+const passport = require('passport');
+const bcrypt = require("bcryptjs");
+const flash = require("connect-flash");
+
 
 //import data models
 const Product = require("../models/product");
@@ -16,13 +23,11 @@ const vendor = require("../models/vendor");
 
 //
 
-const express = require('express');
-const router = express.Router()
-const fetch = require("node-fetch");
-const expressip = require('express-ip');
+router.use(expressip().getIpInfoMiddleware);
 
+const ipstack = require('ipstack')
 
-router.get('/', function(req, res) {
+router.get('/home', function(req, res) {
   const ipInfo = req.ipInfo.ip.substring(0,13);
 
      res.status(200).render("home",{
@@ -41,13 +46,8 @@ router.get('/signup', function(req, res) {
 }); 
 
 
-router.get('/', function(req, res) {
-  const ipInfo = req.ipInfo.ip.substring(0,13);
-
-     res.status(200).render("home",{
-
-     })
-  
+router.get("/", function(req, res) {
+  res.render("index");
 });
 
 // RETREIVE all books
