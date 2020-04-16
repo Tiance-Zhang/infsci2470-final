@@ -27,6 +27,8 @@ router.use(expressip().getIpInfoMiddleware);
 
 const ipstack = require('ipstack')
 
+//log home
+
 router.get('/home', function(req, res) {
   const ipInfo = req.ipInfo.ip.substring(0,13);
 
@@ -38,7 +40,7 @@ router.get('/home', function(req, res) {
 
 
 
-//
+// sign up
 
 router.get('/signup', function(req, res) { 
     res.render('signup', {
@@ -49,6 +51,17 @@ router.get('/signup', function(req, res) {
 router.get("/", function(req, res) {
   res.render("index");
 });
+
+// lognin
+router.post('/login', function(req,res,next){
+  passport.authenticate("local", (err, user, info) => {
+    console.log('err', err);
+    console.log('user', user);
+    res.send("ok!");
+  });
+});
+
+
 
 // RETREIVE all books
 
@@ -102,6 +115,9 @@ router.post("/addone", function(req, res) {
   product.save();
   res.status(201).send(product);
 });
+
+
+
 
 
 
