@@ -91,14 +91,12 @@ router.get("/", function(req, res) {
 });
 
 // lognin
-router.post("/login", passport.authenticate('local'), (req, res) => {
-  if (req.user) {
-    console.log('logged in!', req.user);
-    res.redirect('/feed/' +req.user._id);
-  }
-  else {
-    res.redirect("/");
-  }
+router.post("/login", function(req,res,next){
+  console.log('this is the thing', passport);
+  passport.authenticate("local", (err, user, info) => {
+    console.log('err', err);
+    console.log('user', user);
+  });
 });
 
 
