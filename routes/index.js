@@ -51,6 +51,35 @@ router.get('/signup', function(req, res) {
     });
 }); 
 
+//Post to sign up
+router.post('/signup', function(req, res){
+  var myData = new User(req.body);
+  
+  console.log(myData);
+  
+  bcrypt.genSalt(10, function(err, salt){
+    bcrypt.hash(myData.password, salt, function(err, hash){
+      if(err){
+        console.log(err);
+      }else{
+        myData.password = hash;
+        myData.save()
+    .then(item => {
+      res.status(400).redirect("https://final-project-25.glitch.me/profile/" + myData._id)
+
+  })
+    .catch(err => {
+       res.status(400).send("unable to save to database");
+});
+      }
+    });
+  })
+});
+
+
+
+
+
 //admin
 
 
@@ -69,6 +98,8 @@ router.post('/login', function(req,res,next){
     res.send("ok!");
   });
 });
+
+
 
 
 
@@ -126,7 +157,15 @@ router.post("/addone", function(req, res) {
 });
 
 
-
+//admin
+router.get('/admin', function(req, res) {
+User.find({}, function(req, userlist){
+  
+  res.render('admin', {
+    users: userlist, 
+    name: 'jose'})
+  });
+});
 
 
 
