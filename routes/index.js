@@ -42,11 +42,20 @@ router.get('/home', function(req, res) {
 
 // sign up
 
+router.get("/login", function(req,res){
+  res.render("login");
+});
+
 router.get('/signup', function(req, res) { 
     res.render('signup', {
     });
 }); 
 
+//admin
+
+
+
+//main
 
 router.get("/", function(req, res) {
   res.render("index");
