@@ -65,7 +65,7 @@ router.post('/signup', function(req, res){
         myData.password = hash;
         myData.save()
     .then(item => {
-      res.status(400).redirect("https://final-project-25.glitch.me/profile/" + myData._id)
+      res.status(400).redirect("https://finalproject-fightcovid19.glitch.me/")
 
   })
     .catch(err => {
@@ -91,12 +91,14 @@ router.get("/", function(req, res) {
 });
 
 // lognin
-router.post('/login', function(req,res,next){
-  passport.authenticate("local", (err, user, info) => {
-    console.log('err', err);
-    console.log('user', user);
-    res.send("ok!");
-  });
+router.post("/login", passport.authenticate('local'), (req, res) => {
+  if (req.user) {
+    console.log('logged in!', req.user);
+    res.redirect('/feed/' +req.user._id);
+  }
+  else {
+    res.redirect("/");
+  }
 });
 
 
