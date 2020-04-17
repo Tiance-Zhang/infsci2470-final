@@ -29,7 +29,7 @@ const ipstack = require('ipstack')
 
 //log home
 
-router.get('/home', function(req, res) {
+router.get('/login', function(req, res) {
   const ipInfo = req.ipInfo.ip.substring(0,13);
 
      res.status(200).render("home",{
