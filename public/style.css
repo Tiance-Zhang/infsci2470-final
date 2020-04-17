@@ -71,13 +71,10 @@ footer {
 
 
 fieldset {
-vertical-align:middle;
-  width: 30%;
-  margin:0px auto;
-  height: 100%;
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;
 }
-
-
 
 
 
