@@ -68,3 +68,28 @@ footer {
   padding-top: 25px;
   border-top: 1px solid lightgrey;
 }
+
+@media only screen and (max-width: 480px) {
+  body{font-size:90%;}
+  h1{font-size:160%;}
+  h2{font-size:120%;}
+  
+}
+
+@media only screen and (min-width: 480px) {
+  body{font-size:100%}
+h1{font-size:190%;}
+  h2{font-size:150%;}
+}
+
+@media only screen and (min-width: 768px) {
+  body{font-size:110%}
+h1{font-size:220%;}
+  h2{font-size:180%;}
+}
+
+@media only screen and (min-width: 1279px) {
+  body{font-size:120%}
+  h1{font-size:250%;}
+  h2{font-size:210%;}
+}
