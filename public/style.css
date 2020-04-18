@@ -67,6 +67,10 @@ footer {
   margin-top: 50px;
   padding-top: 25px;
   border-top: 1px solid lightgrey;
+  #footer {
+   float: left;
+   width: 100%;
+}
 }
 
 
