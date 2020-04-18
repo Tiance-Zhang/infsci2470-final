@@ -1,55 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- import the webpage's stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    
-    <h1>网站名？</h1>
-  
-    
-    
-     <form action="/login" method="post">
-       <div id="login-info" align="center">
-         
-               <legend>Please Login:</legend> <br/>
-            
-              <div class="form-group">
-             <label>Email: </label>
-             <input type="email" id="email" name="email" placeholder="Please Enter Your Email Address" ><br><br>
-             </div>
-               <div class="form-group">
-             <label>Password: </label>
-             <input type="password" id="password" name="password" placeholder="Please Enter Your Password" ><br><br>
-             </div>
-             <button class="btn btn-lg btn-primary " 
-               type="submit">Log In</button> 
-              <br/><br/><br/><br/>
-              Do not have account? <input class="btn btn-primary" type="button" name="test" value="Sign Up Here" onClick="location.href='/signup'"/>
-     
-         </div>
-        </form>
-<br/><br/><br/><br/><br/><br/>
-    <a href="/admin">Admin Login</a><br><br>
-
-
-       <form method="get" action="/myProfile">
-         
-
-    <!-- include the Glitch button to show what the webpage is about and
-to make it easier for folks to view source and remix -->
-
-  </body>
-</html>
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+      <% include ./partials/messages %>
+      <form action="/users/login" method="POST">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Enter Password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <p class="lead mt-4">
+        No Account? <a href="/users/register">Register</a>
+      </p>
+    </div>
+  </div>
+</div>

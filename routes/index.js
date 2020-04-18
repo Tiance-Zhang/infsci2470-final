@@ -9,7 +9,7 @@ const Look = require("../models/look");
 // Route handlers
 // Route handlers
 const express = require('express');
-const router = express.Router()
+
 const fetch = require("node-fetch");
 const expressip = require('express-ip');
 const passport = require('passport');
@@ -23,14 +23,15 @@ const vendor = require("../models/vendor");
 
 //
 
-router.use(expressip().getIpInfoMiddleware);
+//router.use(expressip().getIpInfoMiddleware);
 
-const ipstack = require('ipstack')
+//const ipstack = require('ipstack')
 
 
 //copy 
-const router = express.Router();
+
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+const router = express.Router();
 
 // Welcome Page
 router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
@@ -43,6 +44,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
 );
 
 module.exports = router;
+/*
 
 //log home
 
@@ -54,8 +56,9 @@ router.get('/login', function(req, res) {
      })
   
 });
+*/
 
-
+/*
 
 // sign up
 
@@ -119,7 +122,7 @@ router.post('/login', (req, res, next) => {
 });
 
 
-
+*/
 
 
 
@@ -178,7 +181,7 @@ router.post("/addone", function(req, res) {
   res.status(201).send(product);
 });
 
-
+/*
 //admin
 router.get('/admin', function(req, res) {
 User.find({}, function(req, userlist){
@@ -189,6 +192,7 @@ User.find({}, function(req, userlist){
   });
 });
 
+*/
 
 
 
