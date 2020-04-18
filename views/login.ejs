@@ -24,11 +24,8 @@
      <form action="/login" method="post">
        <div id="login-info" align="center">
          
-       
-           
-               <legend>Please Login:</legend>
+               <legend>Please Login:</legend> <br/>
             
-             <br/><br/>
               <div class="form-group">
              <label>Email: </label>
              <input type="email" id="email" name="email" placeholder="Please Enter Your Email Address" ><br><br>
@@ -37,10 +34,10 @@
              <label>Password: </label>
              <input type="password" id="password" name="password" placeholder="Please Enter Your Password" ><br><br>
              </div>
-             <button class="btn btn-lg btn-primary btn-block" 
+             <button class="btn btn-lg btn-primary " 
                type="submit">Log In</button> 
               <br/><br/><br/><br/>
-              Do not have account? <input type="button" name="test" value="Sign Up Here" onClick="location.href='/signup'"/>
+              Do not have account? <input class="btn btn-primary" type="button" name="test" value="Sign Up Here" onClick="location.href='/signup'"/>
      
          </div>
         </form>

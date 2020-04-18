@@ -90,14 +90,19 @@ router.get("/", function(req, res) {
   res.render("index");
 });
 
-// lognin
-router.post("/login", function(req,res,next){
-  console.log('this is the thing', passport);
-  passport.authenticate("local", (err, user, info) => {
-    console.log('err', err);
-    console.log('user', user);
-  });
+
+
+// Login
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/admin',
+    failureRedirect: '/index',
+    failureFlash: true
+  })(req, res, next);
 });
+
+
+
 
 
 
