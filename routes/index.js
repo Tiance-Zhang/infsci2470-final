@@ -5,8 +5,6 @@ const Look = require("../models/look");
 //const Product = require("../products.json");
 
 
-
-// Route handlers
 // Route handlers
 const express = require('express');
 
