@@ -32,7 +32,7 @@ const ipstack = require('ipstack')
 router.get('/login', function(req, res) {
   const ipInfo = req.ipInfo.ip.substring(0,13);
 
-     res.status(200).render("home",{
+     res.status(200).render("login",{
 
      })
   
