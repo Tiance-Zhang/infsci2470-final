@@ -3,7 +3,7 @@
 //import data models
 const Look = require("../models/look");
 //const Product = require("../products.json");
-const User = require("../models/users");
+
 
 
 // Route handlers
@@ -26,6 +26,23 @@ const vendor = require("../models/vendor");
 router.use(expressip().getIpInfoMiddleware);
 
 const ipstack = require('ipstack')
+
+
+//copy 
+const router = express.Router();
+const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+
+// Welcome Page
+router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
+
+// Dashboard
+router.get('/dashboard', ensureAuthenticated, (req, res) =>
+  res.render('dashboard', {
+    user: req.user
+  })
+);
+
+module.exports = router;
 
 //log home
 
