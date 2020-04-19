@@ -18,7 +18,6 @@ Cart.find({}, function(err, cart_item) {
     }
 })
 
-
 // Welcome Page
 router.get("/", forwardAuthenticated, (req, res) => res.render("welcome"));
 
@@ -77,7 +76,6 @@ router.post("/addCart", function(request, response) {
             response.send(400, 'Bad Request');
         }
         else {
-          alert
           response.redirect('/product');
         }
     });
