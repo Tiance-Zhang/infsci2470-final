@@ -10,13 +10,7 @@ const cartSchema = new Schema({
 })
 var my_cart;
 var Cart = mongoose.model('Cart', cartSchema);
-Cart.find({}, function(err, cart_item) {
-    if (!cart_item.length) {
-      my_cart = new Cart();
-    } else {
-      my_cart = cart_item[0];
-    }
-})
+
 
 // Welcome Page
 router.get("/", forwardAuthenticated, (req, res) => res.render("welcome"));
@@ -83,17 +77,32 @@ router.post("/addCart", function(request, response) {
 });
 
 router.get("/myCart", function(req, res) {
+  Cart.find({}, function(err, cart_item) {
+    if (!cart_item.length) {
+      my_cart = new Cart();
+      my_cart.save();
+    } else {
+      my_cart = cart_item[0];
+    }
+  })
   Cart.find({}, function(err, productarray){
     let total_price = 0;
-    if (productarray) {
-    productarray[0].product_list.forEach(function(product) {
-      total_price = total_price + product.price;
-    })
+    if (productarray.length > 0) {
+      productarray[0].product_list.forEach(function(product) {
+        total_price = total_price + product.price;
+      })
+      res.render("cart", {
+        list: productarray[0].product_list,
+        total_price: total_price
+      });
     }
-    res.render("cart", {
-      list: productarray[0].product_list,
-      total_price: total_price
-    });
+    else {
+      res.render("cart", {
+        list: [],
+        total_price: total_price
+      });
+    }
+    
     //res.send(productarray);
   })
 })
