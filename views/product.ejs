@@ -47,27 +47,24 @@
      
      <% if (product) { %>
     <p>There are <%= product.length %> products in the database.</p>
-    <table class="table">
-      <tbody><tr><th>Id</th><th>Name</th><th>Size</th><th>Price</th><th>Volumn</th></tr>
-        <% product.forEach(function(product){ %>
-     <div class="card">
-        <li class="list-group-item">ID: <%= product.id %></li>
-        <li class="list-group-item">NAME: <%= product.name %></li>
-        <li class="list-group-item">BRAND: <%= product.brand %></li>
-        <li class="list-group-item">PRICE: <%= product.price %></li>
-        <li class="list-group-item">COLOR: <%= product.color %></li>
-        <li class="list-group-item">IMAGE: <%= product.shoeUrl %></li>
-        <li class="list-group-item"><img src=<%= product.shoeUrl %> 
-                  alt="Screenshots of the games" width="60%"></li>
-      <form action="/addCart?id=<%= product.id %>" method="POST">
-         <button type="submit">
+   <table class="table table-bordered" style="max-width:80%; align:right">
+      <% product.forEach(function(product){ %>
+      <tr>
+        <td rowspan="6"><img src=<%= product.shoeUrl %> 
+                  alt="Screenshots of the games" width="100%"></td>
+        <td >ID: <%= product.id %></td></tr>
+      <tr><td >NAME: <%= product.name %></td></tr>
+      <tr><td>BRAND: <%= product.brand %></td></tr>
+      <tr><td>PRICE: <%= product.price %></td></tr>
+      <tr><td>COLOR: <%= product.color %></td></tr>
+      <tr><td>IMAGE: <%= product.shoeUrl %></td></tr>
+ <tr><td colspan="2" align="center"><form action="/addCart?id=<%= product.id %>" method="POST">
+         <button class="btn btn-secondary btn-lg btn-block" type="submit">
            Add to Cart
          </button>
-       </form>
-        
-      </div>
-        <% }); %>
-      </tbody>
+       </form></td></tr>
+      
+  <% }); %>
     </table>
     <% } else { %>
     <p>No products in the database.</p>
