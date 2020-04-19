@@ -5,7 +5,7 @@
         <i class="fas fa-user-plus"></i> Register
       </h1>
       <% include ./partials/messages %>
-      <form action="/users/register" method="POST">
+      <form action="/users/adminregister" method="POST">
         <div class="form-group">
           <label for="name">Name</label>
           <input
@@ -51,10 +51,10 @@
           />
         </div>
         <button type="submit" class="btn btn-primary btn-block">
-          Register
+          adminRegister
         </button>
       </form>
-      <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+      <p class="lead mt-4">Have An Account? <a href="/users/adminlogin">Login</a></p>
     </div>
   </div>
 </div>
