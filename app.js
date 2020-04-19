@@ -9,9 +9,12 @@ const app = express();
 
 // Passport Config
 require('./config/passport')(passport);
+//require('./config/passport2')(passport);
 
 // DB Config
 const db = require('./config/keys').mongoURI;
+
+
 
 // Connect to MongoDB
 mongoose
@@ -25,6 +28,7 @@ mongoose
 
 
 
+
 // Get the username, password, host, and databse from the .env file
 const mongoDB = ("mongodb+srv://"+
                  process.env.USERNAME+
@@ -34,7 +38,7 @@ const mongoDB = ("mongodb+srv://"+
                  +process.env.HOST+
                  "/"
                  +process.env.DATABASE);
-mongoose.connect(mongoDB, {useNewUrlParser: true, retryWrites: true});
+mongoose.connect(mongoDB,{useNewUrlParser: true, retryWrites: true});
 
 //debugging 
 mongoose.connection.on('connected', function (){
@@ -86,6 +90,7 @@ app.use(function(req, res, next) {
 // Routes
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
+app.use('/admin', require('./routes/admin.js'));
 
 const PORT = process.env.PORT || 5000;
 
