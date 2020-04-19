@@ -1,60 +1,68 @@
-<div class="row mt-5">
-  <div class="col-md-6 m-auto">
-    <div class="card card-body">
-      <h1 class="text-center mb-3">
-        <i class="fas fa-user-plus"></i> Register
-      </h1>
-      <% include ./partials/messages %>
-      <form action="/edit" method="POST">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input
-            type="name"
-            id="name"
-            name="name"
-            class="form-control"
-            placeholder="Enter Name"
-            value="<%= typeof name != 'undefined' ? name : '' %>"
-          />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="form-control"
-            placeholder="Enter Email"
-            value="<%= typeof email != 'undefined' ? email : '' %>"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="form-control"
-            placeholder="Create Password"
-            value="<%= typeof password != 'undefined' ? password : '' %>"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password2">Confirm Password</label>
-          <input
-            type="password"
-            id="password2"
-            name="password2"
-            class="form-control"
-            placeholder="Confirm Password"
-            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">
-          Submit
-        </button>
-      </form>
-      <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add movies!</title>
+    <link rel="stylesheet" href="/style.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+<body>
+  <div class="container" style="padding-top: 40px;">
+   <nav class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link active" href=" /">Home</a >
+      </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="/product">Check All Shoes</a >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/vendors">Check Brand</a >
+      </li>
+  </nav>
+  
+  <div class="card">
+  <h2 class="card-header"><storng style="color: pink">Add</storng> a new shoes </h2>
+
+  
+  <form action="/addOne" method="post">
+    <div>
+      <label for="id">ID :</label>
+      <input type="text" name="id">
     </div>
+    
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" name="name">
+    </div>
+    
+    <div>
+      <label for="brand">brand:</label>
+      <input type="text" name="brand">
+    </div>
+    
+    <div>
+      <label for="price">Price:</label>
+      <input type="text" name="price">
+    </div>  
+    
+    <div>
+      <label for="color">color:</label>
+      <input type="text" name="color">
+    </div>
+    
+    <div>
+      <label for="imageUrl">imageUrl:</label>
+      <input type="text" name="imageUrl">
+    </div>
+    
+    <button type="submit"> Submit </button>
+  </form>
+  
   </div>
-</div>
+  </div>
+</body>
