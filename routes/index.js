@@ -48,7 +48,9 @@ router.get("/dashboard", ensureAuthenticated, (req, res) =>
 );
 
 //edit profile
-router.get('/edit', forwardAuthenticated, (req, res) => res.render('edit'));
+router.get("/edit", function(req, res) {
+  res.render("edit");
+});
 
 
 //Cart
