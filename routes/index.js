@@ -1,11 +1,11 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
 const Product = require("../models/product");
 const vendor = require("../models/vendor");
 
 // Welcome Page
-router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
+router.get("/", forwardAuthenticated, (req, res) => res.render("welcome"));
 
 //index
 router.get("/index", function(req, res) {
@@ -22,7 +22,6 @@ router.get("/product", function(request, response) {
   });
 });
 
-
 // RETREIVE all vendor
 
 router.get("/vendors", function(request, response) {
@@ -33,10 +32,9 @@ router.get("/vendors", function(request, response) {
   });
 });
 
-
 // Dashboard
-router.get('/dashboard', ensureAuthenticated, (req, res) =>
-  res.render('dashboard', {
+router.get("/dashboard", ensureAuthenticated, (req, res) =>
+  res.render("dashboard", {
     user: req.user
   })
 );
