@@ -70,8 +70,17 @@ router.post("/addCart", function(request, response) {
       color: product.color,
       shoeUrl: product.shoeUrl
     });
-    my_cart.save();
-    response.status(201).send(product.name);
+    //my_cart.save();
+    my_cart.save(function(err, user) {
+        if (err) {
+            console.log(err);
+            response.send(400, 'Bad Request');
+        }
+        else {
+          alert
+          response.redirect('/product');
+        }
+    });
   })
 });
 
