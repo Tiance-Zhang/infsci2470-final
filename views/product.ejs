@@ -28,6 +28,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/vendors">Check Brand</a></li>
           <li class="nav-item">
+        <a class="nav-link active" href="/myCart">My Cart</a >
+          </li>
+          <li class="nav-item">
       <a class="nav-link" href="/dashboard">Log out</a></li>
         </ul>
  </div>
@@ -55,7 +58,11 @@
         <li class="list-group-item">IMAGE: <%= product.shoeUrl %></li>
         <li class="list-group-item"><img src=<%= product.shoeUrl %> 
                   alt="Screenshots of the games" width="900" height="500"></li>
-      
+      <form action="/addCart?id=<%= product.id %>" method="POST">
+         <button type="submit">
+           Add to Cart
+         </button>
+       </form>
         
       </div>
         <% }); %>

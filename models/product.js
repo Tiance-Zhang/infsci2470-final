@@ -6,7 +6,7 @@ const productSchema = new Schema(
     id: {type: Number},
     name: {type: String},
     brand: {type: String},
-    price: {type: String},
+    price: {type: Number},
     color: {type: String},
     shoeUrl: {type: String},
   }

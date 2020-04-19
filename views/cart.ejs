@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart</title>
+  <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+  <div class="container" style="padding-top: 40px;">
+   <nav class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link active" href="/ ">Home</a >
+      </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="/product">Check All Shoes</a >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/addNew">Add New Shoes</a >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/vendors">Check Brand</a >
+      </li>
+     <li class="nav-item">
+        <a class="nav-link active" href="/myCart">My Cart</a >
+      </li>
+  </nav>
+    
+    
+   <div>
+    
+     <% if (list) { %>
+    <p>There are <%= list.length %> products in the Cart.</p>
+    <table class="table">
+      <tbody><tr><th>Id</th><th>Name</th><th>Size</th><th>Price</th><th>Volumn</th></tr>
+        <% list.forEach(function(product){ %>
+     <div class="card">
+        <li class="list-group-item">ID: <%= product.id %></li>
+        <li class="list-group-item">NAME: <%= product.name %></li>
+        <li class="list-group-item">BRAND: <%= product.brand %></li>
+        <li class="list-group-item">PRICE: <%= product.price %></li>
+        <li class="list-group-item">COLOR: <%= product.color %></li>
+        <li class="list-group-item">
+          <form action="/updateCart?id=<%= product.id %>" method="POST">
+           <button type="submit">
+             Clear Cart
+           </button>
+         </form>
+       </li>   
+      </div>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <p>No products in the Cart.</p>
+    <% } %>
+    
+  </div>
+    <p>
+      Total Price: <%= total_price %>
+    </p>
+    <form action="/clearCart" method="POST">
+         <button type="submit">
+           Clear Cart
+         </button>
+    </form>
+    
+
+
+    
+  </div>
+    
+  </div>
+</body>
+</html>
