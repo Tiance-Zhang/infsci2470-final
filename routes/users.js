@@ -101,13 +101,26 @@ router.get('/logout', (req, res) => {
 router.get('/adminlogin', forwardAuthenticated, (req, res) => res.render('adminlogin'));
 
 
+
 // adminLogin
 router.post('/adminlogin', (req, res, next) => {
-  passport.authenticate('local', {
-    successRedirect: '/index',
-    failureRedirect: '/users/login',
-    failureFlash: true
-  })(req, res, next);
+ const { email, password} = req.body;
+   let errors = [];
+  if(email == 'admin@pitt.edu')
+    {
+      if(password == 'adminadmin')
+        {
+          res.redirect('/product');
+        }
+      else{
+errors.push({ msg: 'Wrong password' });
+      }
+    }
+  else
+    {
+
+errors.push({ msg: 'No Account' });
+    }
 });
 
 // admin Register Page

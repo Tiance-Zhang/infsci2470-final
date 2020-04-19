@@ -37,7 +37,7 @@
  </div>
 </nav>
 </div>
-    <br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/>
     
   
   
@@ -47,7 +47,7 @@
      
      <% if (product) { %>
     <p>There are <%= product.length %> products in the database.</p>
-   <table class="table table-bordered" style="max-width:80%; align:right">
+   <table class="table table-bordered" style="max-width:90%;">
       <% product.forEach(function(product){ %>
       <tr>
         <td rowspan="6"><img src=<%= product.shoeUrl %> 
@@ -63,7 +63,6 @@
            Add to Cart
          </button>
        </form></td></tr>
-      
   <% }); %>
     </table>
     <% } else { %>

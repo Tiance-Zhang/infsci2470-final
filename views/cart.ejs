@@ -44,25 +44,23 @@
     
      <% if (list) { %>
     <p>There are <%= list.length %> products in the Cart.</p>
-    <table class="table">
-      <tbody><tr><th>Id</th><th>Name</th><th>Size</th><th>Price</th><th>Volumn</th></tr>
-        <% list.forEach(function(product){ %>
-     <div class="card">
-        <li class="list-group-item">ID: <%= product.id %></li>
-        <li class="list-group-item">NAME: <%= product.name %></li>
-        <li class="list-group-item">BRAND: <%= product.brand %></li>
-        <li class="list-group-item">PRICE: <%= product.price %></li>
-        <li class="list-group-item">COLOR: <%= product.color %></li>
-        <li class="list-group-item">
-          <form action="/updateCart?id=<%= product.id %>" method="POST">
-           <button type="submit">
+     <table class="table table-bordered" style="max-width:90%;">
+      <% list.forEach(function(product){ %>
+      <tr>
+        <td rowspan="5"><img src=<%= product.shoeUrl %> 
+                  alt="Screenshots of the games" width="100%"></td>
+        <td >ID: <%= product.id %></td></tr>
+      <tr><td >NAME: <%= product.name %></td></tr>
+      <tr><td>BRAND: <%= product.brand %></td></tr>
+      <tr><td>PRICE: <%= product.price %></td></tr>
+      <tr><td>COLOR: <%= product.color %></td></tr>
+      <tr><td colspan="2" align="center"><form action="/updateCart?id=<%= product.id %>" method="POST">
+           <button class="btn btn-secondary btn-lg btn-block" type="submit">
              Delete Item
            </button>
-         </form>
-       </li>   
-      </div>
-        <% }); %>
-      </tbody>
+         </form></td></tr>
+      
+  <% }); %>
     </table>
     <% } else { %>
     <p>No products in the Cart.</p>
