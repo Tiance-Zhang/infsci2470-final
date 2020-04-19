@@ -26,12 +26,15 @@ router.post('/adminlogin', (req, res, next) => {
         }
       else{
 errors.push({ msg: 'Wrong password' });
+        res.redirect('/admin/adminlogin');
       }
     }
   else
     {
 
 errors.push({ msg: 'No Account' });
+      res.redirect('/admin/adminlogin');
+      
     }
 });
 
