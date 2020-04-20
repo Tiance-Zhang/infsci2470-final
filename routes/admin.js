@@ -22,7 +22,7 @@ router.post('/adminlogin', (req, res, next) => {
     {
       if(password == 'adminadmin')
         {
-          res.redirect('/product');
+          res.redirect('/productadmin');
         }
       else{
 errors.push({ msg: 'Wrong password' });

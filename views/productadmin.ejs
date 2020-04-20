@@ -24,14 +24,12 @@
     
   <div class="collapse navbar-collapse" id="navbarResponsive">      
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
-      <li class="nav-item"><a class="nav-link active" href="/product">Check All Shoes</a></li>
-      <li class="nav-item"><a class="nav-link" href="/vendors">Check All Brands</a></li>
+      <li class="nav-item"><a class="nav-link active" href="/productadmin">Check All Shoes</a></li>
+      <li class="nav-item"><a class="nav-link" href="/addNew">Add new shoes</a></li>
     </ul>
         
      <ul class="navbar-nav ml-auto"> 
-          <li class="nav-item"><a class="nav-link" href="/myCart">My Cart</a ></li>
-          <li class="nav-item"><a class="nav-link" href="/edit">Edit Profile</a></li>
+
           <li class="nav-item"><a class="nav-link" href="/dashboard">Log out</a></li>
     </ul>
  </div>
@@ -57,12 +55,14 @@
       <tr><td>BRAND: <%= product.brand %></td></tr>
       <tr><td>PRICE: <%= product.price %></td></tr>
       <tr><td>COLOR: <%= product.color %></td></tr>
- <tr><td colspan="2" align="center"><form action="/addCart?id=<%= product.id %>" method="POST">
+ <tr><td colspan="2" align="center">
+               <form action="/delete?id=<%= product.id %>" method="POST">
    
          <button class="btn btn-secondary btn-lg btn-block" type="submit">
-           Add to Cart
+           Delete
          </button>
-       </form></td></tr>
+         </form>
+   </td></tr>
   <% }); %>
     </table>
     <% } else { %>

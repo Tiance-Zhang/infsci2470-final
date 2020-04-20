@@ -31,6 +31,17 @@ router.get("/product", function(request, response) {
   });
 });
 
+
+// RETREIVE all  product for admin
+
+router.get("/productadmin", function(request, response) {
+  Product.find({}, function(err, product_list) {
+    response.render("productadmin", {
+      product: product_list
+    });
+  });
+});
+
 // RETREIVE all vendor
 
 router.get("/vendors", function(request, response) {
@@ -184,7 +195,8 @@ router.get("/addOne", function(request, response, next) {
 router.post("/addone", function(req, res) {
   let product = new Product(req.body);
   product.save();
-  res.status(201).send(product);
+  
+  res.redirect('/productadmin');
 });
 
 
@@ -196,7 +208,7 @@ router.post("/delete", function(req, res) {
         res.status(500).send(err);
       } else {
         //res.status(204).send("removed");
-        res.redirect('/product');
+        res.redirect('/productadmin');
       }
     });
   });
