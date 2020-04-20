@@ -158,4 +158,32 @@ router.post("/updateCart", function(req, res) {
 })
 
 
+router.get("/addNew", function(request, response, next) {
+  Product.find({}, function(err, product_list) {
+    try {
+      response.render("addNew", { foot: product_list });
+    } catch (err) {
+      next(err);
+    }
+  });
+});
+
+router.get("/addOne", function(request, response, next) {
+  Product.find({}, function(err, product_list) {
+    try {
+      response.render("addNew", { foot: product_list });
+    } catch (err) {
+      next(err);
+    }
+  });
+});
+
+
+
+router.post("/addone", function(req, res) {
+  let product = new Product(req.body);
+  product.save();
+  res.status(201).send(product);
+});
+
 module.exports = router;
