@@ -187,4 +187,21 @@ router.post("/addone", function(req, res) {
   res.status(201).send(product);
 });
 
+
+//DELETE
+router.post("/delete", function(req, res) {
+  Product.findOne({id: req.query.id}, function(err, product) {
+    product.remove(function(err) {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        //res.status(204).send("removed");
+        res.redirect('/product');
+      }
+    });
+  });
+});
+
+
+
 module.exports = router;
