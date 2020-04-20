@@ -64,7 +64,9 @@ router.get("/edit", function(req, res) {
   res.render("edit");
 });
 
-
+router.get("/mine", function(req, res) {
+  res.render("mine");
+});
 
 //Cart
 router.post("/addCart", function(request, response) {
