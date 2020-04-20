@@ -52,15 +52,6 @@ router.get("/vendors", function(request, response) {
   });
 });
 
-router.get("/useradmin", function(request, response) {
-  vendor.find({}, function(err, vendor_list) {
-    response.render("useradmin", {
-      vendor: vendor_list
-    });
-  });
-});
-
-
 
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
