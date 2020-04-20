@@ -64,9 +64,11 @@ router.get("/edit", function(req, res) {
   res.render("edit");
 });
 
-router.get("/mine", function(req, res) {
-  res.render("mine");
-});
+router.get("/mine", ensureAuthenticated, (req, res) =>
+  res.render("mine", {
+    user: req.user
+  })
+);
 
 //Cart
 router.post("/addCart", function(request, response) {

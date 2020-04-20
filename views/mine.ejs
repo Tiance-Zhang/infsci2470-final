@@ -38,15 +38,27 @@
     <br/><br/><br/><br/>
   
 <br/><br/>
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center">
 <div class="card text-center" style="width:50%">
   <div class="card-header">
-    My Profile
+   <h1>
+     My Profile
+    </h1> 
   </div>
+  
+   <table class="table table-bordered" style="max-width:95%;">
+      <tr><td ><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td></tr>
+      <tr><td>Total Price: </td></tr>
+      <tr><td align="center"><form action="/clearCart" method="POST">
+         <button class="btn btn-secondary btn-lg btn-block" type="submit">
+           Clear Cart
+         </button>
+    </form></td></tr>
+    </table>
   <div class="card-body">
-    <h1 class="card-title">Name: <%= user.name %></h1>
-   <p class="card-text">See you later~<%= user.name %></p>
-   <a href="/users/logout" class="btn btn-secondary">Logout</a>
+    
+    <h4 class="card-text"><strong>Name: &nbsp;&nbsp;</strong><%= user.name %></h4>
+   <h4 class="card-text"><strong>Email:&nbsp;&nbsp; </strong> <%= user.email %></h4>
   </div>
 </div></div>
   <br/><br/><br/><br/>
