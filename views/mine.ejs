@@ -24,18 +24,20 @@
     
   <div class="collapse navbar-collapse" id="navbarResponsive">      
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" href="/productadmin">Check All Shoes</a></li>
-      <li class="nav-item"><a class="nav-link active" href="/addNew">Add New Shoes</a></li>
+      <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="/product">Check All Shoes</a></li>
+      <li class="nav-item"><a class="nav-link" href="/vendors">Check All Brands</a></li>
     </ul>
         
      <ul class="navbar-nav ml-auto"> 
-
+          <li class="nav-item"><a class="nav-link" href="/myCart">My Cart</a ></li>
+          <li class="nav-item"><a class="nav-link  active" href="/mine">My Profile</a ></li>
           <li class="nav-item"><a class="nav-link" href="/dashboard">Log out</a></li>
     </ul>
  </div>
 </nav>
 </div>
-    <br/><br/><br/><br/>
+    <br/><br/><br/>
   
 <br/><br/>
 <div class="d-flex justify-content-center">
@@ -46,21 +48,12 @@
     </h1> 
   </div>
   
-   <table class="table table-bordered" style="max-width:95%;">
-      <tr><td ><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td></tr>
-      <tr><td>Total Price: </td></tr>
-      <tr><td align="center"><form action="/clearCart" method="POST">
-         <button class="btn btn-secondary btn-lg btn-block" type="submit">
-           Clear Cart
-         </button>
-    </form></td></tr>
+   <table class="table table-bordered" style="max-width:100%;">
+    <tr><td><strong>Name</strong></td><td><%= user.name %></td></tr>
+     <tr><td><strong>Email</strong></td><td><%= user.email %></td></tr>
     </table>
-  <div class="card-body">
-    
-    <h4 class="card-text"><strong>Name: &nbsp;&nbsp;</strong><%= user.name %></h4>
-   <h4 class="card-text"><strong>Email:&nbsp;&nbsp; </strong> <%= user.email %></h4>
-  </div>
 </div></div>
+  
   <br/><br/><br/><br/>
   <footer class="container-fluid bg-dark">
 <p class="m-0 text-center text-white">Copyright &copy; Venom 2020</p>
