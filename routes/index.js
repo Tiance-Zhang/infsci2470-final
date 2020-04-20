@@ -52,6 +52,16 @@ router.get("/vendors", function(request, response) {
   });
 });
 
+router.get("/useradmin", function(request, response) {
+  vendor.find({}, function(err, vendor_list) {
+    response.render("useradmin", {
+      vendor: vendor_list
+    });
+  });
+});
+
+
+
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {
@@ -64,6 +74,7 @@ router.get("/edit", function(req, res) {
   res.render("edit");
 });
 
+//View Profile
 router.get("/mine", ensureAuthenticated, (req, res) =>
   res.render("mine", {
     user: req.user
