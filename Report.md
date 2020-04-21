@@ -12,13 +12,21 @@
 <br><br>
 
 ## Introduction
-Introduce the team and provide a high level description of the project. 
+We build an online shoping store for shoes, which provide a platform to let consumers see all the products and brands, 
+and to let sellers/ administrators to manage their products. 
 
-We build an online shoping store for shoes, which consumers could check all shoes we have on our website.
-We want to provide a web platform, and it allows consumers to search among multiple sellers. 
-Consumers are also allowed to see all the information about goods and services sellers post. 
+### High-level Feartures
+#### Recommedation
+On the homepage, we show the most popoluar shoes in the period of time. 
+Consumers could see pictures and prices of these shoes to decide if they want to follow the trend.
+#### Browse
+Our website allows consumers to check all the shoes we have on our we
 Consumers need to log in or sign up for our website, and the personal information is only available to these people and system administrators.
-
+It will have a user login interface, users can log in as customer or manager. 
+Different users would have different views. For the customers, they will be able to see the list of items including price, description, and picture. 
+Goods and services would be classified in several categories. Consumers could look over these categories. 
+For the manager’s interface, they will see the similar view as customers’ but they can edit the item list, 
+they will also be able to see which item has been bought and the remaining stock of items.
 ## Objective
 
 Describe with more specific details what your objectives and goals are for the project. 
