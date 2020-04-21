@@ -38,8 +38,8 @@ We want to build a website that customers can use to discover the most trending 
  we want our website can let customers to buy any sneakers they like regardless of brand. Our website can save them time of tossing
  between various brand website by providing all popular sneaker brands.<br>
 What problems did you want to solve or what did you want to learn in developing this application? 
-By developing our website, we want to apply forms that customers can login in order to purchase items. We also want to build a
-website that cutomers can use it 
+By developing our application, we want to learn how to build a complete shopping website which include user interface,
+admin interface, 
 
 
 <br><br><br>
