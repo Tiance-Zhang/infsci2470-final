@@ -42,7 +42,7 @@ how to
 
 
 ## Team member’s contributions
-Describe in detail what each member of the team did on the project.
+`Describe in detail what each member of the team did on the project.`
 
 #### Backend:
 #### Frontend: 
@@ -56,8 +56,8 @@ tables on product and shopping cart page, and other opitmizations.
 
 
 ## Technical Architecture
-What are the libraries, frameworks, and other technologies you used and how did you put them together. 
-Use the MVC conceptual model to provide a guide (i.e. what are the models/views/controllers and what do they do).
+`What are the libraries, frameworks, and other technologies you used and how did you put them together. 
+Use the MVC conceptual model to provide a guide (i.e. what are the models/views/controllers and what do they do).`
 
 #### Backend:
 MVC
@@ -71,9 +71,9 @@ After adding the link from Bootstrap page, we could use it by adding class in di
 
 
 ## Challenges
-Discuss any challenges you faced in trying to develop this app. 
+`Discuss any challenges you faced in trying to develop this app. 
 Were there libraries or technologies you wanted to use but we’re frustrating? 
-Where there features you couldn’t get working?
+Where there features you couldn’t get working?`
 
 
 
@@ -89,17 +89,17 @@ If we have more time, we want to learn some SQL to realize the fearture of query
 
 
 ## Conclusion
-Reflect upon the web technologies and standards you learned in this course, 
+`Reflect upon the web technologies and standards you learned in this course, 
 did you learn what you wanted? What technologies or standards do you think would be useful in future iterations of this course?
-
+`
+After taking this course, we have learned a lot. We started from the basic skills like HTML, CSS and Javascript at the beginning.
+Then we kept 
 
 
 ## Resources
 
-List any resources that you used in creating this project (I.e. tutorials, library documentation, or blog posts). 
+`List any resources that you used in creating this project (I.e. tutorials, library documentation, or blog posts). 
 Only include resources that are beyond the readings from the course.
-
-
-Include any specific instructions for testing the functionality of your application.
+Include any specific instructions for testing the functionality of your application.`
 
 
