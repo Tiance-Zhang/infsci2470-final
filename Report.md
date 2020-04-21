@@ -32,25 +32,32 @@ We want to build a website that customers can use to discover the most trending 
  fashion is always changing, we want our website can be made not only an online shop but also as trands reference for custmers.
  By using our website, they will know what is the most popular sneakers this season and any information about those sneakers. Besides,
  we want our website can let customers to buy any sneakers they like regardless of brand. Our website can save them time of tossing
- between various brand website by providing all popular sneaker brands. 
+ between various brand website by providing all popular sneaker brands.<br>
 What problems did you want to solve or what did you want to learn in developing this application? 
-
-What features, beyond the ones listed in the assignment requirements, did you implement?
+By developing our website, we want to apply forms for users
 
 ## Team member’s contributions
-
 Describe in detail what each member of the team did on the project.
-#### Backend
-#### Frontend: Yanru Li, Yuyan Li
+#### Backend:
+#### Frontend: 
+Yanru Li, Yuyan Li
 + We designed user interface includes navigation bar, cycling through images on the homepage, cards on the hompage, footer,
 tables on product and shopping cart page, form on adding page and other opitmization.
 + We designed the different viewports based on different screen size including desktop, tablet and phone.
++ We add some contents on homepage to make it looks well-designed.<br><br><br>
+
 
 
 ## Technical Architecture
 
 What are the libraries, frameworks, and other technologies you used and how did you put them together. 
 Use the MVC conceptual model to provide a guide (i.e. what are the models/views/controllers and what do they do).
+#### Backend:
+MVC
++ Model:
++ View:
++ Controller:
+#### Frontend: 
 
 ## Challenges
 
