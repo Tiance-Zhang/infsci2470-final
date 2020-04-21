@@ -40,7 +40,7 @@ By developing our website, we want to apply forms that customers can login in or
 how to 
 
 
-
+<br><br><br>
 ## Team member’s contributions
 `Describe in detail what each member of the team did on the project.`
 
@@ -76,7 +76,7 @@ Were there libraries or technologies you wanted to use but we’re frustrating?
 Where there features you couldn’t get working?`
 
 
-
+<br><br><br>
 ## Future Work
 In the future, we want to develop a query system, 
 which it could let users to query by entering specific keywords like id or name.
@@ -84,16 +84,17 @@ Moreover, we want to develop the filter system.
 Then users could filter products by brand, name, color or price as them want. 
 Finally, we want to design a payment page to realize the full function of shopping process.<br>
 
-If we have more time, we want to learn some SQL to realize the fearture of query. 
+If we have more time, we want to connect SQL to realize the fearture of query. <br><br><br>
 
 
 
 ## Conclusion
-`Reflect upon the web technologies and standards you learned in this course, 
-did you learn what you wanted? What technologies or standards do you think would be useful in future iterations of this course?
-`
 After taking this course, we have learned a lot. We started from the basic skills like HTML, CSS and Javascript at the beginning.
-Then we kept 
+Then we had the deeper understand for the framework like React and Bootstrap. 
+After all the frontend skills, we kept looking into backend skills like REST APIs and MongoDB.<br>
+This course has a great learning process, it would lead us to think through every step，
+and each class is related to each other, which is a continuous process.
+We learned everything we want to design the webiste. <br><br><br>
 
 
 ## Resources
