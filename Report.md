@@ -1,5 +1,7 @@
 # 2560 Web Final Project Report - Online Shopping Store
 
+<br>
+
 ### Group: FightCovid19
 
 | Name              | Pitt ID |
@@ -82,7 +84,7 @@ In the future, we want to develop a query system,
 which it could let users to query by entering specific keywords like id or name.
 Moreover, we want to develop the filter system. 
 Then users could filter products by brand, name, color or price as them want. 
-Finally, we want to design a payment page to realize the full function of shopping process.<br>
+Finally, we want to design a payment page to realize the full function of the shopping process.<br>
 
 If we have more time, we want to connect SQL to realize the fearture of query. <br><br><br>
 
