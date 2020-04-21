@@ -34,7 +34,7 @@ We want to build a website that customers can use to discover the most trending 
  we want our website can let customers to buy any sneakers they like regardless of brand. Our website can save them time of tossing
  between various brand website by providing all popular sneaker brands.<br>
 What problems did you want to solve or what did you want to learn in developing this application? 
-By developing our website, we want to apply forms for users
+By developing our website, we want to apply forms that customers can login in order to purchase items.
 
 ## Team member’s contributions
 Describe in detail what each member of the team did on the project.
@@ -42,9 +42,10 @@ Describe in detail what each member of the team did on the project.
 #### Frontend: 
 Yanru Li, Yuyan Li
 + We designed user interface includes navigation bar, cycling through images on the homepage, cards on the hompage, footer,
-tables on product and shopping cart page, form on adding page and other opitmization.
+tables on product and shopping cart page, and other opitmization.
++ We set up forms with username, email and passward for users to register and login our website.
 + We designed the different viewports based on different screen size including desktop, tablet and phone.
-+ We add some contents on homepage to make it looks well-designed.<br><br><br>
++ We added some contents on homepage to make it looks well-designed.<br><br><br>
 
 
 
@@ -54,10 +55,11 @@ What are the libraries, frameworks, and other technologies you used and how did 
 Use the MVC conceptual model to provide a guide (i.e. what are the models/views/controllers and what do they do).
 #### Backend:
 MVC
-+ Model:
++ Model: 
 + View:
-+ Controller:
++ Controller: 
 #### Frontend: 
+We use CSS and Bootstrap to optimize pages.<br><br><br>
 
 ## Challenges
 
@@ -72,7 +74,7 @@ Moreover, we want to develop the filter system.
 Then users could filter products by brand, name, color or price as them want. 
 
 If you had more time what technologies would you like to learn?
-
+If we have more time, we want to learn some SQL to realize the fearture of query. 
 ## Conclusion
 
 Reflect upon the web technologies and standards you learned in this course, 
