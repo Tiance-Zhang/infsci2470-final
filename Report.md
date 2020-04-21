@@ -28,19 +28,24 @@ Our website allows consumers to check all the information for shoes and brands w
 Consumers could add/ delete shoes in the shopping cart. <br><br><br>
 
 ## Objective
-
-Describe with more specific details what your objectives and goals are for the project. 
 We want to build a website that customers can use to discover the most trending sneakers and be able to purchase them. As
  fashion is always changing, we want our website can be made not only an online shop but also as trands reference for custmers.
- By using our website, they will know what is the most popular sneakers this season and any information about those sneakers.,
+ By using our website, they will know what is the most popular sneakers this season and any information about those sneakers. Besides,
+ we want our website can let customers to buy any sneakers they like regardless of brand. Our website can save them time of tossing
+ between various brand website by providing all popular sneaker brands. 
 What problems did you want to solve or what did you want to learn in developing this application? 
+
 What features, beyond the ones listed in the assignment requirements, did you implement?
 
 ## Team member’s contributions
 
 Describe in detail what each member of the team did on the project.
-#### Frontend
 #### Backend
+#### Frontend: Yanru Li, Yuyan Li
++ We designed user interface includes navigation bar, cycling through images on the homepage, cards on the hompage, footer,
+tables on product and shopping cart page, form on adding page and other opitmization.
++ We designed the different viewports based on different screen size including desktop, tablet and phone.
+
 
 ## Technical Architecture
 
