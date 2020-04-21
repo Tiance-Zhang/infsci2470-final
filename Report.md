@@ -37,12 +37,13 @@ We want to build a website that customers can use to discover the most trending 
  By using our website, they will know what is the most popular sneakers this season and any information about those sneakers. Besides,
  we want our website can let customers to buy any sneakers they like regardless of brand. Our website can save them time of tossing
  between various brand website by providing all popular sneaker brands.<br>
-What problems did you want to solve or what did you want to learn in developing this application? 
+<br>
 By developing our application, we want to learn how to build a complete shopping website which include user interface and
-admin interface. We want our website can let customers to register and login, as well as manage shopping cart and purchase items. 
+admin interface. As more and more people prefer using mobile phone nowadays, we want to create a website that can looks 
+properly both on the phone and computer so we will use different viewpoints to achieve this goal. Morever, We want our 
+website can let customers to register and login, as well as manage shopping cart and purchase items. 
 Therefore, we need to have form for cutomers' information that can be submitted to our database and HTML5 APIs to add, delete or
-update our database. For the unexpected 
-
+update data in our database. For the unexpected input, we also need to handle such errors.
 
 
 <br><br><br>
