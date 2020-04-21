@@ -24,21 +24,23 @@ Moreover, personal information is only available to themselves.
 On the homepage, we show the most popoluar shoes in the period of time. 
 Consumers could see pictures and prices of these shoes to decide if they want to follow the trend.
 #### Browsing and Adding
-Our website allows consumers to check all the shoes and brands we have. 
-Consumers could add/ delete shoes in the shopping cart.
+Our website allows consumers to check all the information for shoes and brands we have. 
+Consumers could add/ delete shoes in the shopping cart. <br><br><br>
 
 ## Objective
 
 Describe with more specific details what your objectives and goals are for the project. 
 We want to build a website that customers can use to discover the most trending sneakers and be able to purchase them. As
  fashion is always changing, we want our website can be made not only an online shop but also as trands reference for custmers.
- By using our website, they will know what is the most popular sneakers this season and any information about those sneakers.
+ By using our website, they will know what is the most popular sneakers this season and any information about those sneakers.,
 What problems did you want to solve or what did you want to learn in developing this application? 
 What features, beyond the ones listed in the assignment requirements, did you implement?
 
 ## Team member’s contributions
 
 Describe in detail what each member of the team did on the project.
+#### Frontend
+#### Backend
 
 ## Technical Architecture
 
@@ -52,8 +54,11 @@ Were there libraries or technologies you wanted to use but we’re frustrating?
 Where there features you couldn’t get working?
 
 ## Future Work
-What features would you like to add to your application? 
-In the future, we want to develop a query system, which could let use
+In the future, we want to develop a query system, 
+which it could let users to query by entering specific keywords like id or name.
+Moreover, we want to develop the filter system. 
+Then users could filter products by brand, name, color or price as them want. 
+
 If you had more time what technologies would you like to learn?
 
 ## Conclusion
