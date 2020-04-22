@@ -93,11 +93,13 @@ MVC
 `user` is used for normal customers to log in.
 `product` defines the data frame for our products.
 `vendor` records vendors' information.
-- View: Different EJS template files are able to handle different data models.<br>
-For example, data of `cart` model of every user can be presented in 
+- View: Different EJS template files are created to handle different data models based on information from the database.<br>
+For example, every user can browse their cart in the same "Cart" page with their own cart data presented. 
 
 - Controller: Javascript file serves as a controller between Model and View. The controller reads data from MongoDB and sends them <br>
 to corresponding views.
+In our application, the script creates and loads data from database and then passes them to relevant view templates. <br>
+The templates then render corresponding Web pages with given data.
 
 #### Frontend:
 
@@ -116,6 +118,7 @@ Backend:
    then the login page can use both these two table's data, but that means costumers can login in to admin's page, that's unreasonable.
 
 2. Since admin's login page do not use library-passport, so anyone can access to management page directly by website link.
+
 
 <br><br><br>
 
