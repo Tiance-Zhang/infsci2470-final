@@ -51,6 +51,12 @@ update data in our database. For the unexpected input, we also need to handle su
 `Describe in detail what each member of the team did on the project.`
 
 #### Backend:
+Shuo Tian, Zhanghaoxiang Yi
++ We designed the Customer login,register page， Admin Customer login page
++ We created the Commodity management pages which can add new products to website or delete existed products
++ We created js in routes document to help frontend get information from data base
++ We created the shopping cart function and it also can calculate total price
++ We connected to the database to store customer accounts and product information
 #### Frontend: 
 Yanru Li, Yuyan Li
 + We designed user interface includes navigation bar, cycling through images on the homepage, cards on the hompage, footer,
