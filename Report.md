@@ -88,9 +88,16 @@ mongoose：Connect to mongoDb<br>
 passport:Verify account information<br>
 MVC
 
-- Model: We analyzed the system objectives and 
-- View:
-- Controller:
+- Model: We analyzed the system objectives and extracted 4 basic data models: admin, user, product and vendor.
+`admin` is used for administrator users.
+`user` is used for normal customers to log in.
+`product` defines the data frame for our products.
+`vendor` records vendors' information.
+- View: Different EJS template files are able to handle different data models.<br>
+For example, data of `cart` model of every user can be presented in 
+
+- Controller: Javascript file serves as a controller between Model and View. The controller reads data from MongoDB and sends them <br>
+to corresponding views.
 
 #### Frontend:
 
