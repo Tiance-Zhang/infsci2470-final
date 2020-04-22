@@ -19,5 +19,9 @@ Public
 * client.js
 * style.css
 
+Source
+======
+Part of login function source from: https://github.com/bradtraversy/node_passport_login
+
 
 
