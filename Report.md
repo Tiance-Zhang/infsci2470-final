@@ -86,6 +86,8 @@ After adding the link from Bootstrap page, we could use it by adding class in di
 `Discuss any challenges you faced in trying to develop this app. 
 Were there libraries or technologies you wanted to use but we’re frustrating? 
 Where there features you couldn’t get working?`
+Backend: I used the library-'passport' and I built two tables in database(One stored costumers' account information. another stored administrators' account information).
+But I coundn't use these two table at the same time, and I found in the passport.js, if I change the code(const User = require('../models/User');) to const User = require('../models/User');
 
 
 <br><br><br>
