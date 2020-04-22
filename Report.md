@@ -72,6 +72,9 @@ tables on product and shopping cart page, and other opitmizations.
 Use the MVC conceptual model to provide a guide (i.e. what are the models/views/controllers and what do they do).`
 
 #### Backend:
+express:Website infrastructure
+mongoose：Connect to mongoDb
+passport:Verify account information
 MVC
 + Model: 
 + View:
@@ -86,9 +89,14 @@ After adding the link from Bootstrap page, we could use it by adding class in di
 `Discuss any challenges you faced in trying to develop this app. 
 Were there libraries or technologies you wanted to use but we’re frustrating? 
 Where there features you couldn’t get working?`
-Backend: I used the library-'passport' and I built two tables in database(One stored costumers' account information. another stored administrators' account information).
-But I coundn't use these two table at the same time, and I found in the passport.js, if I change the code(const User = require('../models/User');) to const User = require('../models/User');
+Backend: 
+1. I used the library-'passport' and I built two tables in database(One stored costumers' account information. another stored administrators' account information).
+But I coundn't use these two table at the same time, and I found in the passport.js, if I change the code(const User = require('../models/User');) to 
+(const User = require('../models/Admin');), then website can only use the admin's account data.
+I tried to create another passport2.js and one connect to costumers' account information, one to admin's. And then add code (require('./config/passport2')(passport);) in main js,
+then the login page can use both these two table's data, but that means costumers can login in to admin's page, that's unreasonable.
 
+2. Since admin's login page do not use library-passport, so anyone can access to management page directly by website link.
 
 <br><br><br>
 ## Future Work
@@ -112,7 +120,9 @@ We learned everything we want to design the webiste. <br><br><br>
 
 
 ## Resources
-
+1. https://assignment3b-sht107.glitch.me/ 
+   Our assignment3b
+2.
 `List any resources that you used in creating this project (I.e. tutorials, library documentation, or blog posts). 
 Only include resources that are beyond the readings from the course.
 Include any specific instructions for testing the functionality of your application.`
