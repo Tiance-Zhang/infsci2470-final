@@ -59,7 +59,7 @@ update data in our database. For the unexpected input, we also need to handle su
 
 #### Backend:
 
-Shuo Tian, Zhanghaoxiang Yi
+Shuo Tian, Zhanghaoxiang Yin
 
 - We designed the Customer login,register page， Admin Customer login page
 - We created the Commodity management pages which can add new products to website or delete existed products
@@ -88,7 +88,7 @@ mongoose：Connect to mongoDb<br>
 passport:Verify account information<br>
 MVC
 
-- Model:
+- Model: We analyzed the system objectives and 
 - View:
 - Controller:
 
@@ -133,6 +133,7 @@ We learned everything we want to design the webiste. <br><br><br>
 
 ## Resources
 
-1. https://assignment3b-sht107.glitch.me/ Our assignment3b<br>2.https://github.com/bradtraversy/node_passport_login
+   1. https://assignment3b-sht107.glitch.me/ Our assignment3b<br>
+   2.https://github.com/bradtraversy/node_passport_login
    Login function model
    `List any resources that you used in creating this project (I.e. tutorials, library documentation, or blog posts). Only include resources that are beyond the readings from the course. Include any specific instructions for testing the functionality of your application.`
