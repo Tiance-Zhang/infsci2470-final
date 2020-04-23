@@ -22,13 +22,13 @@ and to let sellers/ administrators to manage their products.
 
 #### Login System
 
-Users should login to view our webstie. If consumers don't have account, they should register first.
+Users should login to view our website. If consumers don't have account, they should register first.
 Administrators would have a different login interface and website interface from common users.
 Moreover, personal information is only available to themselves.
 
-#### Recommedation
+#### Recommendation
 
-On the homepage, we show the most popoluar shoes in the period of time.
+On the homepage, we show the most popular shoes in the period of time.
 Consumers could see pictures and prices of these shoes to decide if they want to follow the trend.
 
 #### Browsing and Adding
