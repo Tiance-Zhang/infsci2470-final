@@ -18,9 +18,9 @@ router.get('/adminlogin', forwardAuthenticated, (req, res) => res.render('adminl
 router.post('/adminlogin', (req, res, next) => {
  const { email, password} = req.body;
    let errors = [];
-  if(email == 'admin@pitt.edu')
+  if(email == process.env.adminaccount)
     {
-      if(password == 'adminadmin')
+      if(password == process.env.adminpassword)
         {
           res.redirect('/productadmin');
         }
