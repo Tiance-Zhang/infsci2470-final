@@ -15,7 +15,7 @@
 
 ## Introduction
 
-We build an online shoping store for shoes, which provide a platform to let consumers see all the products and vendors,
+We build an online shopping store for shoes, which provide a platform to let consumers see all the products and vendors,
 and to let sellers/ administrators to manage their products.
 
 ### High-level Feartures
