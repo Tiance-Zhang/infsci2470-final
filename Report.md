@@ -55,7 +55,7 @@ update data in our database. For the unexpected input, we also need to handle su
 
 ## Team member’s contributions
 
-`Describe in detail what each member of the team did on the project.`
+
 
 #### Backend:
 
@@ -79,13 +79,12 @@ Yanru Li, Yuyan Li
 
 ## Technical Architecture
 
-`What are the libraries, frameworks, and other technologies you used and how did you put them together. Use the MVC conceptual model to provide a guide (i.e. what are the models/views/controllers and what do they do).`
 
 #### Backend:
 
-express:Website infrastructure<br>
-mongoose：Connect to mongoDb<br>
-passport:Verify account information<br>
+express: Website infrastructure<br>
+mongoose: Connect to mongoDb<br>
+passport: Verify account information<br><br>
 MVC
 
 - Model: We analyzed the system objectives and extracted 4 basic data models: admin, user, product and vendor.
@@ -108,7 +107,6 @@ After adding the link from Bootstrap page, we could use it by adding class in di
 
 ## Challenges
 
-`Discuss any challenges you faced in trying to develop this app. Were there libraries or technologies you wanted to use but we’re frustrating? Where there features you couldn’t get working?`
 Backend:
 
 1. I used the library-'passport' and I built two tables in database(One stored costumers' account information. another stored administrators' account information).
@@ -143,7 +141,8 @@ We learned everything we want to design the webiste. <br><br><br>
 
 ## Resources
 
-   1. https://assignment3b-sht107.glitch.me/ Our assignment3b<br>
-   2.https://github.com/bradtraversy/node_passport_login
+   1. https://assignment3b-sht107.glitch.me <br>
+   Our assignment3b
+   2. https://github.com/bradtraversy/node_passport_login <br>
    Login function model
-   `List any resources that you used in creating this project (I.e. tutorials, library documentation, or blog posts). Only include resources that are beyond the readings from the course. Include any specific instructions for testing the functionality of your application.`
+  
