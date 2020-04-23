@@ -18,11 +18,11 @@
 We build an online shopping store for shoes, which provide a platform to let consumers see all the products and vendors,
 and to let sellers/ administrators to manage their products.
 
-### High-level Feartures
+### High-level Features
 
 #### Login System
 
-Users should login to view our website. If consumers don't have account, they should register first.
+Users should log in to view our website. If consumers don't have accounts, they should register first.
 Administrators would have a different login interface and website interface from common users.
 Moreover, personal information is only available to themselves.
 
@@ -39,16 +39,16 @@ Consumers could add/ delete shoes in the shopping cart. <br><br><br>
 ## Objective
 
 We want to build a website that customers can use to discover the most trending sneakers and be able to purchase them. As
-fashion is always changing, we want our website can be made not only an online shop but also as trands reference for custmers.
+fashion is always changing, we want our website can be made not only an online shop but also as trends reference for customers.
 By using our website, they will know what is the most popular sneakers this season and any information about those sneakers. Besides,
 we want our website can let customers to buy any sneakers they like regardless of brand. Our website can save them time of tossing
 between various brand website by providing all popular sneaker brands.<br>
 <br>
-By developing our application, we want to learn how to build a complete shopping website which include user interface and
+By developing our application, we want to learn how to build a complete shopping website which includes user interface and
 admin interface. As more and more people prefer using mobile phone nowadays, we want to create a website that can looks
 properly both on the phone and computer so we will use different viewpoints to achieve this goal. Morever, We want our
 website can let customers to register and login, as well as manage shopping cart and purchase items.
-Therefore, we need to have form for cutomers' information that can be submitted to our database and HTML5 APIs to add, delete or
+Therefore, we need to have form for customers' information that can be submitted to our database and HTML5 APIs to add, delete or
 update data in our database. For the unexpected input, we also need to handle such errors.
 
 <br><br><br>
@@ -61,9 +61,9 @@ update data in our database. For the unexpected input, we also need to handle su
 
 Shuo Tian, Zhanghaoxiang Yin
 
-- We designed the Customer login,register page， Admin Customer login page
+- We designed the Customer login, register page，Admin Customer login page
 - We created the Commodity management pages which can add new products to website or delete existed products
-- We created js in routes document to help frontend get information from data base
+- We created js in routes document to help frontend get information from database
 - We created the shopping cart function and it also can calculate total price
 - We connected to the database to store customer accounts and product information
 
@@ -73,9 +73,9 @@ Yanru Li, Yuyan Li
 
 - We designed user interface includes navigation bar, cycling through images on the homepage, cards on the hompage, footer,
   tables on product and shopping cart page, and other opitmizations.
-- We set up forms with username, email and passward for users to register and login our website.
+- We set up forms with username, email and password for users to register and login our website.
 - We designed the different viewports based on different screen size including desktop, tablet and phone.
-- We added some contents on homepage to make it looks well-designed.<br><br><br>
+- We added some content on homepage to make it looks well-designed.<br><br><br>
 
 ## Technical Architecture
 
@@ -110,7 +110,7 @@ After adding the link from Bootstrap page, we could use it by adding class in di
 Backend:
 
 1. I used the library-'passport' and I built two tables in database(One stored costumers' account information. another stored administrators' account information).
-   But I coundn't use these two table at the same time, and I found in the passport.js, if I change the code(const User = require('../models/User');) to
+   But I coundn't use these two tables at the same time, and I found in the passport.js, if I change the code(const User = require('../models/User');) to
    (const User = require('../models/Admin');), then website can only use the admin's account data.
    I tried to create another passport2.js and one connect to costumers' account information, one to admin's. And then add code (require('./config/passport2')(passport);) in main js,
    then the login page can use both these two table's data, but that means costumers can login in to admin's page, that's unreasonable.
