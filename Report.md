@@ -110,9 +110,9 @@ After adding the link from Bootstrap page, we could use it by adding class in di
 Backend:
 
 1. I used the library-'passport' and I built two tables in database(One stored costumers' account information. another stored administrators' account information).
-   But I coundn't use these two tables at the same time, and I found in the passport.js, if I change the code(const User = require('../models/User');) to
-   (const User = require('../models/Admin');), then website can only use the admin's account data.
-   I tried to create another passport2.js and one connect to costumers' account information, one to admin's. And then add code (require('./config/passport2')(passport);) in main js,
+   But I coundn't use these two tables at the same time, and I found in the passport.js, if I change the code `(const User = require('../models/User');)` to
+   `(const User = require('../models/Admin');)`, then website can only use the admin's account data.
+   I tried to create another passport2.js and one connect to costumers' account information, one to admin's. And then add code `(require('./config/passport2')(passport);)` in main js,
    then the login page can use both these two table's data, but that means costumers can login in to admin's page, that's unreasonable.
 
 2. Since admin's login page do not use library-passport, so anyone can access to management page directly by website link.
