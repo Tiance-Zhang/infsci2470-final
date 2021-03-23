@@ -222,13 +222,12 @@ router.post("/delete", function(req, res) {
   });
 });
 
-
 //UPDATE
-router.put("/change", function(req, res) {
-  Product.findById(req.params.TaskID, function(err, product) {
-    product.status = 200;
-    product.save();
-    res.json(product);
+router.put("/TaskID", function(req, res) {
+  Product.findOne({TaskID: req.query.TaskID}, function(err, product) {
+    product.put
+    product.status = 2;
+    res.json(book);
   });
 });
 
