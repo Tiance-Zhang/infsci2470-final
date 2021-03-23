@@ -223,10 +223,10 @@ router.post("/delete", function(req, res) {
 });
 
 //UPDATE
-router.put("/TaskID", function(req, res) {
+router.put("/change", function(req, res) {
   Product.findOne({TaskID: req.query.TaskID}, function(err, product) {
     product.status = 2;
-    res.json(book);
+    res.json(product);
   });
 });
 
