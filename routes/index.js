@@ -106,6 +106,8 @@ router.post("/addCart", function(request, response) {
   })
 });
 
+
+
 router.get("/myCart", function(req, res) {
   Cart.find({email: req.user.email}, function(err, cart_item) {
     if (!cart_item.length) {
