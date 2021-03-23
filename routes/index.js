@@ -223,5 +223,14 @@ router.post("/delete", function(req, res) {
 });
 
 
+//UPDATE
+router.put("/change", function(req, res) {
+  Product.findById(req.params.TaskID, function(err, product) {
+    product.status = 200;
+    product.save();
+    res.json(product);
+  });
+});
+
 
 module.exports = router;
