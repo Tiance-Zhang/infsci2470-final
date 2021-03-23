@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema(
   {
-    id: {type: Number},
-    name: {type: String},
-    brand: {type: String},
-    price: {type: Number},
-    color: {type: String},
-    shoeUrl: {type: String},
+    TaskID: {type: Number},
+    TaskName: {type: String},
+    Instructor: {type: String},
+    status: {type: Number},
+    Room: {type: String},
+    Description: {type: String},
   }
 );
 
