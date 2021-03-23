@@ -48,11 +48,11 @@
    <table class="table table-bordered" style="max-width:80%;">
       <% product.forEach(function(product){ %>
      
-      <tr><td>NAME: <%= product.TaskID %></td></tr>
-      <tr><td>BRAND: <%= product.brand %></td></tr>
-      <tr><td>BRAND: <%= product.brand %></td></tr>
-      <tr><td>PRICE: <%= product.price %></td></tr>
-      <tr><td>COLOR: <%= product.color %></td></tr>
+      <tr><td>NAME: <%= product.TaskName %></td></tr>
+      <tr><td>BRAND: <%= product.Instructor %></td></tr>
+      <tr><td>BRAND: <%= product.status %></td></tr>
+      <tr><td>PRICE: <%= product.Room %></td></tr>
+      <tr><td>COLOR: <%= product.Description %></td></tr>
  <tr><td colspan="2" align="center">
                <form action="/delete?id=<%= product.id %>" method="POST">
    
