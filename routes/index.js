@@ -76,9 +76,9 @@ router.get("/mine", ensureAuthenticated, (req, res) =>
 //UPDATE
 router.put("/change", function(req, res) {
   Product.findById({TaskID: req.params.TaskID}, function(err, product) {
-    product.status = 2;
+    product.status = req.params.TaskID;
     product.save();
-    res.json(product);
+    res.redirect('/product');
   });
 });
 
