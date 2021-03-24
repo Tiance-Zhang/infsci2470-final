@@ -55,7 +55,7 @@
       <tr><td>status: <%= product.status %></td></tr>
       <tr><td>Room: <%= product.Room %></td></tr>
       <tr><td>Description: <%= product.Description %></td></tr>
- <tr><td colspan="2" align="center"><form action="/change?TaskName=<%= product.TaskID %>" method="put">
+ <tr><td colspan="2" align="center"><form action="/addCart?id=<%= product.id %>" method="POST">
    
          <button class="btn btn-secondary btn-lg btn-block" type="submit">
            Change
