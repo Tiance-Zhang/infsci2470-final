@@ -72,6 +72,17 @@ router.get("/mine", ensureAuthenticated, (req, res) =>
   })
 );
 
+
+//UPDATE
+router.put("/change", function(req, res) {
+  Product.findById({TaskID: req.params.TaskID}, function(err, product) {
+    product.status = 2;
+    product.save();
+    res.json(product);
+  });
+});
+
+
 //Cart
 router.post("/addCart", function(request, response) {
   Cart.find({email: request.user.email}, function(err, cart_item) {
@@ -222,14 +233,6 @@ router.post("/delete", function(req, res) {
   });
 });
 
-//UPDATE
-router.put("/change", function(req, res) {
-  Product.findById({TaskID: req.params.TaskID}, function(err, product) {
-    product.status = 2;
-    product.save();
-    res.json(product);
-  });
-});
 
 
 module.exports = router;
