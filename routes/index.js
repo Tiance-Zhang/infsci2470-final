@@ -224,8 +224,9 @@ router.post("/delete", function(req, res) {
 
 //UPDATE
 router.put("/change", function(req, res) {
-  Product.findOne({TaskID: req.query.TaskID}, function(err, product) {
+  Product.findById({TaskID: req.params.TaskID}, function(err, product) {
     product.status = 2;
+    product.save();
     res.json(product);
   });
 });
