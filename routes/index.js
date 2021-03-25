@@ -149,18 +149,6 @@ router.post("/clearCart", function(req, res) {
   res.redirect("/myCart");
 });
 
-//try
-router.put("/update", function(req, res) {
-  const { email } = req.user.email;
-  const { title } = req.user.status;
-
-  const cart = cart.find(p => p.email == email);
-
-  cart.title = 2;
-  res.redirect("/myCart");
-});
-
-
 
 //update
 router.put("/update", function(req, res) {
@@ -173,26 +161,16 @@ router.put("/update", function(req, res) {
       my_cart = cart_item[0];
     }
   });
-  
-  
-  const { email } = req.user.email;
-  const { status } = req.user.status;
-
-  const cart = my_cart.find(p => p.email == email);
-
-  cart.stat = 2;
+  let pid = req.query.id;
+  let index = 0;
+  for (index = 0; index < my_cart.product_list.length; index++) {
+    if (my_cart.product_list[index].id == pid) {
+      my_cart.product_list[index].status = 2
+      my_cart.save();
+      break;
+    }
+  }
   res.redirect("/myCart");
-  
-  // let pid = req.query.id;
-  // let index = 0;
-  // for (index = 0; index < my_cart.product_list.length; index++) {
-  //   if (my_cart.product_list[index].id == pid) {
-  //     my_cart.product_list[index].status = 2
-  //     my_cart.save();
-  //     break;
-  //   }
-  // }
-  // res.redirect("/myCart");
 });
 
 //
