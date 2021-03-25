@@ -79,6 +79,9 @@ footer.end {
   margin: auto 0;
 }
 
+
+
+
 .checklist_table tr{
   width: 100%;
   height: 10px!important;
@@ -88,8 +91,8 @@ footer.end {
 
 
 .checklist_table td{
-  padding: 10px;
-  border: 1px solid black;
+/*   padding: 10px; */
+  
 }
 .list_id{
   background-color: grey;
