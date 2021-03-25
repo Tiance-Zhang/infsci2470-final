@@ -148,6 +148,7 @@ router.post("/clearCart", function(req, res) {
   my_cart.save();
   res.redirect("/myCart");
 });
+
 //update
 router.put("/update", function(req, res) {
   Cart.find({ email: req.user.email }, function(err, cart_item) {
@@ -159,7 +160,7 @@ router.put("/update", function(req, res) {
       my_cart = cart_item[0];
     }
   });
-  let pid = req.query.name;
+  let pid = req.query.id;
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
