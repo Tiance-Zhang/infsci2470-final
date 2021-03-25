@@ -10,6 +10,10 @@ body {
   margin: 2em;
 }
 
+table tr td{
+  height: auto;
+}
+
 h1 {
   font-style: italic;
   color: #373fff;
