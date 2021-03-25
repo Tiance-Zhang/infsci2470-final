@@ -148,7 +148,7 @@ router.post("/clearCart", function(req, res) {
   my_cart.save();
   res.redirect("/myCart");
 });
-
+//update
 router.put("/updateCart", function(req, res) {
   Cart.find({ email: req.user.email }, function(err, cart_item) {
     if (!cart_item.length) {
@@ -200,7 +200,7 @@ router.post("/addone", function(req, res) {
 
 //DELETE
 router.post("/delete", function(req, res) {
-  Product.findOne({ TaskID: req.query.TaskID }, function(err, product) {
+  Product.findOne({ id: req.query.id }, function(err, product) {
     product.remove(function(err) {
       if (err) {
         res.status(500).send(err);
