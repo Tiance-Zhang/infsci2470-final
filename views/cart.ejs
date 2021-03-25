@@ -51,19 +51,20 @@
     
      <table class="table table-bordered" id="checklist_table">
       <% list.forEach(function(product){ %>
-      <th>id: <%= product.id %></th>
-      <tr><td>NAME: <%= product.TaskName %></td></tr>
-      <tr><td>Instructor: <%= product.Instructor %></td></tr>
-      <tr><td>status: <%= product.status %></td></tr>
-      <tr><td>Room: <%= product.Room %></td></tr>
-      <tr><td>Description: <%= product.Description %></td></tr>
-      <tr><td colspan="2" align="center">
+      <tr><td>id: <%= product.id %></td><td rowspan="6">
 <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->
         <form method="POST" action="/update?_method=PUT&name=<%= product.id %>">
            <button class="btn btn-secondary btn-lg btn-block" type="submit">
              Change status
            </button>
          </form></td></tr>
+       
+      <tr><td>NAME: <%= product.TaskName %></td></tr>
+      <tr><td>Instructor: <%= product.Instructor %></td></tr>
+      <tr><td>status: <%= product.status %></td></tr>
+      <tr><td>Room: <%= product.Room %></td></tr>
+      <tr><td>Description: <%= product.Description %></td></tr>
+      
       
   <% }); %>
     </table></div>
@@ -100,11 +101,11 @@
   
    $( document ).ready(function() {
      
-     $("#checklist_table td").hide();
+//      $("#checklist_table td").hide();
  
     $("#checklist_table th" ).click(function() {
      // this.siblings("#checklist_table td").show();
-   $(this).siblings().find("td").show();
+   $(this).parent().siblings().find('td').show();
    
    
    
