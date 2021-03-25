@@ -163,7 +163,7 @@ router.put("/updateCart", function(req, res) {
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
-      
+      my_cart.product_list[index].status = 2
       my_cart.save();
       break;
     }
