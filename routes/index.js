@@ -148,30 +148,46 @@ router.post("/clearCart", function(req, res) {
   my_cart.save();
   res.redirect("/myCart");
 });
-//update
+
+//try
 router.put("/update", function(req, res) {
-  Cart.find({ email: req.user.email }, function(err, cart_item) {
-    if (!cart_item.length) {//////
+  Cart.findOne({ email: req.user.email }, function(err, cart_item) {
       my_cart = new Cart();
       my_cart.email = req.user.email;
+      my_cart.status = 2222;
       my_cart.save();
-    } else {
-      my_cart = cart_item[0];
-    }
+       
   });
-  
-  let pid = req.query.id;
-  let index = 0;
-  for (index = 0; index < my_cart.product_list.length; index++) {
-    if (my_cart.product_list[index].id == pid) {
-      my_cart.product_list[index].status = 2
-      my_cart.save();
-      break;
-    }
-  }
   res.redirect("/myCart");
 });
 
+
+
+//update
+// router.put("/update", function(req, res) {
+//   Cart.find({ email: req.user.email }, function(err, cart_item) {
+//     if (!cart_item.length) {//////
+//       my_cart = new Cart();
+//       my_cart.email = req.user.email;
+//       my_cart.save();
+//     } else {
+//       my_cart = cart_item[0];
+//     }
+//   });
+  
+//   let pid = req.query.id;
+//   let index = 0;
+//   for (index = 0; index < my_cart.product_list.length; index++) {
+//     if (my_cart.product_list[index].id == pid) {
+//       my_cart.product_list[index].status = 2
+//       my_cart.save();
+//       break;
+//     }
+//   }
+//   res.redirect("/myCart");
+// });
+
+//
 router.get("/addNew", function(request, response, next) {
   Product.find({}, function(err, product_list) {
     try {
