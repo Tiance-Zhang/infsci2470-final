@@ -51,7 +51,7 @@
     
      <table class="table table-bordered" id="checklist_table">
       <% list.forEach(function(product){ %>
-      <tr><td>id: <%= product.id %></td><td rowspan="6">
+      <tr class="list_id"><td >id: <%= product.id %></td><td rowspan="6">
 <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->
         <form method="POST" action="/update?_method=PUT&name=<%= product.id %>">
            <button class="btn btn-secondary btn-lg btn-block" type="submit">
@@ -101,11 +101,12 @@
   
    $( document ).ready(function() {
      
-//      $("#checklist_table td").hide();
+     $("#checklist_table td").hide();
+     $(".list_id").find('td').show();
  
-    $("#checklist_table th" ).click(function() {
+    $(".list_id" ).click(function() {
      // this.siblings("#checklist_table td").show();
-   $(this).parent().siblings().find('td').show();
+   $(this).parent().find('td').show();
    
    
    
