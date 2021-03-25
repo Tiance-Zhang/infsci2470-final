@@ -130,7 +130,12 @@
                             var col_index = $(this).index();
                             for (var i = 1; i < 5; i++) {
                                 var row = $(this).index() + i;
-                                $("#checklist_table tr:eq(" + row + ")").find('td').toggle();
+                                // $("#checklist_table tr:eq(" + row + ")").find('td').toggle();
+                              if($("#checklist_table tr:eq(" + row + ")").find('td').css('display') == 'none'){ 
+                                 $("#checklist_table tr:eq(" + row + ")").find('td').show('slow'); 
+                              } else { 
+                                 $("#checklist_table tr:eq(" + row + ")").find('td').hide('slow'); 
+                                      }
                             }
 
 
