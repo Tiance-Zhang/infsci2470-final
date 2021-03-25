@@ -107,7 +107,14 @@ footer.end {
   
 }
 
-.change_status{
-  backgroud-color: red!important;
+.table_form{
   width: 100%!important;
+  height: 100%!important;
+}
+
+.change_status{
+  background-color: white!important;
+  width: 100%!important;
+  height: 100%!important;
+  border: 1px solid black!important;
 }
