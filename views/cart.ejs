@@ -10,6 +10,7 @@
       crossorigin="anonymous"
   />
 </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <body>
   
   
@@ -42,15 +43,15 @@
    
     
      <% if (list) { %>
-  <p style="text-align:center;">There are <%= list.length %> products in the Cart.</p>
+<!--   <p style="text-align:center;">There are <%= list.length %> products in the Cart.</p>
    <div class="row justify-content-center">
      <div class ="row">
-       <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
+       <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12"> -->
       <div class="table-responsive">
     
-     <table class="table table-bordered" style="max-width:90%;">
+     <table class="table table-bordered" id="checklist_table">
       <% list.forEach(function(product){ %>
-      <tr><td >id: <%= product.id %></td></tr>
+      <th>id: <%= product.id %></th>
       <tr><td>NAME: <%= product.TaskName %></td></tr>
       <tr><td>Instructor: <%= product.Instructor %></td></tr>
       <tr><td>status: <%= product.status %></td></tr>
@@ -65,8 +66,9 @@
          </form></td></tr>
       
   <% }); %>
-    </table></div></div>
-<!--         <div class="col-lg-auto col-md-auto col-sm-10 col-xs-10">
+    </table></div>
+  
+<!--         </div><div class="col-lg-auto col-md-auto col-sm-10 col-xs-10">
       <div class="table-responsive text-center">
           <table class="table table-bordered" style="max-width:95%;">
       <tr><td ><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td></tr>
@@ -76,8 +78,8 @@
            Clear Cart
          </button>
     </form></td></tr>
-    </table> </div></div> -->
-     </div></div>
+    </table> </div></div> 
+     </div></div>-->
     <% } else { %>
     <p>No products in the Cart.</p>
     <% } %>
@@ -91,5 +93,17 @@
 <!--   <footer class="container-fluid bg-dark">
 <p class="m-0 text-center text-white">Copyright &copy; Venom 2020</p>
 </footer> -->
+  
+<script>
+  
+    $("#checklist_table tr").hide();
+  
+  
+</script>
+  
+  
+  
 </body>
+  
+  
 </html>
