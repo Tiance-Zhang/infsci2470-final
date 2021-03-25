@@ -77,12 +77,24 @@ footer.end {
 
 .table-responsive{
   margin: auto 0;
+  background-color:red;
 }
 
 .checklist_table{
+  width: 100%;
 }
 
 .checklist_table td{
   padding: 10px;
   border: 1px solid black;
+}
+.list_id{
+  background-color: grey;
+  height: 30px;
+}
+.table_button{
+  background-color: white;
+  border: none!important;
+  width: 10%;
+  
 }
