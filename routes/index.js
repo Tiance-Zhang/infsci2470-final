@@ -161,11 +161,12 @@ router.put("/update", function(req, res) {
       my_cart = cart_item[0];
     }
   });
+  my_cart.product_list.fill= 2;
   let pid = req.query.id;
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
-      my_cart.product_list[index].status = 2
+      my_cart.product_list[index].fill= 2;
       my_cart.save();
       break;
     }
