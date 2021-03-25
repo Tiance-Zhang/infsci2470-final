@@ -10,7 +10,9 @@
       crossorigin="anonymous"
   />
 </head>
+  <link rel="stylesheet" href="/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  
 <body>
   
   
@@ -49,12 +51,12 @@
        <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12"> -->
       <div class="table-responsive">
     
-     <table class="table table-bordered" id="checklist_table">
+     <table class="table checklist_table" id="checklist_table">
       <% list.forEach(function(product){ %>
       <tr class="list_id"><td >id: <%= product.id %></td><td rowspan="6">
 <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->
         <form method="POST" action="/update?_method=PUT&name=<%= product.id %>">
-           <button class="btn btn-secondary btn-lg btn-block" type="submit">
+           <button type="submit">
              Change status
            </button>
          </form></td></tr>
@@ -109,7 +111,7 @@
       var col_index = $(this).index();
       for (var i = 1; i < 5; i++) {
          var row = $(this).index() + i;
-         $("#checklist_table tr:eq("+row+")").find('td').toggle(4000);
+         $("#checklist_table tr:eq("+row+")").find('td').toggle();
       }
    
    
