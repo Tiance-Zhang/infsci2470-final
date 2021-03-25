@@ -149,7 +149,7 @@ router.post("/clearCart", function(req, res) {
   res.redirect("/myCart");
 });
 
-router.post("/updateCart", function(req, res) {
+router.put("/updateCart", function(req, res) {
   Cart.find({ email: req.user.email }, function(err, cart_item) {
     if (!cart_item.length) {
       my_cart = new Cart();
