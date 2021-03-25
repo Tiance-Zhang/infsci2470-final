@@ -109,10 +109,11 @@
    // $(this).siblings().find('td').show();
       // $(this).closest("tr").find('td').show();
       var col_index = $(this).index();
-      for (int i = col_index; i < )
-      alert(col_index);
-   
-   
+      for (int i = 1; i < 5; i++) {
+         var row = $(this).index() + i;
+         // row.find('td').show();
+        console.log(row);
+      }
    
    
    });
