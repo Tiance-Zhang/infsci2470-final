@@ -85,11 +85,11 @@ router.post("/addCart", function(request, response) {
   Product.findOne({ id: pid }, function(err, product) {
     my_cart.product_list.push({
       id: product.id,
-      name: product.name,
-      brand: product.brand,
-      price: product.price,
-      color: product.color,
-      shoeUrl: product.shoeUrl
+      TaskName: product.TaskName,
+      Instructor: product.Instructor,
+      status: product.status,
+      Room: product.Room,
+      Description: product.Description
     });
     //my_cart.save();
     my_cart.save(function(err, user) {
@@ -163,7 +163,7 @@ router.put("/updateCart", function(req, res) {
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
-      my_cart.product_list.splice(index, 1);
+      
       my_cart.save();
       break;
     }
