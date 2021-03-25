@@ -159,7 +159,6 @@ router.put("/update", function(req, res) {
     } else {
       my_cart = cart_item[0];
     }
-  });
   let pid = req.query.id;
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
@@ -169,7 +168,9 @@ router.put("/update", function(req, res) {
       break;
     }
   }
-  res.redirect("/myCart");
+  res.redirect("/myCart"); 
+  });
+
 });
 
 router.get("/addNew", function(request, response, next) {
