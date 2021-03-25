@@ -106,7 +106,11 @@
  
     $(".list_id" ).click(function() {
      // this.siblings("#checklist_table td").show();
-   $(this).parent().find('td').show();
+   // $(this).siblings().find('td').show();
+      // $(this).closest("tr").find('td').show();
+      var col_index = $(this).index();
+      for (int i = col_index; i < )
+      alert(col_index);
    
    
    
