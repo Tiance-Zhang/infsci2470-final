@@ -101,9 +101,10 @@
    $( document ).ready(function() {
      
      $("#checklist_table td").hide();
- $("#checklist_table th" ).click(function() {
+ 
+    $("#checklist_table th" ).click(function() {
      // this.siblings("#checklist_table td").show();
-   $(this).closest('tr').find('td:nth-child(3)').show();
+   $(this).siblings().find("td").show();
    
    
    
