@@ -50,7 +50,7 @@
             
                 <% list.forEach(function(product){ %>
           <table class="checklist_table" id="checklist_table">
-                    <th class="list_id">
+                    <tr class="list_id">
                         <td>id:
                             <%= product.id %>
                         </td>
@@ -61,7 +61,7 @@
                                 <button type="submit" class="change_status">Change status</button>
                             </form>
                         </td>
-                    </th>
+                    </tr>
 
                     <tr>
                         <td>NAME:
@@ -123,8 +123,7 @@
                     $(document).ready(function() {
 
                         $("#checklist_table td").hide();
-                        $("#checklist_table td").hide();
-                        $(".list_id").find('th').show();
+                        $(".list_id").find('td').show();
 
                         $(".list_id").click(function() {
 
@@ -139,7 +138,8 @@
                             //   }
                             // }
 
-                        $(this).parent().find('tr').toggle();
+                        $(this).parent().find('td').toggle();
+                          $(".list_id").find('td').show();
 
                         });
                     });
