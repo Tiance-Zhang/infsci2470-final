@@ -83,12 +83,14 @@ footer.end {
   margin: auto 0;
 }
 
-
+.checklist_table{
+  margin: 10px;
+}
 
 
 .checklist_table tr{
   width: 100%;
-  height: 10px!important;
+/*   height: 10px!important; */
   vertical-align:top;
 }
 

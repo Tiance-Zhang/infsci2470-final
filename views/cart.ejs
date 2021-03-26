@@ -47,9 +47,10 @@
        <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12"> -->
         <div class="table-responsive">
 
-            <table class="checklist_table" id="checklist_table">
+            
                 <% list.forEach(function(product){ %>
-                    <tr class="list_id">
+          <table class="checklist_table" id="checklist_table">
+                    <th class="list_id">
                         <td>id:
                             <%= product.id %>
                         </td>
@@ -60,7 +61,7 @@
                                 <button type="submit" class="change_status">Change status</button>
                             </form>
                         </td>
-                    </tr>
+                    </th>
 
                     <tr>
                         <td>NAME:
@@ -87,10 +88,9 @@
                             <%= product.Description %>
                         </td>
                     </tr>
-
-
+ </table>
                     <% }); %>
-            </table>
+           
         </div>
 
         <!--         </div><div class="col-lg-auto col-md-auto col-sm-10 col-xs-10">
@@ -123,21 +123,23 @@
                     $(document).ready(function() {
 
                         $("#checklist_table td").hide();
-                        $(".list_id").find('td').show();
+                        $("#checklist_table td").hide();
+                        $(".list_id").find('th').show();
 
                         $(".list_id").click(function() {
 
-                            var col_index = $(this).index();
-                            for (var i = 1; i < 5; i++) {
-                                var row = $(this).index() + i;
-                                // $("#checklist_table tr:eq(" + row + ")").find('td').toggle();
-                              if($("#checklist_table tr:eq(" + row + ")").find('td').css('display') == 'none'){ 
-                                 $("#checklist_table tr:eq(" + row + ")").find('td').show('slow'); 
-                              } else { 
-                                 $("#checklist_table tr:eq(" + row + ")").find('td').hide('slow'); 
-                              }
-                            }
+                            // var col_index = $(this).index();
+                            // for (var i = 1; i < 5; i++) {
+                            //     var row = $(this).index() + i;
+                            //     // $("#checklist_table tr:eq(" + row + ")").find('td').toggle();
+                            //   if($("#checklist_table tr:eq(" + row + ")").find('td').css('display') == 'none'){ 
+                            //      $("#checklist_table tr:eq(" + row + ")").find('td').show('slow'); 
+                            //   } else { 
+                            //      $("#checklist_table tr:eq(" + row + ")").find('td').hide('slow'); 
+                            //   }
+                            // }
 
+                        $(this).parent().find('tr').toggle();
 
                         });
                     });
