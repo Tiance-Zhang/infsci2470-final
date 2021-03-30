@@ -150,6 +150,7 @@ router.post("/clearCart", function(req, res) {
 });
 
 
+
 //update
 router.put("/update", function(req, res) {
   Cart.find({ email: req.user.email }, function(err, cart_item) {
@@ -160,19 +161,20 @@ router.put("/update", function(req, res) {
     } else {
       my_cart = cart_item[0];
     }
-  });
-  my_cart.product_list.fill= 2;
-  let pid = req.query.id;
-  let index = 0;
-  for (index = 0; index < my_cart.product_list.length; index++) {
-    if (my_cart.product_list[index].id === pid) {
-      my_cart.product_list[index] = 2;
-      console.log(my_cart.product_list[index]);
-      my_cart.save();
-      break;
+  
+    let pid = req.user.email;
+    let index = 0;
+    for (index = 0; index < my_cart.product_list.length; index++) {
+      console.log(my_cart.product_list[index].id );
+      console.log(pid);
+      if (my_cart.product_list[index].id === pid) {
+        my_cart.product_list[index].status = 2;
+        my_cart.save();
+        break;
+      }
     }
-  }
-  res.redirect("/myCart");
+    res.redirect("/myCart");
+  });
 });
 
 
