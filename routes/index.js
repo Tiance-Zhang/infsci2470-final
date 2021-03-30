@@ -165,14 +165,16 @@ router.put("/update", function(req, res) {
   let pid = req.query.id;
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
-    if (my_cart.product_list[index].id == pid) {
-      my_cart.product_list[index].fill= 2;
+    if (my_cart.product_list[index].id === pid) {
+      my_cart.product_list[index] = 2;
+      console.log(my_cart.product_list[index]);
       my_cart.save();
       break;
     }
   }
   res.redirect("/myCart");
 });
+
 
 //
 router.get("/addNew", function(request, response, next) {
