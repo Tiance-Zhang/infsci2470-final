@@ -36,7 +36,7 @@ p {
   border-radius: 3px;
 } */
 
-input {
+/* input {
   display: block;
   margin-bottom: 10px;
   padding: 5px;
@@ -44,7 +44,7 @@ input {
   border: 1px solid lightgrey;
   border-radius: 3px;
   font-size: 16px;
-}
+} */
 
 /* button {
   font-size: 16px;
@@ -125,10 +125,10 @@ footer.end {
 }
 
 .change_status{
-  display:inline-block;
-  background-color: white!important;
+  -webkit-appearance: none;
   width: 100%!important;
   height: 100%!important;
+  background-color: white!important;
   border: 1px solid red!important;
   margin: 0px!important;
 }
