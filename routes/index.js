@@ -171,11 +171,11 @@ router.put("/update", function(req, res) {
       if (my_cart.product_list[index].id == pid) {
         console.log('good')
         my_cart.product_list[index].status = 2;
-        console.log(my_cart);
-        my_cart.save();
+        console.log(my_cart.product_list[index].status);
         break;
       }
     }
+  my_cart.s
   
   //my_cart.save();
     my_cart.save(function(err, user) {
