@@ -104,7 +104,7 @@ footer.end {
 }
 
 .list_id{
-  background-color: #8F658E;
+  background-color: #7099C8;
   cursor: pointer;
   
 }
@@ -129,11 +129,11 @@ footer.end {
   width: 100%!important;
   height: 100%!important;
   background-color: white!important;
-  border: 1px solid #8F658E!important;
+  border: 1px solid #7099C8!important;
   margin-left: 10px!important;
 }
 
 
 .bg-dark {
-    background-color: #8F658E!important;
+    background-color: #7099C8!important;
 }
