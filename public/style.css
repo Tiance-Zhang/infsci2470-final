@@ -104,7 +104,8 @@ footer.end {
 }
 
 .list_id{
-  background-color: grey;
+  background-color: #8F658E;
+  cursor: pointer;
   
 }
 .table_button{
@@ -128,6 +129,11 @@ footer.end {
   width: 100%!important;
   height: 100%!important;
   background-color: white!important;
-  border: 1px solid grey!important;
+  border: 1px solid #8F658E!important;
   margin-left: 10px!important;
+}
+
+
+.bg-dark {
+    background-color: #8F658E!important;
 }
