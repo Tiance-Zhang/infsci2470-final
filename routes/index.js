@@ -165,6 +165,7 @@ router.put("/update", function(req, res) {
   
     let pid = req.query.id
     let index = 0;
+    my_cart.find
     for (index = 0; index < my_cart.product_list.length; index++) {
       console.log(my_cart.product_list[index].id );
       console.log(pid);
@@ -175,7 +176,7 @@ router.put("/update", function(req, res) {
         break;
       }
     }
-  my_cart.s
+  my_cart.save();
   
   //my_cart.save();
     my_cart.save(function(err, user) {
