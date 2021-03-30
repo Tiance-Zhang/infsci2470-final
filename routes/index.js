@@ -153,6 +153,15 @@ router.post("/clearCart", function(req, res) {
 
 //update
 router.put("/update", function(req, res) {
+      //my_cart.save();
+  my_cart.save(function(err, user) {
+    if (err) {
+      console.log(err);
+      response.send(400, "Bad Request");
+    } else {
+      response.redirect("/product");
+    }
+  }
   Cart.find({ email: req.user.email }, function(err, cart_item) {
     if (!cart_item.length) {//////
       my_cart = new Cart();
@@ -163,12 +172,14 @@ router.put("/update", function(req, res) {
     }
   
     let pid = req.query.id
-    console.log(pid);
     let index = 0;
     for (index = 0; index < my_cart.product_list.length; index++) {
       console.log(my_cart.product_list[index].id );
-      if (my_cart.product_list[index].id === pid) {
+      console.log(pid);
+      if (my_cart.product_list[index].id == pid) {
+        console.log('good')
         my_cart.product_list[index].status = 2;
+        
         my_cart.save();
         break;
       }
