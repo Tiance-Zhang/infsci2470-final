@@ -55,7 +55,7 @@
                             <%= product.id %>
                         </td>
                         <td rowspan="6" class="table_button">
-                            <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->
+                            <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->       
                             <form class="table_form" method="POST" action="/update?_method=PUT&name=<%= product.id %>">
                              
                                 <button type="submit" class="change_status">Change status</button>
@@ -140,6 +140,8 @@
 
                         $(this).parent().find('td').toggle();
                           $(".list_id").find('td').show();
+                          
+                          alert($(this).parent().find('.table_button').$(.table_button))
 
                         });
                     });
