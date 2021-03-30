@@ -162,11 +162,11 @@ router.put("/update", function(req, res) {
       my_cart = cart_item[0];
     }
   
-    let pid = req.user.email;
+    let pid = req.query.id
+    console.log(pid);
     let index = 0;
     for (index = 0; index < my_cart.product_list.length; index++) {
       console.log(my_cart.product_list[index].id );
-      console.log(pid);
       if (my_cart.product_list[index].id === pid) {
         my_cart.product_list[index].status = 2;
         my_cart.save();
