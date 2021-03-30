@@ -153,15 +153,6 @@ router.post("/clearCart", function(req, res) {
 
 //update
 router.put("/update", function(req, res) {
-      //my_cart.save();
-  my_cart.save(function(err, user) {
-    if (err) {
-      console.log(err);
-      response.send(400, "Bad Request");
-    } else {
-      response.redirect("/product");
-    }
-  }
   Cart.find({ email: req.user.email }, function(err, cart_item) {
     if (!cart_item.length) {//////
       my_cart = new Cart();
@@ -170,6 +161,7 @@ router.put("/update", function(req, res) {
     } else {
       my_cart = cart_item[0];
     }
+  });
   
     let pid = req.query.id
     let index = 0;
@@ -179,13 +171,21 @@ router.put("/update", function(req, res) {
       if (my_cart.product_list[index].id == pid) {
         console.log('good')
         my_cart.product_list[index].status = 2;
-        
+        console.log(my_cart);
         my_cart.save();
         break;
       }
     }
-    res.redirect("/myCart");
-  });
+  
+  //my_cart.save();
+    my_cart.save(function(err, user) {
+      if (err) {
+        console.log(err);
+        res.send(400, "Bad Request");
+      } else {
+        res.redirect("/mycart");
+      }
+    });
 });
 
 
