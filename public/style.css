@@ -140,3 +140,20 @@ footer.end {
 .bg-dark {
     background-color: #7099C8!important;
 }
+
+.login{
+  outline:none!important;
+}
+
+.back_button{
+  background-color: #7099C8!important;
+  border: none!important;
+  outline:none!important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #7099C8!important;
+    border-color: #7099C8!important;
+    outline: none!important;
+}
