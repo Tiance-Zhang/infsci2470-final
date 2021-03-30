@@ -137,3 +137,10 @@ footer.end {
 .bg-dark {
     background-color: #7099C8!important;
 }
+
+.login_img {
+  height: 100vh;
+  weight: 70%;
+  float: left;
+  background-color: red;!important
+}
