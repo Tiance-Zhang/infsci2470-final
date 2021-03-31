@@ -175,11 +175,10 @@ router.get("/myCart", function(req, res) {
 
 //update
 router.put("/update", function(req, res) {
-  Cart.find({ email: req.user.email, 'product_list.TaskName':"333"}, function(err, product_list) {
+  Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"}, function(err, product_list) {
     console.log('good');
-    console.log(product_list);
-    product_list[0].status = 200;
-    product_list.save();
+    console.log(product_list.id);
+    product_list.status = 200;
   });
 //     let pid = req.query.id;
 //     let index = 0;
@@ -206,7 +205,6 @@ router.put("/update", function(req, res) {
 //         break;
 //       }
 //     }
-    console.log(my_cart.product_list);
      res.redirect("/mycart");
 });
 

@@ -63,10 +63,10 @@
           <input type="radio" class="btn-check" name="options" id="teacher" autocomplete="off" value="teacher" >
 <label class="btn btn-primary role" for="teacher" style="margin-right:2%;">Teacher</label>
 
-<input type="radio" class="btn-check" name="options" id="student" autocomplete="off" value="student" checked>
+<input type="radio" class="btn-check" name="options" id="student" autocomplete="off" value="student">
 <label class="btn btn-primary role" for="student" style="margin-left:2%;">Student</label>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">
+        <button type="submit" class="btn btn-primary btn-block" id="submit">
           Register
         </button>
       </form>
@@ -76,15 +76,17 @@
 </div>
   <script>
                     $(document).ready(function() {
-                      var radio = $('input[name=options]');
-                      var checkedRadio = $('input[name=options]:checked + label');
-                      var uncechedRadio = $('input[name=options]:not(:checked) + label');
+                      // var radio = $('input[name=options]');
+                      // var checkedRadio = $('input[name=options]:checked + label');
+                      // var uncechedRadio = $('input[name=options]:not(:checked) + label');
                       // checkedRadio.css("background-color", "#7099C8");
                       // uncechedRadio.css("background-color", "#ffffff");
                       // radio.click(function() {
                       //   checkedRadio.css("background-color", "#7099C8");
                       //   uncechedRadio.css("background-color", "#ffffff");
                       // });
+                      var button = $('#submit');
+                      if ()
                         
                     });
                 </script>
