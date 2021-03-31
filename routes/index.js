@@ -180,18 +180,13 @@ router.put("/update", async function(req, res) {
   //   console.log(product_list.TaskName);
   //   product_list.status = 200;
   // });
-  
-  const doc =await Cart.create({
-   email: req.user.email,
-  'product_list.TaskName':"333",
-  'product_list.status':1
+  console.log(req.query.id);
+await Cart.updateOne({ email: req.user.email, 'product_list.id':req.query.id}, {
+  'product_list.$.status': 800
 });
-console.log(doc);
-// Update the document by setting a property and calling `save()`
-doc.product_list.status = 222;
-await doc.save();
-  
-  
+
+// Load the document to see the updated value
+const doc = await Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"});
 console.log(doc);
 //     let pid = req.query.id;
 //     let index = 0;
