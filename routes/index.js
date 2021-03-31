@@ -197,21 +197,23 @@ router.put("/update", function(req, res) {
     //my_cart.save();
   });
   
-    let pid = req.query.id;
-    let index = 0;
+//     let pid = req.query.id;
+//     let index = 0;
 
-    for (index = 0; index < my_cart.product_list.length; index++) {
-      console.log(my_cart.product_list[index].id);
-      console.log(pid);
-      if (my_cart.product_list[index].id == pid) {
-        my_cart.product_list[index].status = 2
-        my_cart.save();
-        console.log(my_cart.product_list[index]);        
-        break;
-      }
-    }
-     res.redirect("/mycart");
-});
+//     for (index = 0; index < my_cart.product_list.length; index++) {
+//       console.log(my_cart.product_list[index].id);
+//       console.log(pid);
+//       if (my_cart.product_list[index].id == pid) {
+//         my_cart.product_list[index].status = 2
+//         my_cart.save();
+//         console.log(my_cart.product_list[index]);        
+//         break;
+//       }
+//     }
+//      res.redirect("/mycart");
+}
+  my_cart.find{}
+          );
 
 //
 router.get("/addNew", function(request, response, next) {

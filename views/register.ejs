@@ -76,10 +76,15 @@
 </div>
   <script>
                     $(document).ready(function() {
-        var radio = $('input[name=options]');
-                      radio.click(function() {
-                        console.log($('input[name=options]:checked').val());
-                      });
+                      var radio = $('input[name=options]');
+                      var checkedRadio = $('input[name=options]:checked + label');
+                      var uncechedRadio = $('input[name=options]:not(:checked) + label');
+                      // checkedRadio.css("background-color", "#7099C8");
+                      // uncechedRadio.css("background-color", "#ffffff");
+                      // radio.click(function() {
+                      //   checkedRadio.css("background-color", "#7099C8");
+                      //   uncechedRadio.css("background-color", "#ffffff");
+                      // });
                         
                     });
                 </script>
