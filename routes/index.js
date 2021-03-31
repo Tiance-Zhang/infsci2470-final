@@ -180,40 +180,24 @@ router.put("/update", async function(req, res) {
   //   console.log(product_list.TaskName);
   //   product_list.status = 200;
   // });
-  console.log(req.query.id);
-await Cart.updateOne({ email: req.user.email, 'product_list.id':req.query.id}, {
-  'product_list.$.status': 800
-});
+  var pid = req.query.id;
+  await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {
+    if( 'product_list.$.status' != 18) {
+    greeting = "Good day";
+    }
+    'product_list.$.status': 8000
+  });
 
-// Load the document to see the updated value
-const doc = await Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"});
-console.log(doc);
+  // Load the document to see the updated value
+  const doc = await Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"});
+  console.log(doc);
 //     let pid = req.query.id;
 //     let index = 0;
 //     console.log(my_cart.product_list);
 //     my_cart.product_list[0].status = 123456789;
 //     my_cart.save();
-  
-//   Cart.updateOne({"id":pid},{$set:{"":20 }},function(error,data){
-//         if(error){
-//             console.log('修改数据失败');
-//             return;
-//         }
-//         //console.log(data);
-//         console.log("修改数据成功");
-
     
-//     for (index = 0; index < my_cart.product_list.length; index++) {
-//       console.log(my_cart.product_list[index].id);
-//       console.log(pid);
-//       if (my_cart.product_list[index].id == pid) {
-//         my_cart.product_list[index].status = 123456789
-//         my_cart.save();
-//         console.log(my_cart.product_list[index]);        
-//         break;
-//       }
-//     }
-     res.redirect("/mycart");
+     location.reload();
 });
 
 //
