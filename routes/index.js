@@ -165,28 +165,40 @@ router.put("/update", function(req, res) {
   
     let pid = req.query.id
     let index = 0;
-    my_cart.find
-    for (index = 0; index < my_cart.product_list.length; index++) {
-      console.log(my_cart.product_list[index].id );
-      console.log(pid);
-      if (my_cart.product_list[index].id == pid) {
-        console.log('good')
-        my_cart.product_list[index].status = 2;
-        console.log(my_cart.product_list[index].status);
-        break;
-      }
-    }
-  my_cart.save();
+    console.log(my_cart);
   
-  //my_cart.save();
-    my_cart.save(function(err, user) {
+  my_cart.findOne({ id: pid }, function(err, uu) {
+    uu.status = 2
+    uu.save(function(err) {
       if (err) {
-        console.log(err);
-        res.send(400, "Bad Request");
+        res.status(500).send(err);
       } else {
+        //res.status(204).send("removed");
         res.redirect("/mycart");
       }
     });
+  });
+//     for (index = 0; index < my_cart.product_list.length; index++) {
+//       console.log(my_cart.product_list[index].id );
+//       console.log(pid);
+//       if (my_cart.product_list[index].id == pid) {
+//         console.log('good')
+//         my_cart.product_list[index].status = 2;
+//         console.log(my_cart.product_list[index].status);
+//         break;
+//       }
+//     }
+//   my_cart.save();
+  
+//   //my_cart.save();
+//     my_cart.save(function(err, user) {
+//       if (err) {
+//         console.log(err);
+//         res.send(400, "Bad Request");
+//       } else {
+//         res.redirect("/mycart");
+//       }
+//     });
 });
 
 
