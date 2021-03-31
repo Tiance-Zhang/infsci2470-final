@@ -51,18 +51,16 @@
           />
         </div>
         <div class="form-group">
-          <input type="radio" class="btn-check" name="roles" id="roles" autocomplete="off" value="teacher" >
+          <input type="radio" class="btn-check" name="options" autocomplete="off" value="teacher" >
 <label class="btn btn-primary role" for="teacher" style="margin-right:2%;">Teacher</label>
 
-<input type="radio" class="btn-check" name="roles" id="roles" autocomplete="off" value="student">
+<input type="radio" class="btn-check" name="options" autocomplete="off" value="student">
 <label class="btn btn-primary role" for="student" style="margin-left:2%;">Student</label>
           <input
             type="text"
             id="roles"
-            name="password"
-            class="form-control"
-            placeholder="Create Password"
-            value="<%= typeof password != 'undefined' ? password : '' %>"
+            style="display:none"
+            value="<%= typeof roles != 'undefined' ? roles : '' %>"
           />
         </div>
         <button type="submit" class="btn btn-primary btn-block" id="submit">
@@ -75,7 +73,19 @@
 </div>
   <script>
                     $(document).ready(function() {
+                      
                       // var radio = $('input[name=options]');
+                      // var radioValue = $('#roles');
+                      // radioValue.val("student");
+                      
+                      // radio.change(function() {
+                      //   radioValue.val($('input[name=options]:checked').val());
+                      //   console.log(radioValue.val());
+                      // });
+                      
+                      
+                      
+                      
                       // var checkedRadio = $('input[name=options]:checked + label');
                       // var uncechedRadio = $('input[name=options]:not(:checked) + label');
                       // checkedRadio.css("background-color", "#7099C8");
