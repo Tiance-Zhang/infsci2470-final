@@ -163,13 +163,13 @@ footer.end {
 }
 
 .btn-check{
-/*   display: none; */
+  display: none;
 }
 
 .role {
   width: 48%;
   float: left;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
 }
 
 .role {
