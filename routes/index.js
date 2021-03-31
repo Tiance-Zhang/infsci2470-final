@@ -175,11 +175,21 @@ router.get("/myCart", function(req, res) {
 
 //update
 router.put("/update", function(req, res) {
-  Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"}, function(err, product_list) {
-    console.log('good');
-    console.log(product_list.id);
-    product_list.status = 200;
-  });
+  // Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"}, function(err, product_list) {
+  //   console.log('good');
+  //   console.log(product_list.TaskName);
+  //   product_list.status = 200;
+  // });
+  
+  const doc = Cart.create({
+  email: req.user.email,
+  'product_list.TaskName':"333",
+    'product_list.status':1
+});
+
+// Update the document by setting a property and calling `save()`
+doc.product_list.TaskName = "3333";
+doc.save();
 //     let pid = req.query.id;
 //     let index = 0;
 //     console.log(my_cart.product_list);
