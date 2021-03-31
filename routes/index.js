@@ -160,16 +160,19 @@ router.put("/update", function(req, res) {
       my_cart = cart_item[0];
     }
   })
+  var change = null;
   let pid = req.query.id;
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
-      my_cart.product_list[index].status = 2
+      let change = index
       my_cart.save();
-      console.log(my_cart);
       break;
     }
   }
+  Cart.findOneAndUpdate((id == ))
+  
+  res.redirect("/mycart");
 })
   
 
