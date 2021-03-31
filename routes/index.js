@@ -194,7 +194,9 @@ router.put("/update", function(req, res) {
     } else {
       my_cart = cart_item[0];
     }
-
+    //my_cart.save();
+  });
+  
     let pid = req.query.id;
     let index = 0;
 
@@ -202,22 +204,13 @@ router.put("/update", function(req, res) {
       console.log(my_cart.product_list[index].id);
       console.log(pid);
       if (my_cart.product_list[index].id == pid) {
-        my_cart.product_list[index].status = 200;
-        console.log(my_cart.product_list[index]);
+        my_cart.product_list[index].status = 2
+        my_cart.save();
+        console.log(my_cart.product_list[index]);        
         break;
       }
     }
-    my_cart.save();
-    //my_cart.save();
-    my_cart.save(function(err, user) {
-      if (err) {
-        console.log(err);
-        res.send(400, "Bad Request");
-      } else {
-        res.redirect("/mycart");
-      }
-    });
-  });
+     res.redirect("/mycart");
 });
 
 //

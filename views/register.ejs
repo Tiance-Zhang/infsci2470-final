@@ -60,11 +60,11 @@
             placeholder="Confirm Password"
             value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
           /> -->
-          <input type="radio" class="btn-check" name="options" id="teacher" autocomplete="off" checked>
-<label class="btn btn-primary role" for="option1" style="margin-right:2%;">Teacher</label>
+          <input type="radio" class="btn-check" name="options" id="teacher" autocomplete="off" value="teacher" >
+<label class="btn btn-primary role" for="teacher" style="margin-right:2%;">Teacher</label>
 
-<input type="radio" class="btn-check" name="options" id="student" autocomplete="off">
-<label class="btn btn-primary role" for="option2" style="margin-left:2%;">Student</label>
+<input type="radio" class="btn-check" name="options" id="student" autocomplete="off" value="student" checked>
+<label class="btn btn-primary role" for="student" style="margin-left:2%;">Student</label>
         </div>
         <button type="submit" class="btn btn-primary btn-block">
           Register
@@ -76,9 +76,9 @@
 </div>
   <script>
                     $(document).ready(function() {
-        var radio = $( "form input:radio" );
+        var radio = $('input[name=options]');
                       radio.click(function() {
-                        alert(radio.id);
+                        console.log($('input[name=options]:checked').val());
                       });
                         
                     });
