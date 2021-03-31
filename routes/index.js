@@ -4,14 +4,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
 const Product = require("../models/product");
-const vendor = require("../models/vendor");
-const cartSchema = new Schema({
-  email: "",
-  product_list: []
-});
+const Cart = require("../models/cart");
 var my_cart;
 var my_product;
-var Cart = mongoose.model("Cart", cartSchema);
 
 // Welcome Page
 // router.get("/", forwardAuthenticated, (req, res) => res.render("welcome"));
@@ -42,15 +37,7 @@ router.get("/productadmin", function(request, response) {
   });
 });
 
-// RETREIVE all vendor
 
-router.get("/vendors", function(request, response) {
-  vendor.find({}, function(err, vendor_list) {
-    response.render("vendors", {
-      vendor: vendor_list
-    });
-  });
-});
 
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
@@ -196,24 +183,22 @@ router.put("/update", function(req, res) {
     }
     //my_cart.save();
   });
-  
-//     let pid = req.query.id;
-//     let index = 0;
+    let pid = req.query.id;
+    let index = 0;
 
-//     for (index = 0; index < my_cart.product_list.length; index++) {
-//       console.log(my_cart.product_list[index].id);
-//       console.log(pid);
-//       if (my_cart.product_list[index].id == pid) {
-//         my_cart.product_list[index].status = 2
-//         my_cart.save();
-//         console.log(my_cart.product_list[index]);        
-//         break;
-//       }
-//     }
-//      res.redirect("/mycart");
-}
-  my_cart.find{}
-          );
+    for (index = 0; index < my_cart.product_list.length; index++) {
+      console.log(my_cart.product_list[index].id);
+      console.log(pid);
+      if (my_cart.product_list[index].id == pid) {
+        my_cart.product_list[index].status = 123456789
+        my_cart.save();
+        console.log(my_cart.product_list[index]);        
+        break;
+      }
+    }
+    console.log(my_cart.product_list);
+     res.redirect("/mycart");
+});
 
 //
 router.get("/addNew", function(request, response, next) {
