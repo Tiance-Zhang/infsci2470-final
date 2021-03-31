@@ -175,9 +175,11 @@ router.get("/myCart", function(req, res) {
 
 //update
 router.put("/update", function(req, res) {
-  Cart.find({ email: req.user.email,'product_list.TaskName':"333"}, function(err, product_list) {
+  Cart.find({ email: req.user.email, 'product_list.TaskName':"333"}, function(err, product_list) {
     console.log('good');
-    console.log(product_list)
+    console.log(product_list);
+    product_list[0].status = 200;
+    product_list.save();
   });
 //     let pid = req.query.id;
 //     let index = 0;
