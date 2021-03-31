@@ -10,6 +10,7 @@ const cartSchema = new Schema({
   product_list: []
 });
 var my_cart;
+var my_product;
 var Cart = mongoose.model("Cart", cartSchema);
 
 // Welcome Page
@@ -160,17 +161,22 @@ router.put("/update", function(req, res) {
       my_cart = cart_item[0];
     }
   })
-  var change = null;
+
   let pid = req.query.id;
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
-      let change = index
+      my_product = new Product();
+      
       my_cart.save();
       break;
     }
   }
-  Cart.findOneAndUpdate((id == ))
+  console.log('good')
+  Cart.findOne({id: change},function(err,uu){
+    console.log(uu)
+    
+  })
   
   res.redirect("/mycart");
 })
