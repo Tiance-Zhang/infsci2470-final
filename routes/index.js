@@ -175,24 +175,23 @@ router.get("/myCart", function(req, res) {
 
 //update
 router.put("/update", function(req, res) {
-  Cart.findOneAndUpdate({ email: req.user.email, 'product_list.TaskName':"333"}, function(err, product_list) {
-    console.log('good');
-    console.log(product_list.TaskName);
-    product_list.status = 200;
-  });
-  Cart.save();
+  // Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"}, function(err, product_list) {
+  //   console.log('good');
+  //   console.log(product_list.TaskName);
+  //   product_list.status = 200;
+  // });
   
-  
-  const doc = await CharacterModel.create({
-  name: 'Jon Snow',
-  title: `Lord Commander of the Night's Watch`
+  const doc =Cart.create({
+  email: req.user.email,
+  'product_list.TaskName':"333",
+    'product_list.status':1
 });
 
 // Update the document by setting a property and calling `save()`
-doc.title = 'King in the North';
-await doc.save();
+doc.product_list.$.TaskName = "3333";
+doc.save();
   
-  // "King in the North"
+  
 //     let pid = req.query.id;
 //     let index = 0;
 //     console.log(my_cart.product_list);
