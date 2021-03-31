@@ -190,6 +190,15 @@ router.put("/update", function(req, res) {
     console.log(my_cart.product_list);
     my_cart.product_list[0].status = 123456789;
     my_cart.save();
+  
+  Cart.updateOne({"id":pid},{$set:{"":20 }},function(error,data){
+        if(error){
+            console.log('修改数据失败');
+            return;
+        }
+        //console.log(data);
+        console.log("修改数据成功");
+
     
 //     for (index = 0; index < my_cart.product_list.length; index++) {
 //       console.log(my_cart.product_list[index].id);
