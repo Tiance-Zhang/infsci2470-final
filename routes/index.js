@@ -149,35 +149,8 @@ router.post("/clearCart", function(req, res) {
   res.redirect("/myCart");
 });
 
-
-
-//update
+// test
 router.put("/update", function(req, res) {
-  Cart.find({ email: req.user.email }, function(err, cart_item) {
-    if (!cart_item.length) {//////
-      my_cart = new Cart();
-      my_cart.email = req.user.email;
-      my_cart.save();
-    } else {
-      my_cart = cart_item[0];
-    }
-  });
-  
-    let pid = req.query.id
-    let index = 0;
-    for (index = 0; index < my_cart.product_list.length; index++) {
-      console.log(my_cart.product_list[index].id );
-      console.log(pid);
-      if (my_cart.product_list[index].id == pid) {
-        console.log('good')
-        // my_cart.product_list[index].status = 2
-        my_cart.save();
-        break;
-      }
-    }
-  
-  
-router.post("/updateCart", function(req, res) {
   Cart.find({email: req.user.email}, function(err, cart_item) {
     if (!cart_item.length) {
       my_cart = new Cart();
@@ -191,24 +164,52 @@ router.post("/updateCart", function(req, res) {
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
-      my_cart.product_list.splice(index, 1);
+      my_cart.product_list[index].status = 2
       my_cart.save();
+      console.log(my_cart);
       break;
     }
   }
-  res.redirect('/myCart');
 })
   
-  //my_cart.save();
-    my_cart.save(function(err, user) {
-      if (err) {
-        console.log(err);
-        res.send(400, "Bad Request");
-      } else {
-        res.redirect("/mycart");
-      }
-    });
-});
+
+// //update
+// router.put("/update", function(req, res) {
+//   Cart.find({ email: req.user.email }, function(err, cart_item) {
+//     if (!cart_item.length) {//////
+//       my_cart = new Cart();
+//       my_cart.email = req.user.email;
+//       my_cart.save();
+//     } else {
+//       my_cart = cart_item[0];
+//     }
+//   });
+  
+//     let pid = req.query.id
+//     let index = 0;
+
+//     for (index = 0; index < my_cart.product_list.length; index++) {
+//       console.log(my_cart.product_list[index].id );
+//       console.log(pid);
+//       if (my_cart.product_list[index].id == pid) {
+//         console.log('good')
+//         // my_cart.product_list[index].status = 2
+//         my_cart.save();
+//         break;
+//       }
+//     }
+    
+  
+//   //my_cart.save();
+//     my_cart.save(function(err, user) {
+//       if (err) {
+//         console.log(err);
+//         res.send(400, "Bad Request");
+//       } else {
+//         res.redirect("/mycart");
+//       }
+//     });
+// });
 
 
 //
