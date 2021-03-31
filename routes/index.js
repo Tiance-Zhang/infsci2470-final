@@ -166,17 +166,20 @@ router.put("/update", function(req, res) {
   let index = 0;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
+      console.log('catched!')
       my_product = new Product();
-      
-      my_cart.save();
+      my_product.id = pid;
+      my_product.status = 2;
+      console.log(my_product)
+      my_product.save();
       break;
     }
   }
   console.log('good')
-  Cart.findOne({id: change},function(err,uu){
-    console.log(uu)
+//   Cart.findOne({id: change},function(err,uu){
+//     console.log(uu)
     
-  })
+//   })
   
   res.redirect("/mycart");
 })
