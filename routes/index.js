@@ -175,29 +175,23 @@ router.get("/myCart", function(req, res) {
 
 //update
 router.put("/update", function(req, res) {
-  Cart.find({ email: req.user.email }, function(err, cart_item) {
-    if (!cart_item.length) {
-      my_cart = new Cart();
-      my_cart.email = req.user.email;
-      my_cart.save();
-    } else {
-      my_cart = cart_item[0];
-    }
-    //my_cart.save();
+  Cart.find({ email: req.user.email,'product_list.TaskName':"333"}, function(err, product_list) {
+    console.log('good');
+    console.log(product_list)
   });
-    let pid = req.query.id;
-    let index = 0;
-    console.log(my_cart.product_list);
-    my_cart.product_list[0].status = 123456789;
-    my_cart.save();
+//     let pid = req.query.id;
+//     let index = 0;
+//     console.log(my_cart.product_list);
+//     my_cart.product_list[0].status = 123456789;
+//     my_cart.save();
   
-  Cart.updateOne({"id":pid},{$set:{"":20 }},function(error,data){
-        if(error){
-            console.log('修改数据失败');
-            return;
-        }
-        //console.log(data);
-        console.log("修改数据成功");
+//   Cart.updateOne({"id":pid},{$set:{"":20 }},function(error,data){
+//         if(error){
+//             console.log('修改数据失败');
+//             return;
+//         }
+//         //console.log(data);
+//         console.log("修改数据成功");
 
     
 //     for (index = 0; index < my_cart.product_list.length; index++) {
