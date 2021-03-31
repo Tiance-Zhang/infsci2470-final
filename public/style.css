@@ -13,9 +13,13 @@ body, html {
 
 }
 
-table tr td{
-  height: auto;
+iframe {
+  display: none;
 }
+
+/* table tr td{
+  height: auto;
+} */
 
 h1 {
   font-style: italic;
@@ -156,4 +160,8 @@ footer.end {
     background-color: #7099C8!important;
     border-color: #7099C8!important;
     outline: none!important;
+}
+
+.btn-check{
+  display: none;
 }
