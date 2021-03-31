@@ -171,6 +171,8 @@ router.get("/myCart", function(req, res) {
 //   res.redirect("/mycart");
 // })
 
+
+
 //update
 router.put("/update", function(req, res) {
   Cart.find({ email: req.user.email }, function(err, cart_item) {
@@ -185,17 +187,20 @@ router.put("/update", function(req, res) {
   });
     let pid = req.query.id;
     let index = 0;
+    console.log(my_cart.product_list);
+    my_cart.product_list[0].status = 123456789;
+    my_cart.save();
     
-    for (index = 0; index < my_cart.product_list.length; index++) {
-      console.log(my_cart.product_list[index].id);
-      console.log(pid);
-      if (my_cart.product_list[index].id == pid) {
-        my_cart.product_list[index].status = 123456789
-        my_cart.save();
-        console.log(my_cart.product_list[index]);        
-        break;
-      }
-    }
+//     for (index = 0; index < my_cart.product_list.length; index++) {
+//       console.log(my_cart.product_list[index].id);
+//       console.log(pid);
+//       if (my_cart.product_list[index].id == pid) {
+//         my_cart.product_list[index].status = 123456789
+//         my_cart.save();
+//         console.log(my_cart.product_list[index]);        
+//         break;
+//       }
+//     }
     console.log(my_cart.product_list);
      res.redirect("/mycart");
 });
