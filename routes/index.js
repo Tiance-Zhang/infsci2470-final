@@ -178,12 +178,11 @@ router.get("/myCart", function(req, res) {
 //   console.log('good')
 // //   Cart.findOne({id: change},function(err,uu){
 // //     console.log(uu)
-    
+
 // //   })
-  
+
 //   res.redirect("/mycart");
 // })
-  
 
 //update
 router.put("/update", function(req, res) {
@@ -195,24 +194,21 @@ router.put("/update", function(req, res) {
     } else {
       my_cart = cart_item[0];
     }
-  
-    let pid = req.query.id
+
+    let pid = req.query.id;
     let index = 0;
 
     for (index = 0; index < my_cart.product_list.length; index++) {
-      console.log(my_cart.product_list[index].id );
+      console.log(my_cart.product_list[index].id);
       console.log(pid);
       if (my_cart.product_list[index].id == pid) {
-        my_cart.product_list[index].status = 2
-        console.log(my_cart.product_list[index])
-        my_cart.save();
+        my_cart.product_list[index].status = 200;
+        console.log(my_cart.product_list[index]);
         break;
       }
     }
-  }
-      );
-  
-  //my_cart.save();
+    my_cart.save();
+    //my_cart.save();
     my_cart.save(function(err, user) {
       if (err) {
         console.log(err);
@@ -221,8 +217,8 @@ router.put("/update", function(req, res) {
         res.redirect("/mycart");
       }
     });
+  });
 });
-
 
 //
 router.get("/addNew", function(request, response, next) {
