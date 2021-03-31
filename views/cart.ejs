@@ -51,7 +51,7 @@
                 <% list.forEach(function(product){ %>
           <table class="checklist_table" id="checklist_table">
                     <tr class="list_id">
-                        <td>id:
+                        <td class="list_id_button">id:
                             <%= product.id %>
                         </td>
                         <td rowspan="6" class="table_button">
@@ -126,7 +126,7 @@
                         $("#checklist_table td").hide();
                         $(".list_id").find('td').show();
 
-                        $(".list_id").click(function() {
+                        $(".list_id_button").click(function() {
 
                             // var col_index = $(this).index();
                             // for (var i = 1; i < 5; i++) {
@@ -139,7 +139,7 @@
                             //   }
                             // }
 
-                        $(this).parent().find('td').toggle();
+                        $(this).parent().parent().find('td').toggle();
                           $(".list_id").find('td').show();
                           
                           table_height = $(this).parent().find('.table_button').height();
