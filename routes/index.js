@@ -185,7 +185,7 @@ router.put("/update", function(req, res) {
   });
     let pid = req.query.id;
     let index = 0;
-
+    
     for (index = 0; index < my_cart.product_list.length; index++) {
       console.log(my_cart.product_list[index].id);
       console.log(pid);
