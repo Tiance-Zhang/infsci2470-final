@@ -195,13 +195,29 @@ router.put("/update", async function(req, res) {
     }
   }
   console.log(idx);
-  if (idx != 1){
-    //update 
-      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 1});    
+  switch(idx) {
+    case 1:
+      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 2});
+      break;
+    case 2:
+      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 3});
+      break;
+    case 3:
+      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 4});
+      break;
+    case 4:
+      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 1});
+      break;
   }
-  else{
-    await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 2});      
-    }
+  
+  
+//   if (idx != 1){
+//     //update 
+      
+//   }
+//   else{
+//     await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 2});      
+//     }
 
 
   // Load the document to see the updated value
