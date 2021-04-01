@@ -155,19 +155,19 @@
                         switch($(this).parent().find('.status').html()) {
                           case "1":
                             $(this).attr('class', 'assignedTask');
-                            $(this).parent().css('z-index', 2);
+                            $(this).parent().parent().css('z-index', 2);
                             break;
                           case "2":
                             $(this).attr('class', 'nextWeekTask');
-                            $(this).parent().css('z-index', 3);
+                            $(this).parent().parent().css('z-index', 3);
                             break;
                           case "3":
                             $(this).attr('class', 'startedTask');
-                            $(this).parent().css('z-index', 4);
+                            $(this).parent().parent().css('z-index', 4);
                             break;
                           case "4":
                             $(this).attr('class', 'finishedTask');
-                            $(this).parent().css('z-index', 1);
+                            $(this).parent().parent().css('z-index', 1);
                             break;
                             
                         }
