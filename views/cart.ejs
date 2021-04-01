@@ -124,7 +124,9 @@
 
                 <script>
                     $(document).ready(function() {
-
+                     $('.checklist_table').sort(function(a, b) {
+                        return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
+                      }).appendTo($(".table-responsive"));
                         $("#checklist_table td").hide();
                         $("[name='list_id']").find('td').show();
 
@@ -149,18 +151,20 @@
 
                         });
                       
+                     
+                      
                       
                       $("[name='list_id']").each(function(){
                       // console.log($(this).parent().find('.status').html());
                         switch($(this).parent().find('.status').html()) {
                           case "1":
-                            $(this).attr('class', 'assignedTask');
+                            $(this).attr('class', 'startedTask');
                             break;
                           case "2":
                             $(this).attr('class', 'nextWeekTask');
                             break;
                           case "3":
-                            $(this).attr('class', 'startedTask');
+                            $(this).attr('class', 'assig');
                             break;
                           case "4":
                             $(this).attr('class', 'finishedTask');
@@ -169,12 +173,6 @@
                         }
                       });
                       
-                      var tables = $('.checklist_table').sort(function (a, b) {
-
-      var contentA =parseInt( $(a).find('.status').html());
-      var contentB =parseInt( $(b).find('.status').html());
-      return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
-   });
                       
                       
                     });
