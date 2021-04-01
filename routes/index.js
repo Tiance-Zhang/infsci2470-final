@@ -175,30 +175,34 @@ router.get("/myCart", function(req, res) {
 
 //update
 router.put("/update", async function(req, res) {
-  // var stu = 0;
-  // Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"}, function(err, product_list) {
-  //   stu = 
-  //   console.log('good');    
-  // });
   var pid = req.query.id;
-  const doc = await Cart.findOne({ email: req.user.email, 'product_list.id':Number(pid)});
+  Cart.find({email: req.user.email}, function(err, cart_item) {
+    if (!cart_item.length) {
+      my_cart = new Cart();
+      my_cart.email = req.user.email;
+      my_cart.save();
+    } else {
+      my_cart = cart_item[0];
+    }
+  })
   
   let index = 0;
+  var idx = null;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
-      console.log('catched!')
-      my_product = new Product();
-      my_product.id = pid;
-      my_product.status = 2;
-      console.log(my_product)
-      my_product.save();
+      idx = my_cart.product_list[index].status;
       break;
     }
   }
-  
-  await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {    
-    'product_list.$.status': 8000
-  });
+  console.log(idx);
+  if (idx != 1){
+    //update 
+      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 1});    
+  }
+  else{
+    await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 2});      
+    }
+
 
   // Load the document to see the updated value
 
@@ -207,8 +211,7 @@ router.put("/update", async function(req, res) {
 //     console.log(my_cart.product_list);
 //     my_cart.product_list[0].status = 123456789;
 //     my_cart.save();
-    
-     location.reload();
+  location.reload([true])
 });
 
 //
