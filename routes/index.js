@@ -182,7 +182,20 @@ router.put("/update", async function(req, res) {
   // });
   var pid = req.query.id;
   const doc = await Cart.findOne({ email: req.user.email, 'product_list.id':Number(pid)});
-  console.log(doc); 
+  
+  let index = 0;
+  for (index = 0; index < my_cart.product_list.length; index++) {
+    if (my_cart.product_list[index].id == pid) {
+      console.log('catched!')
+      my_product = new Product();
+      my_product.id = pid;
+      my_product.status = 2;
+      console.log(my_product)
+      my_product.save();
+      break;
+    }
+  }
+  
   await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {    
     'product_list.$.status': 8000
   });

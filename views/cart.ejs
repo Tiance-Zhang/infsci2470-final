@@ -51,8 +51,11 @@
                 <% list.forEach(function(product){ %>
           <table class="checklist_table" id="checklist_table">
                     <tr class="list_id">
-                        <td class="list_id_button">id:
+<!--                         <td class="list_id_button">id:
                             <%= product.id %>
+                        </td> -->
+                      <td class="list_id_button">
+                            <%= product.TaskName %>
                         </td>
                         <td rowspan="6" class="table_button">
                             <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->       
@@ -64,13 +67,13 @@
                         </td>
                     </tr>
 
-                    <tr>
+<!--                     <tr>
                         <td>NAME:
                             <%= product.TaskName %>
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
-                        <td>Instructor:
+<!--                         <td>Instructor: -->
                             <%= product.Instructor %>
                         </td>
                     </tr>
