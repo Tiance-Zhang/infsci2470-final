@@ -79,9 +79,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="status">
-                            <%= product.status %>
-                        </td>
+                        <td class="status"><%= product.status %></td>
                     </tr>
                     <tr>
                         <td>Room:
@@ -151,12 +149,24 @@
 
                         });
                       
-                      var eachTable = $(".list_id");
-                      eachTable.each(function(){
-                      console.log(eachTable.parent().find('.status').html());
-                      if(eachTable.parent().find('.status').html() == 1) {
-                        // eachTable.css("background-color","red");
-                      }
+                      
+                      $(".list_id").each(function(){
+                      // console.log($(this).parent().find('.status').html());
+                        switch($(this).parent().find('.status').html()) {
+                          case "1":
+                            $(this).css("background-color","#D9ECDB");
+                            break;
+                          case "2":
+                            $(this).css("background-color","#FFCCCC");
+                            break;
+                          case "3":
+                            $(this).css("background-color","#FFFFCC");
+                            break;
+                          case "4":
+                            $(this).css("background-color","#7099C8");
+                            break;
+                            
+                        }
                       });
                       
                       
