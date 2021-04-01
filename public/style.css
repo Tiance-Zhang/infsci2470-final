@@ -158,6 +158,9 @@ footer.end {
   margin-left: 10px!important;
 }
 
+.status {
+  display: none;
+}
 
 .bg-dark {
     background-color: #7099C8!important;

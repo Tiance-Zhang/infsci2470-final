@@ -57,7 +57,7 @@
                       <td class="list_id_button">
                             <%= product.TaskName %>
                         </td>
-                        <td rowspan="5" class="table_button">
+                        <td rowspan="6" class="table_button">
                             <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->       
                             <form class="table_form" method="POST" action="/update?_method=PUT&id=<%= product.id %>" target="test">
 <!--                             <form class="table_form" method="POST" action="/update?id=<%= product.id %>" > -->
@@ -124,50 +124,41 @@
 
                 <script>
                     $(document).ready(function() {
+                      
                      $('.checklist_table').sort(function(a, b) {
                         return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
                       }).appendTo($(".table-responsive"));
+                      
+                      
                         $("#checklist_table td").hide();
                         $("[name='list_id']").find('td').show();
 
                         $(".list_id_button").click(function() {
 
-                            // var col_index = $(this).index();
-                            // for (var i = 1; i < 5; i++) {
-                            //     var row = $(this).index() + i;
-                            //     // $("#checklist_table tr:eq(" + row + ")").find('td').toggle();
-                            //   if($("#checklist_table tr:eq(" + row + ")").find('td').css('display') == 'none'){ 
-                            //      $("#checklist_table tr:eq(" + row + ")").find('td').show('slow'); 
-                            //   } else { 
-                            //      $("#checklist_table tr:eq(" + row + ")").find('td').hide('slow'); 
-                            //   }
-                            // }
-
                         $(this).parent().parent().find('td').toggle();
                           $("[name='list_id']").find('td').show();
-                          
-                          // table_height = $(this).parent().find('.table_button').height();
-                          // $(this).parent().find('.table_button').children().find('.change_status').height(table_height);
+                          $(this).parent().parent().find('.status').hide();
 
                         });
-                      
-                     
-                      
                       
                       $("[name='list_id']").each(function(){
                       // console.log($(this).parent().find('.status').html());
                         switch($(this).parent().find('.status').html()) {
                           case "1":
                             $(this).attr('class', 'startedTask');
+                            $(this).find('.change_status').html('Complete');
                             break;
                           case "2":
                             $(this).attr('class', 'nextWeekTask');
+                            $(this).find('.change_status').html('Start');
                             break;
                           case "3":
-                            $(this).attr('class', 'assig');
+                            $(this).attr('class', 'assignedTask');
+                            $(this).find('.change_status').html('Next Week');
                             break;
                           case "4":
                             $(this).attr('class', 'finishedTask');
+                            $(this).find('.change_status').html('Reset');
                             break;
                             
                         }
