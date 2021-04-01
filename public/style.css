@@ -92,6 +92,9 @@ footer.end {
 
 .checklist_table{
   margin: 10px;
+  width: 90%;
+  border-collapse: separate;
+  border-spacing: 1em 0;
 }
 
 
@@ -136,26 +139,19 @@ footer.end {
 .table_button{
   vertical-align:middle!important;
   background-color: white;
-  border: none!important;
+  border: 1px solid #7099C8!important;
   width: 10%;
   height: 100%!important;
-  padding: 0px!important;
-  margin: 0px!important;
-  
-  
 }
 
-.table_button_div {
-  width: 100%!important;
-  height: 100%!important;
-}
 
 .change_status{
   width: 100%!important;
   height: 100%!important;
   background-color: white!important;
-  border: 1px solid #7099C8!important;
-  margin-left: 10px!important;
+/*   border: 1px solid #7099C8!important; */
+  border: none!important;
+  
 }
 
 .status {

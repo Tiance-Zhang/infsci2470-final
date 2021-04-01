@@ -197,16 +197,16 @@ router.put("/update", async function(req, res) {
   console.log(idx);
   switch(idx) {
     case 1:
-      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 2});
-      break;
-    case 2:
-      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 3});
-      break;
-    case 3:
       await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 4});
       break;
-    case 4:
+    case 2:
       await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 1});
+      break;
+    case 3:
+      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 2});
+      break;
+    case 4:
+      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 3});
       break;
   }
   
