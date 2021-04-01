@@ -117,17 +117,17 @@ footer.end {
 }
 
 .nextWeekTask{
-  background-color: #7099C8;
+  background-color: #D9ECDB;
   cursor: pointer;
 }
 
 .startedTask{
-  background-color: #7099C8;
+  background-color: #FFCCCC;
   cursor: pointer;
 }
 
 .finishedTask{
-  background-color: #7099C8;
+  background-color: #CCCCCC;
   cursor: pointer;
 }
 
