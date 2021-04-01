@@ -175,22 +175,20 @@ router.get("/myCart", function(req, res) {
 
 //update
 router.put("/update", async function(req, res) {
+  // var stu = 0;
   // Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"}, function(err, product_list) {
-  //   console.log('good');
-  //   console.log(product_list.TaskName);
-  //   product_list.status = 200;
+  //   stu = 
+  //   console.log('good');    
   // });
   var pid = req.query.id;
-  await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {
-    if( 'product_list.$.status' != 18) {
-    greeting = "Good day";
-    }
+  const doc = await Cart.findOne({ email: req.user.email, 'product_list.id':Number(pid)});
+  console.log(doc); 
+  await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {    
     'product_list.$.status': 8000
   });
 
   // Load the document to see the updated value
-  const doc = await Cart.findOne({ email: req.user.email, 'product_list.TaskName':"333"});
-  console.log(doc);
+
 //     let pid = req.query.id;
 //     let index = 0;
 //     console.log(my_cart.product_list);
