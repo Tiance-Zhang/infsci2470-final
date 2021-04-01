@@ -141,11 +141,13 @@ footer.end {
 
 
 .change_status{
+  display:inline-block!important;
   width: 100%!important;
   height: 100%!important;
-  background-color: white!important;
+  background-color: red!important;
 /*   border: 1px solid #7099C8!important; */
   border: none!important;
+  font-size: 1em;
   
 }
 
@@ -155,6 +157,7 @@ footer.end {
   border: 1px solid #7099C8!important;
   width: 10%!important;
   height: 100%!important;
+  
   
   
 }
