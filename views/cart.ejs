@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
     <meta charset="UTF-8">
     <title>Cart</title>
@@ -49,7 +49,7 @@
 
             
                 <% list.forEach(function(product){ %>
-          <table class="checklist_table" id="checklist_table"+<%= product.id %>+"">
+          <table class="checklist_table" id="checklist_table">
                     <tr class="list_id">
 <!--                         <td class="list_id_button">id:
                             <%= product.id %>
@@ -62,7 +62,9 @@
                             <form class="table_form" method="POST" action="/update?_method=PUT&id=<%= product.id %>" target="test">
 <!--                             <form class="table_form" method="POST" action="/update?id=<%= product.id %>" > -->
                              
-                                <button type="submit" class="change_status">Change status</button>
+                                <button type="submit" class="change_status">Change status
+                              </button>
+                                  
                             </form>
                         </td>
                     </tr>
@@ -151,10 +153,12 @@
                         });
                       
                       var eachTable = $(".list_id");
+                      eachTable.each(function(){
                       console.log(eachTable.parent().find('.status').html());
                       if(eachTable.parent().find('.status').html() == 1) {
-                        eachTable.css("background-color","red");
+                        // eachTable.css("background-color","red");
                       }
+                      });
                       
                       
                     });

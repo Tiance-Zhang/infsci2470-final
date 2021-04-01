@@ -211,7 +211,6 @@ router.put("/update", async function(req, res) {
 //     console.log(my_cart.product_list);
 //     my_cart.product_list[0].status = 123456789;
 //     my_cart.save();
-  location.reload([true])
 });
 
 //
