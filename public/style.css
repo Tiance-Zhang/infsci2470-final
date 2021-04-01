@@ -93,7 +93,7 @@ footer.end {
 .checklist_table{
   margin: 10px;
   width: 90%;
-   table-layout: fixed;
+  table-layout: fixed;
 /*   border-collapse: separate;
   border-spacing: 5px 0; */
 }
@@ -155,6 +155,7 @@ footer.end {
   border: 1px solid #7099C8!important;
   width: 10%!important;
   height: 100%!important;
+  
   
 }
 
