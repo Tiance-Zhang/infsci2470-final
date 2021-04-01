@@ -155,23 +155,26 @@
                         switch($(this).parent().find('.status').html()) {
                           case "1":
                             $(this).attr('class', 'assignedTask');
-                            $(this).parent().parent().css('z-index', 2);
                             break;
                           case "2":
                             $(this).attr('class', 'nextWeekTask');
-                            $(this).parent().parent().css('z-index', 3);
                             break;
                           case "3":
                             $(this).attr('class', 'startedTask');
-                            $(this).parent().parent().css('z-index', 4);
                             break;
                           case "4":
                             $(this).attr('class', 'finishedTask');
-                            $(this).parent().parent().css('z-index', 1);
                             break;
                             
                         }
                       });
+                      
+                      var tables = $('.checklist_table').sort(function (a, b) {
+
+      var contentA =parseInt( $(a).find('.status').html());
+      var contentB =parseInt( $(b).find('.status').html());
+      return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
+   });
                       
                       
                     });
