@@ -251,11 +251,11 @@ router.get("/addOne", function(request, response, next) {
 });
 
 //add one
-router.put("/addone", async function(req, res) {
-  Cart.find({}, function(err, cart_item) {
+router.post("/addone", async function(req, res) {  
+  Cart.find({}, function(err, cart_item) {    
     let product = new Product(req.body);
     product.save();
-    res.redirect("/productadmin");    
+    console.log(cart_item.) 
   })
 });
 
