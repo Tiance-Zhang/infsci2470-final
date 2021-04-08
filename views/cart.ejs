@@ -209,8 +209,9 @@
                         var thisClass = $("[name='"+$(this).find("[name='description']").html()+"']");
                         // if ($("[name='"+$(this).find("[name='description']").html()+"']").html() == $(this).find("[name='description']").html()){
                         if (thisClass.html() == $(this).find("[name='description']").html()){
-                          var x = $(this).remove();
-                          thisClass.appendChild(x);
+                          // var x = $(this).remove();
+                          $(this).appendChild("<div></div>");
+                          // thisClass.appendChild(x);
                         }
                         
                       });

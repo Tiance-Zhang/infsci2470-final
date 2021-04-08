@@ -92,36 +92,36 @@ router.post("/addCart", function(request, response) {
   });
 });
 
-// router.get("/myCart", function(req, res) {
-//   Cart.find({ email: req.user.email }, function(err, cart_item) {
-//     if (!cart_item.length) {
-//       my_cart = new Cart();
-//       my_cart.email = req.user.email;
-//       my_cart.save();
-//     } else {
-//       my_cart = cart_item[0];
-//     }
-//   });
-//   Cart.find({ email: req.user.email }, function(err, productarray) {
-//     let total_price = 0;
-//     if (productarray.length > 0) {
-//       productarray[0].product_list.forEach(function(product) {
-//         total_price = total_price + product.price;
-//       });
-//       res.render("cart", {
-//         list: productarray[0].product_list,
-//         total_price: total_price
-//       });
-//     } else {
-//       res.render("cart", {
-//         list: [],
-//         total_price: total_price
-//       });
-//     }
+router.get("/myCart", function(req, res) {
+  Cart.find({ email: req.user.email }, function(err, cart_item) {
+    if (!cart_item.length) {
+      my_cart = new Cart();
+      my_cart.email = req.user.email;
+      my_cart.save();
+    } else {
+      my_cart = cart_item[0];
+    }
+  });
+  Cart.find({ email: req.user.email }, function(err, productarray) {
+    let total_price = 0;
+    if (productarray.length > 0) {
+      productarray[0].product_list.forEach(function(product) {
+        total_price = total_price + product.price;
+      });
+      res.render("cart", {
+        list: productarray[0].product_list,
+        total_price: total_price
+      });
+    } else {
+      res.render("cart", {
+        list: [],
+        total_price: total_price
+      });
+    }
 
-//     //res.send(productarray);
-//   });
-// });
+    //res.send(productarray);
+  });
+});
 
 // router.post("/clearCart", function(req, res) {
 //   Cart.find({ email: req.user.email }, function(err, cart_item) {
@@ -241,12 +241,15 @@ router.post("/addone", async function(req, res) {
   product.save();
   
   Cart.find({}, function(err, cart_item) {  
+    console.log(1)
     total_cart = cart_item;
   });
   
   console.log(pid)
   Product.findOne({ Task_id: pid }, function(err, product) {
     var index = 0;
+    console.log(2)
+    console.log(total_cart)
     for (index = 0; index < total_cart.length; index++) {
     my_cart = total_cart[index]
       my_cart.product_list.push({
