@@ -181,11 +181,9 @@
                         }
                       });
                       
-                      var process=[[]];
                       $("[name='description']").each(function(){
                       // console.log($(this).parent().find('.status').html());
                         if (!$("[name='"+$(this).html()+"']").length){
-                          process.insert()
                           
                           let newDiv = document.createElement("div");
                           newDiv.setAttribute("name", $(this).html()); 
@@ -193,7 +191,7 @@
                           
                           let tableDiv = document.createElement("div");
                           tableDiv.setAttribute("class", "tableDiv");
-                          // tableDiv.setAttribute("style", "width: 25%;");
+                          tableDiv.setAttribute("name", "0");
                           
                           
                           tableDiv.append($(this).html());
@@ -210,6 +208,9 @@
                         if (thisClass.html() == $(this).find("[name='description']").html()){
                           var x = $(this).remove();
                           thisClass.parent().append(x);
+                          var total = parseInt(thisClass.attr('name'))+ 1;
+                          thisClass.attr("name", total);
+                          console.log(thisClass.attr("name"));
                         }
                         
                       });
