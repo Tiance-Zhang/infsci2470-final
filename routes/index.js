@@ -270,7 +270,7 @@ router.post("/addone", async function(req, res) {
 
 
 //delete
-router.post("/delete", function(req, res) {
+router.put("/delete", function(req, res) {
   Cart.find({}, function(err, cart_item) {  
     total_cart = cart_item;
   });
@@ -280,7 +280,7 @@ router.post("/delete", function(req, res) {
   Product.findOne({ id: pid }, function(err, product) {
   let total = 0;
   let index = 0;
-  for (total = 0; total < total_cart.length; index++){
+  for (total = 0; total < total_cart.length; total++){
     my_cart = total_cart[total]
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
