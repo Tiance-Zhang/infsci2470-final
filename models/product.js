@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema(
   {
-    id: {type: Number},
+    Task_id: {type: Number},
     TaskName: {type: String},
     Instructor: {type: String},
     status: {type: Number},

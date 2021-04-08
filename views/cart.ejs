@@ -79,7 +79,7 @@
           <table class="checklist_table" id="checklist_table">
                     <tr name="list_id">
 <!--                         <td class="list_id_button">id:
-                            <%= product.id %>
+                            <%= product.Task_id %>
                         </td> -->
                       <td class="list_id_button">
                             <%= product.TaskName %>
@@ -200,11 +200,14 @@
                         }
                         
                       });
+                      
+                      
+                      
+                      
                       $("[name='description']").each(function(){
                         if ($("[name='"+$(this).html()+"']").html() == $(this).html()){
-                          $("[name='"+$(this).html()+"']").append($(this).parent().parent());
-                          // $(this).parent().parent().removeChild($(this).parent());
-                          // $(this).parent().parent().remove();
+                          var x = $(this).parent().parent().remove();
+                          $("[name='"+$(this).html()+"']").append(x);
                         }
                         
                       });

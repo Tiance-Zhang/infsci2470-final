@@ -190,7 +190,7 @@ router.put("/update", async function(req, res) {
   let index = 0;
   var idx = null;
   for (index = 0; index < my_cart.product_list.length; index++) {
-    if (my_cart.product_list[index].id == pid) {
+    if (my_cart.product_list[index].Task_id == pid) {
       idx = my_cart.product_list[index].status;
       break;
     }
@@ -198,16 +198,16 @@ router.put("/update", async function(req, res) {
   console.log(idx);
   switch(idx) {
     case 1:
-      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 4});
+      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 4});
       break;
     case 2:
-      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 1});
+      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 1});
       break;
     case 3:
-      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 2});
+      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 2});
       break;
     case 4:
-      await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 3});
+      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 3});
       break;
   }
 });
@@ -248,7 +248,7 @@ router.post("/addone", async function(req, res) {
     for (index = 0; index < total_cart.length; index++) {
     my_cart = total_cart[index]
       my_cart.product_list.push({
-      _id: parseInt(req.body.TaskID),
+      Task_id: parseInt(req.body.TaskID),
       TaskName: req.body.TaskName,
       Instructor: req.body.Instructor,
       status: req.body.status,
@@ -277,7 +277,7 @@ router.put("/delete", function(req, res) {
   
   let pid = req.query.id;
   console.log(req.query)
-  Product.findOne({ id: pid }, function(err, product) {
+  Product.findOne({ Task_id: pid }, function(err, product) {
   let total = 0;
   let index = 0;
   for (total = 0; total < total_cart.length; total++){
