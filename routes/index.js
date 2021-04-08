@@ -210,24 +210,6 @@ router.put("/update", async function(req, res) {
       await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 3});
       break;
   }
-  
-  
-//   if (idx != 1){
-//     //update 
-      
-//   }
-//   else{
-//     await Cart.updateOne({ email: req.user.email, 'product_list.id':Number(pid)}, {'product_list.$.status': 2});      
-//     }
-
-
-  // Load the document to see the updated value
-
-//     let pid = req.query.id;
-//     let index = 0;
-//     console.log(my_cart.product_list);
-//     my_cart.product_list[0].status = 123456789;
-//     my_cart.save();
 });
 
 //
@@ -254,14 +236,11 @@ router.get("/addOne", function(request, response, next) {
 //add one
 router.post("/addone", async function(req, res) {
   let product = new Product(req.body);
-  console.log('1048')
   product.save();
   
   Cart.find({}, function(err, cart_item) {  
     total_cart = cart_item;
-    console.log('9527');
   });
-  console.log('ttttttttttttttttttttttttttttttttttttttttttttttssssssssssssssssssss');
   let pid = req.body.TaskID;
   console.log(pid)
   Product.findOne({ id: pid }, function(err, product) {
@@ -290,16 +269,13 @@ router.post("/addone", async function(req, res) {
 });
 
 
-// router.post("/addone", function(req, res) {
-//   let product = new Product(req.body);
-//   product.save();
-
-//   res.redirect("/productadmin");
-// });
-
 //DELETE
 router.post("/delete", function(req, res) {
   Product.findOne({ id: req.query.id }, function(err, product) {
+  Cart.find({}, function(err, cart_item) {  
+    total_cart = cart_item;
+  });
+    
     product.remove(function(err) {
       if (err) {
         res.status(500).send(err);

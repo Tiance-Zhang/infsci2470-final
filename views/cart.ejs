@@ -39,7 +39,7 @@
     <br/><br/><br/><br/>
 
   
- <div id="SurgicalSkills" class="classification">
+<!--  <div id="SurgicalSkills" class="classification">
    Surgical Skills/procedures
   </div>
   <div id="ClinicalSkills" class="classification">
@@ -65,7 +65,7 @@
   </div>
   <div id="Imaging" class="classification">
   Imaging:ww.learningradiology.com or Stentor
-  </div>
+  </div> -->
 
     <% if (list) { %>
         <!--   <p style="text-align:center;">There are <%= list.length %> products in the Cart.</p>
@@ -193,28 +193,16 @@
                       
                       $("[name='description']").each(function(){
                       // console.log($(this).parent().find('.status').html());
-                        if($(this).html() == )
+                        if (!$("[name='"+$(this).html()+"']").length){
+                          let newDiv = document.createElement("div");
+                          newDiv.name = $(this).html();
+                          newDiv.class = 'classification';
+                          document.body.appendChild(newDiv);
+                        }
+                           
+                           
                         
                         
-//                         switch($(this).parent().find('.status').html()) {
-//                           case "1":
-//                             $(this).attr('class', 'startedTask');
-//                             $(this).find('.change_status').html('Complete');
-//                             break;
-//                           case "2":
-//                             $(this).attr('class', 'nextWeekTask');
-//                             $(this).find('.change_status').html('Start');
-//                             break;
-//                           case "3":
-//                             $(this).attr('class', 'assignedTask');
-//                             $(this).find('.change_status').html('Next Week');
-//                             break;
-//                           case "4":
-//                             $(this).attr('class', 'finishedTask');
-//                             $(this).find('.change_status').html('Reset');
-//                             break;
-                            
-//                         }
                       });
                       
                       
