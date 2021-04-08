@@ -256,11 +256,46 @@ router.post("/addone", async function(req, res) {
   Cart.find({}, function(err, cart_item) {  
     total_cart = cart_item;
     console.log('9527');
-    console.log(total_cart);
   });
   console.log('ttttttttttttttttttttttttttttttttttttttttttttttssssssssssssssssssss');
-  console.log(total_cart);
-    ?
+  let pid = req.body.TaskID;
+  Product.findOne({ id: pid }, function(err, product) {
+    var index = 0;
+    for (index = 0; index < total_cart.length; index++) {
+    my_cart
+     my_cart.product_list.push({
+      id: product.id,
+      TaskName: product.TaskName,
+      Instructor: product.Instructor,
+      status: product.status,
+      Room: product.Room,
+      Description: product.Description
+    });
+      
+    //my_cart.save();
+    my_cart.save(function(err, user) {
+      if (err) {
+        console.log(err);
+        res.send(400, "Bad Request");
+      } else {
+        res.redirect("/productadmin");
+      }
+    });
+    }
+  });
+    // var index = 0;
+    // for (index = 0; index < total_cart.length; index++) {
+    //   my_cart = total_cart[index];
+    //   console.log(index)
+    //   my_cart.product_list.push({
+    //   id: req.body.TaskID,
+    //   TaskName: req.body.TaskName,
+    //   Instructor: req.body.Instructor,
+    //   status: req.body.status,
+    //   Room: req.body.Room,
+    //   Description: req.body.Description
+    // });
+    // }
 });
 
 
