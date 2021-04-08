@@ -200,14 +200,15 @@
                         }
                         
                       });
+       
                       
                       
-                      
-                      
-                      $("[name='description']").each(function(){
-                        if ($("[name='"+$(this).html()+"']").html() == $(this).html()){
-                          var x = $(this).parent().parent().remove();
-                          $("[name='"+$(this).html()+"']").append(x);
+                      var i = 0;
+                      $(".checklist_table").each(function(){
+                        console.log(i++);
+                        if ($("[name='"+$(this).find("[name='description']").html()+"']").html() == $(this).find("[name='description']").html()){
+                          var x = $(this).remove();
+                          $("[name='"+$(this).find("[name='description']").html()+"']").append($(this));
                         }
                         
                       });
