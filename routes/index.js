@@ -269,20 +269,6 @@ router.post("/addone", async function(req, res) {
 });
 
 
-//DELETE
-router.post("/delete", function(req, res) {
-  Product.findOne({ id: req.query.id }, function(err, product) {   
-    product.remove(function(err) {
-      if (err) {
-        res.status(500).send(err);
-      } else {
-        //res.status(204).send("removed");
-        res.redirect("/productadmin");
-      }
-    });
-  });
-});
-
 //delete
 router.post("/delete", function(req, res) {
   Cart.find({}, function(err, cart_item) {  
@@ -290,9 +276,12 @@ router.post("/delete", function(req, res) {
   });
   
   let pid = req.query.id;
-  let total = 0
+  console.log(req.query)
+  Product.findOne({ id: pid }, function(err, product) {
+  let total = 0;
   let index = 0;
-  for (total = 0; total < total_cart.length; index++)
+  for (total = 0; total < total_cart.length; index++){
+    my_cart = total_cart[total]
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].id == pid) {
       my_cart.product_list.splice(index, 1);
@@ -300,8 +289,11 @@ router.post("/delete", function(req, res) {
       break;
     }
   }
-  res.redirect('/myCart');
-})
+  }
+  });
+    
+  res.redirect('/productadmin');
+});
 
 module.exports = router;
 
