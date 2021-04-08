@@ -7,6 +7,7 @@ const Product = require("../models/product");
 const Cart = require("../models/cart");
 var my_cart;
 var my_product;
+var total_cart;
 
 // Welcome Page
 // router.get("/", forwardAuthenticated, (req, res) => res.render("welcome"));
@@ -251,21 +252,24 @@ router.get("/addOne", function(request, response, next) {
 });
 
 //add one
-router.post("/addone", async function(req, res) {  
-  Cart.find({}, function(err, cart_item) {
-    // var index = 0
-    // for (index = 0; index < cart_item.length; index++) {
-    //   my_cart = cart_item[index];
-    // my_cart.product_list.push({
-    //   id: product.id,
-    //   TaskName: product.TaskName,
-    //   Instructor: product.Instructor,
-    //   status: product.status,
-    //   Room: product.Room,
-    //   Description: product.Description
-    // });
-    // }
+router.post("/addone", async function(req, res) {
+  Cart.find({}, function(err, cart_item) {  
+    total_cart = cart_item
   })
+  console.log(total_cart)
+    var index = 0;
+    for (index = 0; index < total_cart.length; index++) {
+      my_cart = total_cart[index];
+      console.log(index)
+      my_cart.product_list.push({
+      id: req.body.TaskID,
+      TaskName: req.body.TaskName,
+      Instructor: req.body.Instructor,
+      status: req.body.status,
+      Room: req.body.Room,
+      Description: req.body.Description
+    });
+    }
 });
 
 
