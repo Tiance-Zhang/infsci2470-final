@@ -155,16 +155,8 @@
                       }).appendTo($(".table-responsive"));
                       
                       
-                        $("#checklist_table td").hide();
-                        $("[name='list_id']").find('td').show();
 
-                        $(".list_id_button").click(function() {
 
-                        $(this).parent().parent().find('td').toggle();
-                          $("[name='list_id']").find('td').show();
-                          $(this).parent().parent().find('.status').hide();
-
-                        });
                       
                       $("[name='list_id']").each(function(){
                       // console.log($(this).parent().find('.status').html());
@@ -215,7 +207,27 @@
                         }
                         
                       });
+                      $("#checklist_table td").hide();
                       
+                      $(".tableDiv").click(function() {
+                         // alert(1);
+                        // $(this).parent().parent().find('td').toggle();
+                        //   $("[name='list_id']").find('td').show();
+                        //   $(this).parent().parent().find('.status').hide();
+                        $(this).parent().find("[name='list_id']").find('td').toggle();
+
+                        });
+                      
+                      
+                        // $("#checklist_table td").hide();
+                        // $("[name='list_id']").find('td').show();
+                       $(".list_id_button").click(function() {
+                         // alert(1);
+                        $(this).parent().parent().find('td').toggle();
+                          $(this).parent().parent().find("[name='list_id']").find('td').show();
+                          $(this).parent().parent().find('.status').hide();
+
+                        });
                       
                       
                       

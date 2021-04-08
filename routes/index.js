@@ -285,15 +285,17 @@ router.post("/addone", async function(req, res) {
 
 //delete
 router.put("/delete", function(req, res) {
+
+  let pid = req.query.Task_id;
   Cart.find({}, function(err, cart_item) {  
+    console.log('1')
     total_cart = cart_item;
   });
-  
-  let pid = req.query.id;
-  console.log(req)
+  console.log('')
   Product.findOne({ Task_id: pid }, function(err, product) {
   let total = 0;
   let index = 0;
+  console.log('2')
   for (total = 0; total < total_cart.length; total++){
     my_cart = total_cart[total]
   for (index = 0; index < my_cart.product_list.length; index++) {
