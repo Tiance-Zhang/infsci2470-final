@@ -150,7 +150,9 @@
                 <script>
                     $(document).ready(function() {
                      
-                      
+                      // $('.checklist_table').sort(function(a, b) {
+                      //   return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
+                      // }).appendTo($(".table-responsive"));
                       
 
 
@@ -231,6 +233,8 @@
                       
                       
                       
+                      
+                      
                       $("#checklist_table td").hide();
                       
                       $(".tableDiv").click(function() {
@@ -256,6 +260,8 @@
                           $(this).parent().parent().find('.status').hide();
 
                         });
+                      
+                      
                       
                       
                       
