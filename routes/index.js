@@ -254,22 +254,13 @@ router.get("/addOne", function(request, response, next) {
 //add one
 router.post("/addone", async function(req, res) {
   Cart.find({}, function(err, cart_item) {  
-    total_cart = cart_item
-  })
-  console.log(total_cart)
-    var index = 0;
-    for (index = 0; index < total_cart.length; index++) {
-      my_cart = total_cart[index];
-      console.log(index)
-      my_cart.product_list.push({
-      id: req.body.TaskID,
-      TaskName: req.body.TaskName,
-      Instructor: req.body.Instructor,
-      status: req.body.status,
-      Room: req.body.Room,
-      Description: req.body.Description
-    });
-    }
+    total_cart = cart_item;
+    console.log('9527');
+    console.log(total_cart);
+  });
+  console.log('ttttttttttttttttttttttttttttttttttttttttttttttssssssssssssssssssss');
+  console.log(total_cart);
+    ?
 });
 
 
