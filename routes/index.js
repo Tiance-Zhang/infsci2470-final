@@ -255,7 +255,7 @@ router.post("/addone", async function(req, res) {
   Cart.find({}, function(err, cart_item) {    
     let product = new Product(req.body);
     product.save();
-    console.log(cart_item.) 
+    console.log(cart_item[0].product_list); 
   })
 });
 
