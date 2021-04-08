@@ -176,7 +176,7 @@ router.get("/myCart", function(req, res) {
 
 //update
 router.put("/update", async function(req, res) {
-  var pid = req.query.id;
+  var pid = req.query.Task_id;
   Cart.find({email: req.user.email}, function(err, cart_item) {
     if (!cart_item.length) {
       my_cart = new Cart();
@@ -207,6 +207,18 @@ router.put("/update", async function(req, res) {
       await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 2});
       break;
     case 4:
+      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 3});
+      break;
+    case '1':
+      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 4});
+      break;
+    case '2':
+      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 1});
+      break;
+    case '3':
+      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 2});
+      break;
+    case '4':
       await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 3});
       break;
   }
@@ -241,15 +253,12 @@ router.post("/addone", async function(req, res) {
   product.save();
   
   Cart.find({}, function(err, cart_item) {  
-    console.log(1)
     total_cart = cart_item;
   });
   
   console.log(pid)
   Product.findOne({ Task_id: pid }, function(err, product) {
     var index = 0;
-    console.log(2)
-    console.log(total_cart)
     for (index = 0; index < total_cart.length; index++) {
     my_cart = total_cart[index]
       my_cart.product_list.push({
@@ -281,14 +290,14 @@ router.put("/delete", function(req, res) {
   });
   
   let pid = req.query.id;
-  console.log(req.query)
+  console.log(req)
   Product.findOne({ Task_id: pid }, function(err, product) {
   let total = 0;
   let index = 0;
   for (total = 0; total < total_cart.length; total++){
     my_cart = total_cart[total]
   for (index = 0; index < my_cart.product_list.length; index++) {
-    if (my_cart.product_list[index].id == pid) {
+    if (my_cart.product_list[index].Task_id == pid) {
       my_cart.product_list.splice(index, 1);
       my_cart.save();
       break;

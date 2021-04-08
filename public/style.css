@@ -92,7 +92,7 @@ footer.end {
 
 .checklist_table{
   margin: 10px;
-  width: 90%;
+  width: 100%;
   table-layout: fixed;
 /*   border-collapse: separate;
   border-spacing: 5px 0; */
@@ -209,8 +209,8 @@ input[type="radio"]:checked + label{
 
 .classification{
   width: 90%;
-  height: 40px;
+  height: auto;
   margin: auto 0 10px;
-  background-color: red;
+  border: 1px solid black;
   
 }

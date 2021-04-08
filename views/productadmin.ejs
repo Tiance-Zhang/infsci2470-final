@@ -61,7 +61,7 @@
       <tr><td>PRICE: <%= product.Room %></td></tr>
       <tr><td>COLOR: <%= product.Description %></td></tr>
  <tr><td colspan="2" align="center">
-               <form  method="POST" action="/update?_method=PUT&id=<%= product.id %>">
+               <form  method="POST" action="/delete?_method=PUT&Task_id=<%= product.Task_id %>">
    
          <button class="btn btn-secondary btn-lg btn-block" type="submit">
            Delete

@@ -86,7 +86,7 @@
                         </td>
                         <td rowspan="6" class="table_button">
                             <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->       
-                            <form class="table_form" method="POST" action="/update?_method=PUT&id=<%= product.id %>" target="test">
+                            <form class="table_form" method="POST" action="/update?_method=PUT&Task_id=<%= product.Task_id %>" target="test">
 <!--                             <form class="table_form" method="POST" action="/update?id=<%= product.id %>" > -->
                              
                                 <button type="submit" class="change_status" onclick="window.location.href = 'https://grave-stellar-answer.glitch.me/myCart'" style="width:100%">Change status</button>
@@ -195,23 +195,23 @@
                           let newDiv = document.createElement("div");
                           newDiv.setAttribute("name", $(this).html()); 
                           newDiv.setAttribute("class", "classification"); 
-                          newDiv.append($(this).html()); 
+                          
+                          let tableDiv = document.createElement("div");
+                          tableDiv.setAttribute("class", "tableDiv");
+                          tableDiv.append($(this).html());
+                          newDiv.append(tableDiv);
                           document.body.appendChild(newDiv);
                         }
                         
                       });
        
                       
-                      
-                      var i = 0;
                       $(".checklist_table").each(function(){
-                        console.log(i++);
-                        var thisClass = $("[name='"+$(this).find("[name='description']").html()+"']");
+                        var thisClass = $("[name='"+$(this).find("[name='description']").html()+"']").find(".tableDiv");
                         // if ($("[name='"+$(this).find("[name='description']").html()+"']").html() == $(this).find("[name='description']").html()){
                         if (thisClass.html() == $(this).find("[name='description']").html()){
-                          // var x = $(this).remove();
-                          $(this).appendChild("<div></div>");
-                          // thisClass.appendChild(x);
+                          var x = $(this).remove();
+                          thisClass.parent().append(x);
                         }
                         
                       });
