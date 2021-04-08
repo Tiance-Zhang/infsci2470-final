@@ -91,7 +91,7 @@ footer.end {
 }
 
 .checklist_table{
-  margin: 10px;
+/*   margin: 10px; */
   width: 90%;
   table-layout: fixed;
 /*   border-collapse: separate;
@@ -213,4 +213,9 @@ input[type="radio"]:checked + label{
   margin: auto 0 10px;
   border: 1px solid black;
   
+}
+
+.tableDiv{
+  overflow:
+  font-size:1.5em;
 }
