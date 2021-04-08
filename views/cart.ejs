@@ -203,12 +203,8 @@
                       });
                       $("[name='description']").each(function(){
                       // console.log($(this).parent().find('.status').html());
-                        if ($("[name='"+$(this).html()+"']").length){
-                          let newDiv = document.createElement("div");
-                          newDiv.setAttribute("name", $(this).html()); 
-                          newDiv.setAttribute("class", "classification"); 
-                          document.body.appendChild(newDiv);
-                          newDiv.appendChild($(this).parent());
+                        if ($("[name='"+$(this).html()+"']").html() == $(this).html()){
+                          $("[name='"+$(this).html()+"']").appendChild($(this).parent());
                         }
                         
                       });
