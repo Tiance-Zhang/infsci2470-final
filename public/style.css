@@ -219,7 +219,8 @@ input[type="radio"]:checked + label{
   text-overflow:inherit;
 	overflow:visible;
   font-size:1.5em;
-  color: white;
-  background-color:#003366;
+  background-color:#669999;
   padding: 5px;
+  white-space: nowrap;
+  cursor: pointer;
 }
