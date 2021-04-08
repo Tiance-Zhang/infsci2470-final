@@ -185,6 +185,8 @@
                       $("[name='description']").each(function(){
                       // console.log($(this).parent().find('.status').html());
                         if (!$("[name='"+$(this).html()+"']").length){
+                          process.insert()
+                          
                           let newDiv = document.createElement("div");
                           newDiv.setAttribute("name", $(this).html()); 
                           newDiv.setAttribute("class", "classification"); 
