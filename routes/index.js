@@ -248,7 +248,7 @@ router.post("/addone", async function(req, res) {
     for (index = 0; index < total_cart.length; index++) {
     my_cart = total_cart[index]
       my_cart.product_list.push({
-      id: req.body.TaskID,
+      _id: parseInt(req.body.TaskID),
       TaskName: req.body.TaskName,
       Instructor: req.body.Instructor,
       status: req.body.status,

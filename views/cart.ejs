@@ -195,16 +195,16 @@
                           let newDiv = document.createElement("div");
                           newDiv.setAttribute("name", $(this).html()); 
                           newDiv.setAttribute("class", "classification"); 
+                          newDiv.append($(this).html()); 
                           document.body.appendChild(newDiv);
                         }
                         
                       });
                       $("[name='description']").each(function(){
-                      // console.log($(this).parent().find('.status').html());
                         if ($("[name='"+$(this).html()+"']").html() == $(this).html()){
-                          alert(1);
-                          $("[name='"+$(this).html()+"']").appendChild($(this).parent());
-                          $(this).parent().parent().removeChild((this).parent());
+                          $("[name='"+$(this).html()+"']").append($(this).parent().parent());
+                          // $(this).parent().parent().removeChild($(this).parent());
+                          // $(this).parent().parent().remove();
                         }
                         
                       });
