@@ -114,9 +114,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td name="description">Description:
-                            <%= product.Description %>
-                        </td>
+                        <td name="description"><%= product.Description %></td>
                     </tr>
  </table>
                     <% }); %>
@@ -204,7 +202,9 @@
                       $("[name='description']").each(function(){
                       // console.log($(this).parent().find('.status').html());
                         if ($("[name='"+$(this).html()+"']").html() == $(this).html()){
+                          alert(1);
                           $("[name='"+$(this).html()+"']").appendChild($(this).parent());
+                          $(this).parent().parent().removeChild((this).parent());
                         }
                         
                       });
