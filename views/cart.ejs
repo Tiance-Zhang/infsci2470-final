@@ -46,25 +46,25 @@
    Clinical skills:Floor Patient Management
   </div>
   <div id="SurgicalCases" class="classification">
-   
+   Surgical Cases
   </div>
   <div id="PatientCare" class="classification">
-   
+   Patient care
   </div>
   <div id="Presentations" class="classification">
-   
+   Presentations
   </div>
   <div id="IntraoperativeSkills" class="classification">
-   
+   Intraoperative Skills
   </div>
   <div id="Orders" class="classification">
-   
+   Orders
   </div>
   <div id="SurgicalDiseases" class="classification">
-   
+   Surgical diseases
   </div>
   <div id="Imaging" class="classification">
-   
+  Imaging:ww.learningradiology.com or Stentor
   </div>
 
     <% if (list) { %>
@@ -114,7 +114,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Description:
+                        <td name="description">Description:
                             <%= product.Description %>
                         </td>
                     </tr>
@@ -191,6 +191,31 @@
                         }
                       });
                       
+                      $("[name='description']").each(function(){
+                      // console.log($(this).parent().find('.status').html());
+                        if($(this).html() == )
+                        
+                        
+//                         switch($(this).parent().find('.status').html()) {
+//                           case "1":
+//                             $(this).attr('class', 'startedTask');
+//                             $(this).find('.change_status').html('Complete');
+//                             break;
+//                           case "2":
+//                             $(this).attr('class', 'nextWeekTask');
+//                             $(this).find('.change_status').html('Start');
+//                             break;
+//                           case "3":
+//                             $(this).attr('class', 'assignedTask');
+//                             $(this).find('.change_status').html('Next Week');
+//                             break;
+//                           case "4":
+//                             $(this).attr('class', 'finishedTask');
+//                             $(this).find('.change_status').html('Reset');
+//                             break;
+                            
+//                         }
+                      });
                       
                       
                       

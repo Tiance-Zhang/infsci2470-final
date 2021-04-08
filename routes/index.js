@@ -265,18 +265,16 @@ router.post("/addone", async function(req, res) {
   let pid = req.body.TaskID;
   console.log(pid)
   Product.findOne({ id: pid }, function(err, product) {
-    console.log('2048')
-    console.log(product)
     var index = 0;
     for (index = 0; index < total_cart.length; index++) {
     my_cart = total_cart[index]
       my_cart.product_list.push({
-      id: product.id,
-      TaskName: product.TaskName,
-      Instructor: product.Instructor,
-      status: product.status,
-      Room: product.Room,
-      Description: product.Description
+      id: req.body.TaskID,
+      TaskName: req.body.TaskName,
+      Instructor: req.body.Instructor,
+      status: req.body.status,
+      Room: req.body.Room,
+      Description: req.body.Description
     });
       
     //my_cart.save();
@@ -284,12 +282,11 @@ router.post("/addone", async function(req, res) {
       if (err) {
         console.log(err);
         res.send(400, "Bad Request");
-      } else {
-        res.redirect("/productadmin");
       }
     });
     }
   });
+  res.redirect("/productadmin");
 });
 
 
