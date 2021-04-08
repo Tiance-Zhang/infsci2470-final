@@ -252,10 +252,19 @@ router.get("/addOne", function(request, response, next) {
 
 //add one
 router.post("/addone", async function(req, res) {  
-  Cart.find({}, function(err, cart_item) {    
-    let product = new Product(req.body);
-    product.save();
-    console.log(cart_item[0].product_list); 
+  Cart.find({}, function(err, cart_item) {
+    // var index = 0
+    // for (index = 0; index < cart_item.length; index++) {
+    //   my_cart = cart_item[index];
+    // my_cart.product_list.push({
+    //   id: product.id,
+    //   TaskName: product.TaskName,
+    //   Instructor: product.Instructor,
+    //   status: product.status,
+    //   Room: product.Room,
+    //   Description: product.Description
+    // });
+    // }
   })
 });
 
