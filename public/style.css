@@ -216,6 +216,8 @@ input[type="radio"]:checked + label{
 }
 
 .tableDiv{
-  overflow:
+  overflow: visible;
   font-size:1.5em;
+  background-color:green;
+  padding: 5px;
 }
