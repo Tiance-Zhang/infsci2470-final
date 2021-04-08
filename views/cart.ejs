@@ -194,8 +194,10 @@
                           tableDiv.setAttribute("name", "0");
                           tableDiv.setAttribute("data-number", "0");
                           
-                          
+                          // let tableSpan = document.createElement("span");
+                          // tableSpan.append($(this).html());
                           tableDiv.append($(this).html());
+                          // tableDiv.append(tableSpan);
                           newDiv.append(tableDiv);
                           document.body.appendChild(newDiv);
                         }
@@ -206,6 +208,7 @@
                       $(".checklist_table").each(function(){
                         var thisClass = $("[name='"+$(this).find("[name='description']").html()+"']").find(".tableDiv");
                         // if ($("[name='"+$(this).find("[name='description']").html()+"']").html() == $(this).find("[name='description']").html()){
+                        // if (thisClass.find("span").html() == $(this).find("[name='description']").html()){
                         if (thisClass.html() == $(this).find("[name='description']").html()){
                           var x = $(this).remove();
                           thisClass.parent().append(x);
@@ -224,7 +227,7 @@
                       $(".tableDiv").each(function(){
                         
                         var width = (parseInt($(this).attr('data-number')) / parseInt($(this).attr('name'))) * 100;
-                        $(this).attr('width', width + "%");
+                        $(this).css('width', width + "%");
                         
                         
                       });

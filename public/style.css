@@ -216,7 +216,8 @@ input[type="radio"]:checked + label{
 }
 
 .tableDiv{
-  overflow: visible;
+  text-overflow:inherit;
+	overflow:visible;
   font-size:1.5em;
   color: white;
   background-color:#003366;
