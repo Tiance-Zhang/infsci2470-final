@@ -250,12 +250,22 @@ router.get("/addOne", function(request, response, next) {
   });
 });
 
-router.post("/addone", function(req, res) {
-  let product = new Product(req.body);
-  product.save();
-
-  res.redirect("/productadmin");
+//add one
+router.put("/addone", async function(req, res) {
+  Cart.find({}, function(err, cart_item) {
+    let product = new Product(req.body);
+    product.save();
+    res.redirect("/productadmin");    
+  })
 });
+
+
+// router.post("/addone", function(req, res) {
+//   let product = new Product(req.body);
+//   product.save();
+
+//   res.redirect("/productadmin");
+// });
 
 //DELETE
 router.post("/delete", function(req, res) {
