@@ -307,6 +307,13 @@ router.put("/delete", function(req, res) {
   }
   }
   });
+  Product.findOne({id: req.query.id}, function(err, product) {
+    product.remove(function(err) {
+      if (err) {
+        res.status(500).send(err);
+      } 
+    });
+  });
     
   res.redirect('/productadmin');
 });
