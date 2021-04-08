@@ -195,8 +195,8 @@
                       // console.log($(this).parent().find('.status').html());
                         if (!$("[name='"+$(this).html()+"']").length){
                           let newDiv = document.createElement("div");
-                          newDiv.name = $(this).html();
-                          newDiv.class = 'classification';
+                          newDiv.setAttribute("name", $(this).html()); 
+                          newDiv.setAttribute("class", "classification"); 
                           document.body.appendChild(newDiv);
                         }
                            
