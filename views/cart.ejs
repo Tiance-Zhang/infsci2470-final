@@ -192,6 +192,7 @@
                           let tableDiv = document.createElement("div");
                           tableDiv.setAttribute("class", "tableDiv");
                           tableDiv.setAttribute("name", "0");
+                          tableDiv.setAttribute("data-number", "0");
                           
                           
                           tableDiv.append($(this).html());
@@ -208,12 +209,28 @@
                         if (thisClass.html() == $(this).find("[name='description']").html()){
                           var x = $(this).remove();
                           thisClass.parent().append(x);
+                          
+                          if ($(this).find("[name='description']").parent().parent().find(".status").html() == '4') {
+                            
+                            var number = parseInt(thisClass.attr('data-number'))+ 1;
+                            thisClass.attr("data-number", number);
+                          }
                           var total = parseInt(thisClass.attr('name'))+ 1;
                           thisClass.attr("name", total);
-                          console.log(thisClass.attr("name"));
                         }
                         
                       });
+                      
+                      $(".tableDiv").each(function(){
+                        
+                        var width = (parseInt($(this).attr('data-number')) / parseInt($(this).attr('name'))) * 100;
+                        $(this).attr('width', width + "%");
+                        
+                        
+                      });
+                      
+                      
+                      
                       $("#checklist_table td").hide();
                       
                       $(".tableDiv").click(function() {
