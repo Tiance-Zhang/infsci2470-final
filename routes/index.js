@@ -307,7 +307,7 @@ router.put("/delete", function(req, res) {
   }
   }
   });
-  Product.findOne({id: req.query.id}, function(err, product) {
+  Product.findOne({Task_id: pid}, function(err, product) {
     product.remove(function(err) {
       if (err) {
         res.status(500).send(err);
