@@ -42,7 +42,7 @@ router.get("/productadmin", function(request, response) {
 router.get("/admin", function(request, response) {
   Cart.find({}, function(err, cart_list) {
     response.render("admin", {
-      product: product_list
+      cart: cart_list
     });
   });
 });

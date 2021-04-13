@@ -50,28 +50,26 @@
   
    <div class="row justify-content-center">
      
-     <% if (product) { %>
-    <p>There are <%= product.length %> products in the database.</p>
+     <% if (cart) { %>
+    <p>There are <%= cart.length %>students in the database.</p>
    <table class="table table-bordered" style="max-width:80%;">
-      <% product.forEach(function(product){ %>
+      <% cart.forEach(function(cart){ %>
+      <tr><td>Task_email: <%= cart.email %></td></tr>
+     <table class="table table-bordered" style="max-width:60%;">
+     
+      <% cart.product_list.forEach(function(product){ %>
+<table class="table table-bordered" style="max-width:0%;">
       <tr><td>Task_id: <%= product.Task_id %></td></tr>
       <tr><td>NAME: <%= product.TaskName %></td></tr>
-      <tr><td>BRAND: <%= product.Instructor %></td></tr>
-      <tr><td>BRAND: <%= product.status %></td></tr>
-      <tr><td>PRICE: <%= product.Room %></td></tr>
-      <tr><td>COLOR: <%= product.Description %></td></tr>
- <tr><td colspan="2" align="center">
-               <form  method="POST" action="/delete?_method=PUT&Task_id=<%= product.Task_id %>">
-   
-         <button class="btn btn-secondary btn-lg btn-block" type="submit">
-           Delete
-         </button>
-         </form>
-   </td></tr>
+      <tr><td>Instructor: <%= product.Instructor %></td></tr>
+      <tr><td>status: <%= product.status %></td></tr>
+      <tr><td>Room: <%= product.Room %></td></tr>
+      <tr><td>Description: <%= product.Description %></td></tr>
+   </table>
+     
   <% }); %>
-    </table>
     <% } else { %>
-    <p>No products in the database.</p>
+    <p>No students in the database.</p>
     <% } %>
     
   </div>
