@@ -257,17 +257,14 @@ router.get("/addOne", function(request, response, next) {
 //add one
 router.post("/addone", async function(req, res) {
   let pid = req.body.TaskID;
-  Product.findOne({ Task_id: pid }, function(err, product) {
-      res.send(400, "already exist");
-      res.redirect("/productadmin");
-      if (err) {
-      let product = new Product(req.body);
-      product.Task_id = pid;
-      product.save();
-      }
-    
+  let product = new Product(req.body);
+  product.Task_id = pid;
+  console.log(Product)
+  Product.find({}, function(err, product) {  
+    pr = cart_item;
   });
 
+  // product.save();
   
   Cart.find({}, function(err, cart_item) {  
     total_cart = cart_item;
