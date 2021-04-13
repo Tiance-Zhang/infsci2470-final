@@ -8,6 +8,7 @@ const Cart = require("../models/cart");
 var my_cart;
 var my_product;
 var total_cart;
+var bool = 0;
 
 // Welcome Page
 // router.get("/", forwardAuthenticated, (req, res) => res.render("welcome"));
@@ -256,11 +257,12 @@ router.get("/addOne", function(request, response, next) {
 
 //add one
 router.post("/addone", async function(req, res) {
+  bool = 0;
   Cart.find({}, function(err, cart_item) {  
     total_cart = cart_item;
     console.log(3)
   });
-  var bool = 0;
+
   let pid = req.body.TaskID;
   let product = new Product(req.body);
   product.Task_id = pid;
@@ -268,53 +270,56 @@ router.post("/addone", async function(req, res) {
   Product.find({}, function(err, product_lst) {  
     my_product = product_lst;
     console.log(2)
-    console.log(my_product)
     var index = 0;
 
     for (index = 0; index < my_product.length; index++) {
-      if(my_product[index].Task_id == pid)
-        {
-          
+      if(my_product[index].Task_id == String(pid))
+        {     
           bool = 1;
+          console.log('catched')   
           break;
         }
     }
+    console.log('new')  
     if (bool == 0){
     let product = new Product(req.body);
     product.Task_id = pid;
-    product.save()
-    console.log('saved')      
+    product.save();
+    console.log('saved'); 
     }
   });
   
 
-  // product.save();
   
   
   console.log(pid)
-  Product.findOne({ Task_id: pid }, function(err, product) {
-    console.log(4)
-    var index = 0;
-    for (index = 0; index < total_cart.length; index++) {
-    my_cart = total_cart[index]
-      my_cart.product_list.push({
-      Task_id: req.body.TaskID,
-      TaskName: req.body.TaskName,
-      Instructor: req.body.Instructor,
-      status: req.body.status,
-      Room: req.body.Room,
-      Description: req.body.Description
-    });
+  if (bool == 0){
+    console.log('add task to students list');
+    console.log(bool);
+//   Product.findOne({ Task_id: pid }, function(err, product) {
+//     console.log(4)
+//     var index = 0;
+//     for (index = 0; index < total_cart.length; index++) {
+//     my_cart = total_cart[index]
+//       my_cart.product_list.push({
+//       Task_id: req.body.TaskID,
+//       TaskName: req.body.TaskName,
+//       Instructor: req.body.Instructor,
+//       status: req.body.status,
+//       Room: req.body.Room,
+//       Description: req.body.Description
+//     });
       
-    //my_cart.save();
-    my_cart.save(function(err, user) {
-      if (err) {
-        console.log(err);
-        res.send(400, "Bad Request");
-      }
-    });
-    }
-  });
+//     //my_cart.save();
+//     my_cart.save(function(err, user) {
+//       if (err) {
+//         console.log(err);
+//         res.send(400, "Bad Request");
+//       }
+//     });
+//     }
+//   })
+  };
   res.redirect("/productadmin");
 });
 
