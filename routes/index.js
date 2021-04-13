@@ -280,46 +280,40 @@ router.post("/addone", async function(req, res) {
           break;
         }
     }
-    console.log('new')  
+    console.log('now'+bool);  
     if (bool == 0){
     let product = new Product(req.body);
     product.Task_id = pid;
     product.save();
     console.log('saved'); 
+//------------------------------------------------
+    Product.findOne({ Task_id: pid }, function(err, product) {
+    console.log(4)
+    var index = 0;
+    for (index = 0; index < total_cart.length; index++) {
+    my_cart = total_cart[index]
+      my_cart.product_list.push({
+      Task_id: req.body.TaskID,
+      TaskName: req.body.TaskName,
+      Instructor: req.body.Instructor,
+      status: req.body.status,
+      Room: req.body.Room,
+      Description: req.body.Description
+    });
+      
+    //my_cart.save();
+    my_cart.save(function(err, user) {
+      if (err) {
+        console.log(err);
+        res.send(400, "Bad Request");
+      }
+    });
+    }
+  });
+//------------------------------------------------
     }
   });
   
-
-  
-  
-  console.log(pid)
-  if (bool == 0){
-    console.log('add task to students list');
-    console.log(bool);
-//   Product.findOne({ Task_id: pid }, function(err, product) {
-//     console.log(4)
-//     var index = 0;
-//     for (index = 0; index < total_cart.length; index++) {
-//     my_cart = total_cart[index]
-//       my_cart.product_list.push({
-//       Task_id: req.body.TaskID,
-//       TaskName: req.body.TaskName,
-//       Instructor: req.body.Instructor,
-//       status: req.body.status,
-//       Room: req.body.Room,
-//       Description: req.body.Description
-//     });
-      
-//     //my_cart.save();
-//     my_cart.save(function(err, user) {
-//       if (err) {
-//         console.log(err);
-//         res.send(400, "Bad Request");
-//       }
-//     });
-//     }
-//   })
-  };
   res.redirect("/productadmin");
 });
 
@@ -342,7 +336,11 @@ router.put("/delete", function(req, res) {
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].Task_id == pid) {
       my_cart.product_list.splice(index, 1);
-      my_cart.save();
+      try {
+                  my_cart.save();
+            }
+      catch(err) {
+      }
       break;
     }
   }
