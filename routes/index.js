@@ -38,6 +38,15 @@ router.get("/productadmin", function(request, response) {
   });
 });
 
+// RETREIVE all  product for admin
+router.get("/admin", function(request, response) {
+  Cart.find({}, function(err, cart_list) {
+    response.render("admin", {
+      product: product_list
+    });
+  });
+});
+
 
 
 // Dashboard
