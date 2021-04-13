@@ -256,22 +256,43 @@ router.get("/addOne", function(request, response, next) {
 
 //add one
 router.post("/addone", async function(req, res) {
+  Cart.find({}, function(err, cart_item) {  
+    total_cart = cart_item;
+    console.log(3)
+  });
+  
   let pid = req.body.TaskID;
   let product = new Product(req.body);
   product.Task_id = pid;
   console.log(Product)
-  Product.find({}, function(err, product) {  
-    pr = cart_item;
+  Product.find({}, function(err, product_lst) {  
+    my_product = product_lst;
+    console.log(2)
+    console.log(my_product)
+    var index = 0;
+    var bool = 0;
+    for (index = 0; index < my_product.length; index++) {
+      if(my_product[index] ==pid)
+        {
+          bool =1;
+          break;
+        }
+    }
+    if (bool == 0){
+    let product = new Product(req.body);
+    product.Task_id = pid;
+    product.save()
+    console.log('saved')      
+    }
   });
+  
 
   // product.save();
   
-  Cart.find({}, function(err, cart_item) {  
-    total_cart = cart_item;
-  });
   
   console.log(pid)
   Product.findOne({ Task_id: pid }, function(err, product) {
+    console.log(4)
     var index = 0;
     for (index = 0; index < total_cart.length; index++) {
     my_cart = total_cart[index]
