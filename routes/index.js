@@ -260,7 +260,7 @@ router.post("/addone", async function(req, res) {
     total_cart = cart_item;
     console.log(3)
   });
-  
+  var bool = 0;
   let pid = req.body.TaskID;
   let product = new Product(req.body);
   product.Task_id = pid;
@@ -270,11 +270,12 @@ router.post("/addone", async function(req, res) {
     console.log(2)
     console.log(my_product)
     var index = 0;
-    var bool = 0;
+
     for (index = 0; index < my_product.length; index++) {
-      if(my_product[index] ==pid)
+      if(my_product[index].Task_id == pid)
         {
-          bool =1;
+          
+          bool = 1;
           break;
         }
     }
