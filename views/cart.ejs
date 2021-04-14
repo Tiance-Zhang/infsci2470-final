@@ -167,14 +167,10 @@
                             $(this).find('.change_status').html('Complete');
                             break;
                           case "2":
-                            $(this).attr('class', 'nextWeekTask');
-                            $(this).find('.change_status').html('Did it');
+                            $(this).attr('class', 'assignedTask');
+                            $(this).find('.change_status').html('Start');
                             break;
                           case "3":
-                            $(this).attr('class', 'assignedTask');
-                            $(this).find('.change_status').html('Next Week');
-                            break;
-                          case "4":
                             $(this).attr('class', 'finishedTask');
                             $(this).find('.change_status').html('Undo');
                             break;
@@ -214,7 +210,7 @@
                           var x = $(this).remove();
                           thisClass.parent().append(x);
                           
-                          if ($(this).find("[name='description']").parent().parent().find(".status").html() == '4') {
+                          if ($(this).find("[name='description']").parent().parent().find(".status").html() == '3') {
                             
                             var number = parseInt(thisClass.attr('data-number'))+ 1;
                             thisClass.attr("data-number", number);
