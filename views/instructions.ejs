@@ -40,7 +40,7 @@
      <ul class="navbar-nav ml-auto"> 
 <!--           <li class="nav-item"><a class="nav-link" href="/myCart">My Cart</a ></li> -->
           <li class="nav-item"><a class="nav-link  active" href="/mine">My Profile</a ></li>
-       <li class="nav-item"><a class="nav-link" href="/instructions">Instructions</a></li>
+       <li class="nav-item"><a class="nav-link" href="/instructions">Instruction</a></li>
           <li class="nav-item"><a class="nav-link" href="/dashboard">Log out</a></li>
     </ul>
  </div>
@@ -53,12 +53,15 @@
 <div class="card text-center" style="width:60%">
   <div class="card-header">
    <h2>
-     My Profile
+     Instructions for new users
     </h2> 
+    <h3>
+      Welcome <td><%= user.name %></td>
+    </h3>
   </div>
   
    <table class="table table-bordered" style="max-width:100%;">
-    <tr><td><strong>Welcome to the Instruction Name</strong></td><td><%= user.name %></td></tr>
+    <tr><td><strong>Name</strong></td><td><%= user.name %></td></tr>
      <tr><td><strong>Email</strong></td><td><%= user.email %></td></tr>
     </table>
   <button class="btn btn-secondary btn-lg btn-block back_button" onclick="location.href='/myCart'" type="button">
@@ -70,3 +73,4 @@
 <p class="m-0 text-center text-white">Copyright &copy; Venom 2020</p>
 </footer> -->
 </body>
+

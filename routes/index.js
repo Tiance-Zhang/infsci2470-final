@@ -68,6 +68,12 @@ router.get("/mine", ensureAuthenticated, (req, res) =>
     user: req.user
   })
 );
+//View Instruction
+router.get("/instructions", ensureAuthenticated, (req, res) =>
+  res.render("instructions", {
+    user: req.user
+  })
+);
 
 //Cart
 router.post("/addCart", function(request, response) {
