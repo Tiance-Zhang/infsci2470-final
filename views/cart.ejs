@@ -90,7 +90,11 @@
                             <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->       
                             <form class="table_form" method="POST" action="/update?_method=PUT&Task_id=<%= product.Task_id %>" target="test">
 <!--                             <form class="table_form" method="POST" action="/update?id=<%= product.id %>" > -->
-                             
+                             <script>
+function window.location.href = 'https://grave-stellar-answer.glitch.me/myCart'{
+	alert("你好，我是一个警告框！");
+}
+</script>
                                 <button type="submit" class="change_status" onclick="window.location.href = 'https://grave-stellar-answer.glitch.me/myCart'" style="width:100%">Change status</button>
                                   
                             </form>
