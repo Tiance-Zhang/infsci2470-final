@@ -62,7 +62,11 @@
 <table class="table table-bordered" style="max-width:0%;">
       <tr><td>Task_id: <%= product.Task_id %></td></tr>
       <tr><td>NAME: <%= product.TaskName %></td></tr>
+  
+  <%= if(product.status){%>
       <tr><td>status: <%= product.status %></td></tr>
+  <% }; %>
+  
    </table>
         <br/><br/><br/><br/> 
   <% }); %>
@@ -79,7 +83,7 @@
     
 
 <footer class="container-fluid bg-dark">
-<p class="m-0 text-center text-white">Copyright &copy; Venom 2020</p>
+<p class="m-0 text-center text-white">Copyright ; Venom 2020</p>
 </footer>
 </body>
 </html>
