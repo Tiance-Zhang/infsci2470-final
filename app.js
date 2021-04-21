@@ -58,6 +58,7 @@ mongoose.connection.on('disconnected', function (){
 
 // EJS
 app.use(expressLayouts);
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 // Express body parser
@@ -88,7 +89,7 @@ app.use(function(req, res, next) {
   res.locals.error = req.flash('error');
   next();
 });
-app.use(express.static(__dirname + '/public'));
+
 // Routes
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
