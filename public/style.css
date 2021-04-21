@@ -41,6 +41,7 @@ html {
   width: 100%;
   height: 100%;
   margin: 0;
+
 }
 
 body {
@@ -48,6 +49,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 7vh 15vw 0vh 15vw;
+
 }
 
 h1 {
@@ -183,7 +185,6 @@ p {
     }
 
     &.percentage:before {
-       background-image: url('https://zephyo.github.io/22Days/code/5/graphics/sky.png');
        opacity: 0.9;
     }
   }
@@ -247,6 +248,8 @@ $indicator-size: 8vh;
 }
 
 body, html {
+  
+background-image: url(https://cdn.glitch.com/861a36ec-6a23-43f1-9b97-1feba04653bc%2FPITT-CAMPUS-.jpg?v=1619046729552)
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 2em;
 /*   width: 100%;
@@ -322,7 +325,6 @@ footer.end {
   float: left;
   width: 100%;
 } */
-
 
 
 
