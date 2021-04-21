@@ -4,7 +4,7 @@
       <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Checklist Login</h1>
       <%- include ('partials/messages') %>
       <form action="/users/login" method="POST">
-        <div class="user-box">
+        <div class="form-group">
           <label for="email">Email</label>
           <input
             type="email"
@@ -14,7 +14,7 @@
             placeholder="Enter Email"
           />
         </div>
-        <div class="user-box">
+        <div class="form-group">
           <label for="password">Password</label>
           <input
             type="password"
@@ -24,9 +24,7 @@
             placeholder="Enter Password"
           />
         </div>
-            <a href="#">
         <button type="submit" class="btn btn-primary btn-block login">Login</button>
-            </a>
       </form>
       <p class="lead mt-4">
         No Account? <a href="/users/register">Register</a></p>
@@ -36,4 +34,6 @@
     </div>
   </div>
 </div>
+
+
 
