@@ -449,17 +449,21 @@ input[type="radio"]:checked + label{
 }
 
 .classification{
+  background: #ffffff9e;
   width: 90%;
   height: auto;
   margin: auto 0 10px;
-  border: 1px solid black;
+  border: 0px solid black;
   font-size: 1rem;
-  text-shadow: 10px 5px 25px rgb(77 80 117 / 60%);
+  text-shadow: 10px 5px 25px rgb(77 80 117 / 80%);
   color: rgb(72 77 140 / 90%);
-  font: Times;
+  font-weight: 550;
+  border-radius: 20px;
+
 }
 
 .tableDiv{
+  background-color: #cddce6;
   text-overflow:inherit;
 	overflow:visible;
   font-size:1.5em;
@@ -467,4 +471,6 @@ input[type="radio"]:checked + label{
   padding: 5px;
   white-space: nowrap;
   cursor: pointer;
+  border-radius: 20px;
+  
 }
