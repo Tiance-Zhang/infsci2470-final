@@ -63,8 +63,14 @@
       <tr><td>Task_id: <%= product.Task_id %></td></tr>
       <tr><td>NAME: <%= product.TaskName %></td></tr>
   
-  <%= if(product.status){%>
-      <tr><td>status: <%= product.status %></td></tr>
+  <% if(product.status==1){%>
+      <tr><td>status: Undo</td></tr>
+  <% }; %>
+  <% if(product.status==2){%>
+      <tr><td>status: Start</td></tr>
+  <% }; %>
+  <% if(product.status==3){%>
+      <tr><td>status: Complete</td></tr>
   <% }; %>
   
    </table>
@@ -83,7 +89,7 @@
     
 
 <footer class="container-fluid bg-dark">
-<p class="m-0 text-center text-white">Copyright ; Venom 2020</p>
+<p class="m-0 text-center text-white">Copyright Pitts</p>
 </footer>
 </body>
 </html>
