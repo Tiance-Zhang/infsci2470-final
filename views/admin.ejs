@@ -94,16 +94,16 @@
                       
                       
                       $(".status").each(function(){
+                        console.log($(this).parent().parent().find(".name").html());
                         switch($(this).html()) {
-                            
                           case "Doing":
-                            $(this).attr('class', 'startedTask');
+                            $(this).parent().find(".name").attr('class', 'startedTask');
                             break;
                           case "Undo":
-                            $(this).attr('class', 'assignedTask');
+                            $(this).parent().find(".name").attr('class', 'assignedTask');
                             break;
                           case "Complete":
-                            $(this).attr('class', 'finishedTask');
+                            $(this).parent().find(".name").attr('class', 'finishedTask');
                             break;
                             
                         }
