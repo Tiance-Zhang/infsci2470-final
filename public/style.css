@@ -33,7 +33,7 @@ $fill-bar3: #ec0071;
 body,
 html {
   font-family: "Nunito", sans-serif;
-  background: linear-gradient(0deg, #EEEFED, #F9E3E9);
+/*   background: linear-gradient(0deg, #EEEFED, #F9E3E9); */
   margin: 0;
   padding: 0;
   color: $highlight;
