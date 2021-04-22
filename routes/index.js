@@ -242,7 +242,7 @@ router.put("/update", async function(req, res) {
       break;
     case "3":
       await Cart.updateOne(
-        { email: req.user.email, "product_list.Task_id": Number(pid) },
+        { email: req.user.email, "product_list.Task_id": pid },
         { "product_list.$.status": 2 }
       );
       break;
