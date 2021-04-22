@@ -1,7 +1,3 @@
-import Swal from 'sweetalert2';
-
-
-
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
@@ -52,8 +48,6 @@ router.get("/admin", function(request, response) {
   });
 });
 
-
-
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {
@@ -96,7 +90,7 @@ router.post("/addCart", function(request, response) {
       Task_id: product.id,
       TaskName: product.TaskName,
       Instructor: product.Instructor,
-      isred:product.isred,
+      isred: product.isred,
       status: product.status,
       Room: product.Room,
       Description: product.Description
@@ -193,12 +187,10 @@ router.get("/myCart", function(req, res) {
 //   res.redirect("/mycart");
 // })
 
-
-
 //update
 router.put("/update", async function(req, res) {
   var pid = req.query.Task_id;
-  Cart.find({email: req.user.email}, function(err, cart_item) {
+  Cart.find({ email: req.user.email }, function(err, cart_item) {
     if (!cart_item.length) {
       my_cart = new Cart();
       my_cart.email = req.user.email;
@@ -206,8 +198,8 @@ router.put("/update", async function(req, res) {
     } else {
       my_cart = cart_item[0];
     }
-  })
-  
+  });
+
   let index = 0;
   var idx = null;
   for (index = 0; index < my_cart.product_list.length; index++) {
@@ -217,25 +209,43 @@ router.put("/update", async function(req, res) {
     }
   }
   console.log(idx);
-  
-  switch(idx) {
+
+  switch (idx) {
     case 1:
-      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 3});
+      await Cart.updateOne(
+        { email: req.user.email, "product_list.Task_id": Number(pid) },
+        { "product_list.$.status": 3 }
+      );
       break;
     case 2:
-      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 1});
+      await Cart.updateOne(
+        { email: req.user.email, "product_list.Task_id": Number(pid) },
+        { "product_list.$.status": 1 }
+      );
       break;
     case 3:
-      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 2});
+      await Cart.updateOne(
+        { email: req.user.email, "product_list.Task_id": Number(pid) },
+        { "product_list.$.status": 2 }
+      );
       break;
-    case '1':
-      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 3});
+    case "1":
+      await Cart.updateOne(
+        { email: req.user.email, "product_list.Task_id": Number(pid) },
+        { "product_list.$.status": 3 }
+      );
       break;
-    case '2':
-      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 1});
+    case "2":
+      await Cart.updateOne(
+        { email: req.user.email, "product_list.Task_id": Number(pid) },
+        { "product_list.$.status": 1 }
+      );
       break;
-    case '3':
-      await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 2});
+    case "3":
+      await Cart.updateOne(
+        { email: req.user.email, "product_list.Task_id": Number(pid) },
+        { "product_list.$.status": 2 }
+      );
       break;
   }
 });
@@ -264,105 +274,99 @@ router.get("/addOne", function(request, response, next) {
 //add one
 router.post("/addone", async function(req, res) {
   bool = 0;
-  Cart.find({}, function(err, cart_item) {  
+  Cart.find({}, function(err, cart_item) {
     total_cart = cart_item;
-    console.log(3)
+    console.log(3);
   });
 
   let pid = req.body.TaskID;
   let product = new Product(req.body);
   product.Task_id = pid;
-  console.log(Product)
-  Product.find({}, function(err, product_lst) {  
+  console.log(Product);
+  Product.find({}, function(err, product_lst) {
     my_product = product_lst;
-    console.log(2)
+    console.log(2);
     var index = 0;
 
     for (index = 0; index < my_product.length; index++) {
-      if(my_product[index].Task_id == String(pid))
-        {     
-          bool = 1;
-          console.log('catched')   
-          break;
-        }
-    }
-    console.log('now'+bool);  
-    if (bool == 0){
-    let product = new Product(req.body);
-    product.Task_id = pid;
-    product.save();
-    console.log('saved'); 
-//------------------------------------------------
-    Product.findOne({ Task_id: pid }, function(err, product) {
-    console.log(4)
-    var index = 0;
-    for (index = 0; index < total_cart.length; index++) {
-    my_cart = total_cart[index]
-      my_cart.product_list.push({
-      Task_id: req.body.TaskID,
-      TaskName: req.body.TaskName,
-      Instructor: req.body.Instructor,
-      isred:req.body.isred,
-      status: req.body.status,
-      Room: req.body.Room,
-      Description: req.body.Description
-    });
-      
-    //my_cart.save();
-    my_cart.save(function(err, user) {
-      if (err) {
-        console.log(err);
-        res.send(400, "Bad Request");
+      if (my_product[index].Task_id == String(pid)) {
+        bool = 1;
+        console.log("catched");
+        break;
       }
-    });
+    }
+    console.log("now" + bool);
+    if (bool == 0) {
+      let product = new Product(req.body);
+      product.Task_id = pid;
+      product.save();
+      console.log("saved");
+      //------------------------------------------------
+      Product.findOne({ Task_id: pid }, function(err, product) {
+        console.log(4);
+        var index = 0;
+        for (index = 0; index < total_cart.length; index++) {
+          my_cart = total_cart[index];
+          my_cart.product_list.push({
+            Task_id: req.body.TaskID,
+            TaskName: req.body.TaskName,
+            Instructor: req.body.Instructor,
+            isred: req.body.isred,
+            status: req.body.status,
+            Room: req.body.Room,
+            Description: req.body.Description
+          });
+
+          //my_cart.save();
+          my_cart.save(function(err, user) {
+            if (err) {
+              console.log(err);
+              res.send(400, "Bad Request");
+            }
+          });
+        }
+      });
+      //------------------------------------------------
     }
   });
-//------------------------------------------------
-    }
-  });
-  
+
   res.redirect("/productadmin");
 });
 
-
 //delete
 router.put("/delete", function(req, res) {
-
   let pid = req.query.Task_id;
-  Cart.find({}, function(err, cart_item) {  
-    console.log('1')
+  Cart.find({}, function(err, cart_item) {
+    console.log("1");
     total_cart = cart_item;
   });
-  console.log('')
+  console.log("");
   Product.findOne({ Task_id: pid }, function(err, product) {
-  let total = 0;
-  let index = 0;
-  console.log('2')
-  for (total = 0; total < total_cart.length; total++){
-    my_cart = total_cart[total]
-  for (index = 0; index < my_cart.product_list.length; index++) {
-    if (my_cart.product_list[index].Task_id == pid) {
-      my_cart.product_list.splice(index, 1);
-      try {
-                  my_cart.save();
-            }
-      catch(err) {
+    let total = 0;
+    let index = 0;
+    console.log("2");
+    for (total = 0; total < total_cart.length; total++) {
+      my_cart = total_cart[total];
+      for (index = 0; index < my_cart.product_list.length; index++) {
+        if (my_cart.product_list[index].Task_id == pid) {
+          my_cart.product_list.splice(index, 1);
+          try {
+            my_cart.save();
+          } catch (err) {}
+          break;
+        }
       }
-      break;
     }
-  }
-  }
   });
-  Product.findOne({Task_id: pid}, function(err, product) {
+  Product.findOne({ Task_id: pid }, function(err, product) {
     product.remove(function(err) {
       if (err) {
         res.status(500).send(err);
-      } 
+      }
     });
   });
-    
-  res.redirect('/productadmin');
+
+  res.redirect("/productadmin");
 });
 
 module.exports = router;
-
