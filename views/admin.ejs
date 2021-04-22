@@ -78,10 +78,10 @@
                       
                     $(document).ready(function() {
                      
-                      $('.checklist_table').sort(function(a, b) {
+                      $("[name='list_id']").sort(function(a, b) {
                         console.log($(a).find('.status').html());
-                        return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
-                      }).appendTo($(".table-responsive"));
+                        return parseInt($(b).find('.status').html()) - parseInt($(a).find('.status').html());
+                      }).appendTo($(".checklist_table"));
                       
                       
                       
