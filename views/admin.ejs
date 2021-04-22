@@ -43,13 +43,9 @@
  </div>
 </nav>
 </div>
-    <br/><br/><br/><br/>
-    
   
   
-  
-  
-   <div class="row justify-content-center">
+<!--    <div class="row justify-content-center">
      
      <% if (cart) { %>
     <p>There are <%= cart.length %>students in the database.</p>
@@ -84,9 +80,82 @@
     <p>No students in the database.</p>
     <% } %>
     
-  </div>
-    <br/><br/><br/><br/>
-    
+  </div> -->
+  
+  
+     <% if (cart) { %>
+        <!--   <p style="text-align:center;">There are <%= list.length %> products in the Cart.</p>
+   <div class="row justify-content-center">
+     <div class ="row">
+       <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12"> -->
+        <div class="table-responsive">
+
+            
+                <% list.forEach(function(product){ %>
+          <table class="checklist_table" id="checklist_table">
+                    <tr name="list_id">
+<!--                         <td class="list_id_button">id:
+                            <%= product.Task_id %>
+                        </td> -->
+                      <td class="list_id_button">
+                            <%= product.TaskName %>
+                        </td>
+                        <td rowspan="6" class="table_button">
+                            <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->       
+                            <form class="table_form" method="POST" action="/update?_method=PUT&Task_id=<%= product.Task_id %>" target="test">
+<!--                             <form class="table_form" method="POST" action="/update?id=<%= product.id %>" > -->
+                             
+                                <button type="submit" class="change_status" onclick="successAlert()" style="width:100%">Change status</button>
+                                  
+                            </form>
+                        </td>
+                    </tr>
+
+<!--                     <tr>
+                        <td>NAME:
+                            <%= product.TaskName %>
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td>Instructor:
+                            <%= product.Instructor %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="status"><%= product.status %></td>
+                    </tr>
+                    <tr>
+                        <td>Room:
+                            <%= product.Room %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td name="description"><%= product.Description %></td>
+                    </tr>
+ </table>
+                    <% }); %>
+           
+        </div>
+
+        <!--         </div><div class="col-lg-auto col-md-auto col-sm-10 col-xs-10">
+      <div class="table-responsive text-center">
+          <table class="table table-bordered" style="max-width:95%;">
+      <tr><td ><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td></tr>
+      <tr><td>Total Price: <%= total_price %></td></tr>
+      <tr><td align="center"><form action="/clearCart" method="POST">
+         <button class="btn btn-secondary btn-lg btn-block" type="submit">
+           Clear Cart
+         </button>
+    </form></td></tr>
+    </table> </div></div> 
+     </div></div>-->
+        <% } else { %>
+            <p>No tasks.</p>
+            <% } %>
+
+
+<iframe name="test"></iframe>
+
 
 <footer class="container-fluid bg-dark">
 <p class="m-0 text-center text-white">Copyright Pitts</p>
