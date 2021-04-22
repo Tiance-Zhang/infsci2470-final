@@ -150,13 +150,7 @@
 </footer> -->
 
                 <script>
-                    $(document).ready(function() {
-                     
-                      // $('.checklist_table').sort(function(a, b) {
-                      //   return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
-                      // }).appendTo($(".table-responsive"));
-                      
-                      function successAlert(){
+                  function successAlert(){
                         Swal.fire({
   position: 'top-end',
   icon: 'success',
@@ -166,6 +160,13 @@
 });
                         window.location.href = 'https://grave-stellar-answer.glitch.me/myCart';
                       }
+                    $(document).ready(function() {
+                     
+                      // $('.checklist_table').sort(function(a, b) {
+                      //   return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
+                      // }).appendTo($(".table-responsive"));
+                      
+                      
                       
                       $("[name='list_id']").each(function(){
                       // console.log($(this).parent().find('.status').html());
