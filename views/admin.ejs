@@ -79,6 +79,7 @@
                     $(document).ready(function() {
                      
                       $('.checklist_table').sort(function(a, b) {
+                        console.log($(a).find('.status').html());
                         return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
                       }).appendTo($(".table-responsive"));
                       
@@ -103,7 +104,9 @@
                         $("#checklist_table td").hide();
                         $("[name='list_id']").find('td').show();
                        $(".list_id_button").click(function() {
+                        // $(this).parent().parent().find('td').toggle();
                           $(this).parent().parent().find("td[name='name']").toggle();
+
                         });
                       
                       

@@ -361,6 +361,15 @@ footer.end {
   
 }
 
+.checklist_table th{
+  cursor:pointer;
+  font-size:1em;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color:#D9ECDB;
+  border-top: 4px solid white;
+}
+
 .assignedTask{
   background-color: #7099C8;
   cursor: pointer;
