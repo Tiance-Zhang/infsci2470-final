@@ -1,3 +1,7 @@
+import Swal from 'sweetalert2';
+
+
+
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
@@ -213,6 +217,7 @@ router.put("/update", async function(req, res) {
     }
   }
   console.log(idx);
+  
   switch(idx) {
     case 1:
       await Cart.updateOne({ email: req.user.email, 'product_list.Task_id':Number(pid)}, {'product_list.$.status': 3});
