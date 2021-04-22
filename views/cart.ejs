@@ -157,6 +157,12 @@
                       // }).appendTo($(".table-responsive"));
                       
 
+                      Swal.fire({
+  title: 'Error!',
+  text: 'Do you want to continue',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})
 
                       
                       $("[name='list_id']").each(function(){
@@ -242,6 +248,8 @@
                         //   $(this).parent().parent().find('.status').hide();
                         
                         // $(this).parent().find("#checklist_table td tr:not([name='list_id'])").hide();//这里td不隐藏
+                        
+                        
                         
                         $(this).parent().find("[name='list_id']").find('td').toggle();
                         
