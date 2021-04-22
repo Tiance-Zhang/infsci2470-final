@@ -51,23 +51,23 @@
             
                 <% cart.forEach(function(cart){ %>
           <table class="checklist_table" id="checklist_table">
-                    <tr name="list_id">
+                    <th name="list_id">
                       <td class="list_id_button">
                             <%= cart.email %>
                         </td>
                        
-                    </tr>
+                    </th>
  <% cart.product_list.forEach(function(product){ %>
       <tr><td>NAME: <%= product.TaskName %></td></tr>
   
   <% if(product.status==1){%>
-      <tr><td>status: Undo</td></tr>
+      <tr><td class="status">Doing</td></tr>
   <% }; %>
   <% if(product.status==2){%>
-      <tr><td>status: Start</td></tr>
+      <tr><td class="status">Undo</td></tr>
   <% }; %>
   <% if(product.status==3){%>
-      <tr><td>status: Complete</td></tr>
+      <tr><td class="status">Complete</td></tr>
   <% }; %>
   
   <% }); %>
@@ -81,5 +81,128 @@
 <!-- <footer class="container-fluid bg-dark">
 <p class="m-0 text-center text-white">Copyright Pitts</p>
 </footer> -->
+  
+  
+  
+  
+  
+                <script>
+                      
+                    $(document).ready(function() {
+                     
+                      // $('.checklist_table').sort(function(a, b) {
+                      //   return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
+                      // }).appendTo($(".table-responsive"));
+                      
+                      
+                      
+                      $("[name='list_id']").each(function(){
+                      // console.log($(this).parent().find('.status').html());
+                      console.log($(this).html());
+                        switch($(this).parent().find('.status').html()) {
+                            
+                          case "Doing":
+                            $(this).attr('class', 'startedTask');
+                            break;
+                          case "Undo":
+                            $(this).attr('class', 'assignedTask');
+                            break;
+                          case "Complete":
+                            $(this).attr('class', 'finishedTask');
+                            break;
+                            
+                        }
+                      });
+                      
+                      $("[name='description']").each(function(){
+                      // console.log($(this).parent().find('.status').html());
+                        if (!$("[name='"+$(this).html()+"']").length){
+                          
+                          let newDiv = document.createElement("div");
+                          newDiv.setAttribute("name", $(this).html()); 
+                          newDiv.setAttribute("class", "classification"); 
+                          
+                          let tableDiv = document.createElement("div");
+                          tableDiv.setAttribute("class", "tableDiv");
+                          tableDiv.setAttribute("name", "0");
+                          tableDiv.setAttribute("data-number", "0");
+                          
+                          // let tableSpan = document.createElement("span");
+                          // tableSpan.append($(this).html());
+                          tableDiv.append($(this).html());
+                          // tableDiv.append(tableSpan);
+                          newDiv.append(tableDiv);
+                          document.body.appendChild(newDiv);
+                        }
+                        
+                      });
+       
+                      
+                      $(".checklist_table").each(function(){
+                        var thisClass = $("[name='"+$(this).find("[name='description']").html()+"']").find(".tableDiv");
+                        // if ($("[name='"+$(this).find("[name='description']").html()+"']").html() == $(this).find("[name='description']").html()){
+                        // if (thisClass.find("span").html() == $(this).find("[name='description']").html()){
+                        if (thisClass.html() == $(this).find("[name='description']").html()){
+                          var x = $(this).remove();
+                          thisClass.parent().append(x);
+                          
+                          if ($(this).find("[name='description']").parent().parent().find(".status").html() == '3') {
+                            
+                            var number = parseInt(thisClass.attr('data-number'))+ 1;
+                            thisClass.attr("data-number", number);
+                          }
+                          var total = parseInt(thisClass.attr('name'))+ 1;
+                          thisClass.attr("name", total);
+                        }
+                        
+                      });
+                      
+                      $(".tableDiv").each(function(){
+                        
+                        var width = (parseInt($(this).attr('data-number')) / parseInt($(this).attr('name'))) * 100;
+                        $(this).css('width', width + "%");
+                        
+                        
+                      });
+                      
+                      
+                      
+                      
+                      
+                      $("#checklist_table td").hide();
+                      
+                      $(".tableDiv").click(function() {
+                         // alert(1);
+                        // $(this).parent().parent().find('td').toggle();
+                        //   $("[name='list_id']").find('td').show();
+                        //   $(this).parent().parent().find('.status').hide();
+                        
+                        // $(this).parent().find("#checklist_table td tr:not([name='list_id'])").hide();//这里td不隐藏
+                        
+                        
+                        
+                        $(this).parent().find("[name='list_id']").find('td').toggle();
+                        
+
+                        });
+                      
+                      
+                        // $("#checklist_table td").hide();
+                        // $("[name='list_id']").find('td').show();
+                       $(".list_id_button").click(function() {
+                         // alert(1);
+                        $(this).parent().parent().find('td').toggle();
+                          $(this).parent().parent().find("[name='list_id']").find('td').show();
+                          $(this).parent().parent().find('.status').hide();
+
+                        });
+                      
+                      
+                      
+                      
+                      
+                    });
+                </script>
+  
 </body>
 </html>
