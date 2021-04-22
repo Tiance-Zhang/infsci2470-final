@@ -55,9 +55,9 @@
                     <th name="list_id" class="list_id_button"><%= cart.email %></th>
               </tr>
  <% cart.product_list.forEach(function(product){ %>
-      <tr><td class="name"><%= product.TaskName %></td></tr>
+      <tr><td name="name"><%= product.TaskName %><span class="status"><%= product.status %></span></td></tr>
   
-  <% if(product.status==1){%>
+<!--   <% if(product.status==1){%>
       <tr><td class="status">Doing</td></tr>
   <% }; %>
   <% if(product.status==2){%>
@@ -65,7 +65,7 @@
   <% }; %>
   <% if(product.status==3){%>
       <tr><td class="status">Complete</td></tr>
-  <% }; %>
+  <% }; %> -->
   
   <% }); %>
  </table>
@@ -94,16 +94,15 @@
                       
                       
                       $(".status").each(function(){
-                        console.log($(this).parent().parent().find(".name").html());
                         switch($(this).html()) {
-                          case "Doing":
-                            $(this).parent().find(".name").attr('class', 'startedTask');
+                          case "1":
+                            $(this).parent().attr('class', 'startedTask');
                             break;
-                          case "Undo":
-                            $(this).parent().find(".name").attr('class', 'assignedTask');
+                          case "2":
+                            $(this).parent().attr('class', 'assignedTask');
                             break;
-                          case "Complete":
-                            $(this).parent().find(".name").attr('class', 'finishedTask');
+                          case "3":
+                            $(this).parent().attr('class', 'finishedTask');
                             break;
                             
                         }
