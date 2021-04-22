@@ -204,7 +204,7 @@ router.put("/update", async function(req, res) {
   var idx = null;
   for (index = 0; index < my_cart.product_list.length; index++) {
     if (my_cart.product_list[index].Task_id == pid) {
-      idx = my_cart.product_list[index].status;
+      idx = parseInt(my_cart.product_list[index].status);
       break;
     }
   }
@@ -212,10 +212,9 @@ router.put("/update", async function(req, res) {
 
   switch (idx) {
     case 1:
+      console.log('Catched');
       await Cart.updateOne(
-        { email: req.user.email, "product_list.Task_id": Number(pid) },
-        { "product_list.$.status": 3 }
-      );
+        { email: req.user.email, "product_list.Task_id": Number(pid)},{"product_list.$.status": 3});
       break;
     case 2:
       await Cart.updateOne(
