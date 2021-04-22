@@ -47,7 +47,7 @@
   
   
      <% if (cart) { %>
-
+ <div class="table-responsive">
             
                 <% cart.forEach(function(cart){ %>
           <table class="checklist_table" id="checklist_table">
@@ -57,20 +57,11 @@
  <% cart.product_list.forEach(function(product){ %>
       <tr><td name="name"><%= product.TaskName %><span class="status"><%= product.status %></span></td></tr>
   
-<!--   <% if(product.status==1){%>
-      <tr><td class="status">Doing</td></tr>
-  <% }; %>
-  <% if(product.status==2){%>
-      <tr><td class="status">Undo</td></tr>
-  <% }; %>
-  <% if(product.status==3){%>
-      <tr><td class="status">Complete</td></tr>
-  <% }; %> -->
   
   <% }); %>
  </table>
                     <% }); %>
-           
+  </div>
 
         <% } %>
 
@@ -87,9 +78,9 @@
                       
                     $(document).ready(function() {
                      
-                      // $('.checklist_table').sort(function(a, b) {
-                      //   return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
-                      // }).appendTo($(".table-responsive"));
+                      $('.checklist_table').sort(function(a, b) {
+                        return parseInt($(a).find('.status').html()) - parseInt($(b).find('.status').html());
+                      }).appendTo($(".table-responsive"));
                       
                       
                       
@@ -109,15 +100,11 @@
                       });
                       
                       
-                        // $("#checklist_table td").hide();
-                        // $("[name='list_id']").find('td').show();
-//                        $(".list_id_button").click(function() {
-//                          // alert(1);
-//                         $(this).parent().parent().find('td').toggle();
-//                           $(this).parent().parent().find("[name='list_id']").find('td').show();
-//                           $(this).parent().parent().find('.status').hide();
-
-//                         });
+                        $("#checklist_table td").hide();
+                        $("[name='list_id']").find('td').show();
+                       $(".list_id_button").click(function() {
+                          $(this).parent().parent().find("td[name='name']").toggle();
+                        });
                       
                       
                       
