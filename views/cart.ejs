@@ -152,13 +152,15 @@
                 <script>
                   function successAlert(){
                         Swal.fire({
-  position: 'top-end',
+  // position: 'top-end',
   icon: 'success',
   title: 'Change successfully!',
   showConfirmButton: false,
   timer: 1500
-});
-                        window.location.href = 'https://grave-stellar-answer.glitch.me/myCart';
+}).then(() => {
+    window.location.href = 'https://grave-stellar-answer.glitch.me/myCart';
+                        });
+                        
                       }
                     $(document).ready(function() {
                      
