@@ -5,7 +5,7 @@ const productSchema = new Schema(
   {
     Task_id: {type: Number},
     TaskName: {type: String},
-    Instructor: {type: String},
+    Abstract: {type: String},
     isred: {type: String},
     status: {type: Number},
     Room: {type: String},

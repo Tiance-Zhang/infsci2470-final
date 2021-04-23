@@ -89,7 +89,7 @@ router.post("/addCart", function(request, response) {
     my_cart.product_list.push({
       Task_id: product.id,
       TaskName: product.TaskName,
-      Instructor: product.Instructor,
+      Abstract: product.Abstract,
       isred: product.isred,
       status: product.status,
       Room: product.Room,
@@ -309,7 +309,7 @@ router.post("/addone", async function(req, res) {
           my_cart.product_list.push({
             Task_id: req.body.TaskID,
             TaskName: req.body.TaskName,
-            Instructor: req.body.Instructor,
+            Abstract: req.body.Abstract,
             isred: req.body.isred,
             status: req.body.status,
             Room: req.body.Room,
