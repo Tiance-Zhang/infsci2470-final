@@ -58,7 +58,7 @@
                     <th name="list_id" class="list_id_button"><%= cart.email %></th>
               </tr>
  <% cart.product_list.forEach(function(product){ %>
-      <tr><td name="name"><%= product.TaskName %><span class="status"><%= product.status %></span></td></tr>
+      <tr myAttribute='<%= product.status %>'><td name="name"><%= product.TaskName %><span class="status"><%= product.status %></span></td></tr>
   
   
   <% }); %>
@@ -89,11 +89,16 @@
                       // sortTable();
                       $(".checklist_table").each(function(){
                         
-                        // $(this).find('tr').each(function(){
-                          var rows = $table.find('tr').get();
-                        rows.sort(function(a, b) {
-                          return parseInt($(a).find('span').html()) - parseInt($(b).find('span').html());
-                        }).appendTo($(this).parent());
+                            var tb = $(this);
+                            var rows = tb.find('tr');
+                            rows.sort(function(a, b) {
+                                var keyA = $(a).attr('myAttribute');
+                                var keyB = $(b).attr('myAttribute');
+                                return keyB - keyA;
+                              });
+                          $.each(rows, function(index, row) {
+                            tb.append(row);
+                          });
 //                           $(this).find('tr').sort(function(a, b) {
 //                             console.log($(a).find('span').html());
 //                               return parseInt($(a).find('span').html()) - parseInt($(b).find('span').html());
