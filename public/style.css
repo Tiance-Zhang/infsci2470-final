@@ -41,7 +41,7 @@ html {
   width: 100%;
   height: 100%;
   margin: 0;
-  background-color:#e9ebec;
+/*   background-color:#e9ebec; */
   
   }
 
@@ -257,7 +257,7 @@ background-image: url(https://cdn.glitch.com/861a36ec-6a23-43f1-9b97-1feba04653b
   margin: 1em;
 /*   width: 100%;
   height: 100%; */
-  background-color:#e9ebec
+/*   background-color:#e9ebec */
 
 }
 
@@ -484,7 +484,8 @@ input[type="radio"]:checked + label{
   width: 90%;
   height: auto;
   margin: auto 0 10px;
-  border: 0px solid black;
+  border: 1px solid rgb(72 77 140 / 90%);
+  bo
   font-size: 1rem;
   text-shadow: 10px 5px 25px rgb(77 80 117 / 60%);
   color: rgb(72 77 140 / 90%);
