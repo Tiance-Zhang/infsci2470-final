@@ -78,40 +78,7 @@
   
   
                 <script>
-                  
-                  function sortTable(table) {
-  var rows, switching, i, x, y, shouldSwitch;
-  switching = true;
-  /*Make a loop that will continue until
-  no switching has been done:*/
-  while (switching) {
-    //start by saying: no switching is done:
-    switching = false;
-    rows = table.rows;
-    /*Loop through all table rows (except the
-    first, which contains table headers):*/
-    for (i = 1; i < (rows.length - 1); i++) {
-      //start by saying there should be no switching:
-      shouldSwitch = false;
-      /*Get the two elements you want to compare,
-      one from current row and one from the next:*/
-      x = rows[i].getElementsByTagName("TD")[0];
-      y = rows[i + 1].getElementsByTagName("TD")[0];
-      //check if the two rows should switch place:
-      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-        //if so, mark as a switch and break the loop:
-        shouldSwitch = true;
-        break;
-      }
-    }
-    if (shouldSwitch) {
-      /*If a switch has been marked, make the switch
-      and mark that a switch has been done:*/
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-    }
-  }
-}
+        
                       
                     $(document).ready(function() {
                      
@@ -119,25 +86,40 @@
                       //   console.log($(a).find('.status').html());
                       //   return parseInt($(b).find('.status').html()) - parseInt($(a).find('.status').html());
                       // }).appendTo($(".checklist_table"));
-                      
+                      // sortTable();
                       $(".checklist_table").each(function(){
-                        sortTable($(this));
-//                         $(this).find('td').each(function(){
-                          
+                        
+                        // $(this).find('tr').each(function(){
+                          var rows = $table.find('tr').get();
+                        rows.sort(function(a, b) {
+                          return parseInt($(a).find('span').html()) - parseInt($(b).find('span').html());
+                        }).appendTo($(this).parent());
 //                           $(this).find('tr').sort(function(a, b) {
 //                             console.log($(a).find('span').html());
 //                               return parseInt($(a).find('span').html()) - parseInt($(b).find('span').html());
 //                           }).appendTo($(this).parent());
                           
                           // if($(this).find('span').html() == '1'){
-                          //   $(this).parent().css("order","1");
+                          //   $(this).prev().insertAfter($(this));
                           // }
                           // if($(this).find('span').html() == '2'){
-                          //   $(this).parent().css("order","2");
+                          //   // $(this).parent().css("order","2");
                           // }
                           // if($(this).find('span').html() == '3'){
-                          //   $(this).parent().css("order","3");
+                          //   // $(this).parent().css("order","3");
                           // }
+                          
+                    //       var rows = $table.find('tr').get();
+                    //         rows.sort(function(a, b) {
+                    //         var keyA = $(a).attr('myAttribute');
+                    //         var keyB = $(b).attr('myAttribute');
+                    //         if (keyA < keyB) return 1;
+                    //         if (keyA > keyB) return -1;
+                    //       return 0;
+                    //         });
+                    //       $.each(rows, function(index, row) {
+                    //     $table.children('tbody').append(row);
+                    // });
                           
                         // });
                         
