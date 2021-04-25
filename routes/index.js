@@ -209,7 +209,6 @@ router.put("/update", async function(req, res) {
     }
   }
 
-
   switch (idx) {
     case 1:
       console.log('Catched');
