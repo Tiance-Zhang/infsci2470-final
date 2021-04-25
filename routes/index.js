@@ -161,6 +161,7 @@ router.put("/update", async function(req, res) {
       break;
     }
   }
+  console.log(idx);
 
   switch (idx) {
     case 1:
