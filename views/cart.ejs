@@ -84,7 +84,7 @@
                             <%= product.Task_id %>
                         </td> -->
                       <td class="list_id_button">
-                            <%= product.TaskName %>
+                            <%= product.TaskName %><span style="display:none;"><%= product.isred %></span>
                         </td>
                         <td rowspan="6" class="table_button">
                             <!--         <form action="/updateCart?id=<%= product.id %>" method="POST"> -->       
@@ -242,7 +242,11 @@
                     //       $(this).setAttribute("order", "1");
                     // }
                     //   });
-                      
+                      $(".list_id_button").each(function(){
+                        if($(this).find("span").html() == 1) {
+                          $(this).css("color","#ff6666");
+                        }
+                      });
                       
                       
                       
