@@ -162,12 +162,11 @@ router.put("/update", async function(req, res) {
     }
   }
   console.log(idx);
-  pid = parseInt(pid);
 
   switch (idx) {
     case 1:
       await Cart.updateOne(
-        {  $and: [ {email: req.user.email} , {"product_list.Task_id): pid}]},{"product_list.$.status": 3});
+        {  $and: [ {email: req.user.email} , {'product_list.Task_id': pid.toString()}]},{"product_list.$.status": 3});
       break;
     case 2:
       await Cart.updateOne(
