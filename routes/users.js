@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
-
+const Cart = require("../models/cart");
+var my_cart;
 
 // Load User model
 const User = require('../models/User');
@@ -60,6 +61,11 @@ router.post('/register', (req, res) => {
           password,
           options
         });
+      my_cart = new Cart();
+      my_cart.email = email;
+      my_cart.save();
+        
+        
 
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
