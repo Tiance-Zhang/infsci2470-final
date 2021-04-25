@@ -86,7 +86,25 @@
                       //   return parseInt($(b).find('.status').html()) - parseInt($(a).find('.status').html());
                       // }).appendTo($(".checklist_table"));
                       
-                      
+                      $(".checklist_table").each(function(){
+                        $(this).find('td').each(function(){
+                          
+                         
+                          
+                          if($(this).find('span').html() == '1'){
+                            $(this).parent().css("order","1");
+                          }
+                          if($(this).find('span').html() == '2'){
+                            $(this).parent().css("order","2");
+                          }
+                          if($(this).find('span').html() == '3'){
+                            $(this).parent().css("order","3");
+                          }
+                        });
+                        
+                        
+                        
+                      });
                       
                       $(".status").each(function(){
                         switch($(this).html()) {
