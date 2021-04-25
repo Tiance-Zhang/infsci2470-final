@@ -371,8 +371,9 @@ footer.end {
 }
 
 .assignedTask{
-  background-color: #7099C8;
+  background-color: #70C4C7;
   cursor: pointer;
+  color: white;
   
 }
 
@@ -384,11 +385,13 @@ footer.end {
 .startedTask{
   background-color: #FFCCCC;
   cursor: pointer;
+  color: white;
 }
 
 .finishedTask{
   background-color: #CCCCCC;
   cursor: pointer;
+  color: white;
 }
 
 
@@ -487,7 +490,8 @@ input[type="radio"]:checked + label{
   border: 0px solid rgb(72 77 140 / 90%);
   font-size: 1rem;
   text-shadow: 10px 5px 25px rgb(77 80 117 / 60%);
-  color: rgb(72 77 140 / 90%);
+/*   color: rgb(72 77 140 / 90%); */
+  color:#4679B4;
   font-weight: 550;
   border-radius: 20px;
 
