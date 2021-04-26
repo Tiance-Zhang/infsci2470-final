@@ -37,7 +37,7 @@
     </ul>
         
      <ul class="navbar-nav ml-auto"> 
-<li class="nav-item"><div class="nav-link" onclick="showInstruction()">Instruction</div></li>
+<li class="nav-item"><div class="nav-link" onclick="showInstruction()" style="cursor:pointer;">Instruction</div></li>
           <li class="nav-item"><a class="nav-link" href="/dashboard">Log out</a></li>
     </ul>
     
@@ -45,9 +45,10 @@
 </nav>
 </div>
   <div id="instruction">
-    <h3 class="entry-title">There are three task status, which are <div style="color:gray;">completed status in gray,</div> 
-    <div style="color:blue;">not yet started status in blue</div> <div style="color:red;">not done yet status in red.</div>
-     </h3>
+    <div style="color:#CCCCCC;">grey: completed tasks</div> 
+    <div style="color:#70C4C7;">blue: not yet started tasks</div> 
+    <div style="color:#FFCCCC;">red: doing tasks</div>
+   
   </div>
   
   
@@ -82,7 +83,6 @@
                 <script>
      
                               function showInstruction() {
-        
         
                                 $("#instruction").toggle('slow');
         
