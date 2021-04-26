@@ -201,14 +201,17 @@
                         switch($(this).parent().find('.status').html()) {
                           case "1":
                             $(this).attr('class', 'startedTask');
+                            $(this).attr('title', 'Current status: doing');
                             $(this).find('.change_status').html('click to complete');
                             break;
                           case "2":
                             $(this).attr('class', 'assignedTask');
+                            $(this).attr('title', 'Current status: not start');
                             $(this).find('.change_status').html('click to start');
                             break;
                           case "3":
                             $(this).attr('class', 'finishedTask');
+                            $(this).attr('title', 'Current status: completed');
                             $(this).find('.change_status').html('click to restart');
                             break;
                             
