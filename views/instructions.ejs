@@ -17,6 +17,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/tourbus.css" type="text/css">
 </head>
 <body>
   
@@ -52,23 +53,25 @@
 <div class="d-flex justify-content-center">
 <div class="card text-center" style="width:100%">
   <div class="card-header">
-     <h1 class="entry-title">Instructions for new users</h1>
+     <div>Instructions for new users</div>
    
-    <h3>
+    <div>
       Welcome <td><%= user.name %></td>
-    </h3>
-    
-    <p>In the United States, medical school typically lasts four years. Medical students spend the first part of this third and fourth years rotating through a combination of required clerkship and electives. Most medical schools require rotations in internal medicine, surgery, pediatrics, psychiatry, obstetrics and gynecology, family medicine, radiology, and neurology. Some schools additionally require emergency medicine and intensive-care medicine. Furthermore, a common graduation requirement is to complete a sub-internship in a specialty, where the medical student acts as an intern.</p>
+    </div>
+    <div>
+          <p>In the United States, medical school typically lasts four years. Medical students spend the first part of this third and fourth years rotating through a combination of required clerkship and electives. Most medical schools require rotations in internal medicine, surgery, pediatrics, psychiatry, obstetrics and gynecology, family medicine, radiology, and neurology. Some schools additionally require emergency medicine and intensive-care medicine. Furthermore, a common graduation requirement is to complete a sub-internship in a specialty, where the medical student acts as an intern.</p>
 
     <p>The purpose of this system is to provide clerkship with a platform for students and teachers to manage the courses they have participated in. From the student side, students can view all their clerkship information, including the content that has been learned and the content that has not been learned, and the student can modify the course status, for example, the student changes the course status from never completed to completed. It is convenient for students to understand the progress of their studies. The teacher can see the student's course selection information, which is convenient for the teacher to understand the courses that the students have learned and the courses that the students have not participated in. So as to better teach in the course. </p>
 
     <p>On this page, I will show you how this platform displays courses and explain the meaning of each functional module. Of course,
 The most important thing is how to use this system correctly.</p>
+    </div>
 
-                                                        <p>
-                                                            <strong>Example of the checklist page</strong>
-                                                        </p>
-                                                      <img
+    <p>
+      <strong>Example of the checklist page</strong>
+    </p>
+    
+    <img
             src="https://cdn.glitch.com/861a36ec-6a23-43f1-9b97-1feba04653bc%2FScreen%20Shot%202021-04-25%20at%202.02.30%20PM.png?v=1619373767791"
             alt="Guards"
             width="600"
